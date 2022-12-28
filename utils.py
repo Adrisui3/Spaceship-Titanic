@@ -11,4 +11,4 @@ def generate_submission(labels, method, notes = ""):
     df["Transported"] = ["False" if p == 0 else "True" for p in labels]
 
     name = "submissions/" + method + "/" + notes + "_" + str(datetime.datetime.now()).replace("-", "_")
-    df.to_csv(name.replace(" ", "_").replace(".", ":") + ".csv", header = ['PassengerId', 'Transported'], index = False)
+    df.to_csv(name.replace(" ", "_").replace(":", "-").replace(".", "-") + ".csv", header = ['PassengerId', 'Transported'], index = False)
