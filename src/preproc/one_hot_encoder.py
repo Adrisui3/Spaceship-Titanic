@@ -1,13 +1,16 @@
+import os
 import sys
-sys.path.insert(1, './src')
-from utils import *
+SRC = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
+sys.path.append(SRC)
+
+import utils
 import pandas as pd
 import pickle
 from sklearn.preprocessing import OneHotEncoder
 
 PATH = "data/pickles/one_hot/"
 
-train_raw = load_data()
+train_raw = utils.load_train()
 train = train_raw.drop(["PassengerId"], axis = 1)
 
 oh_destination = OneHotEncoder(categories = "auto", drop="first", sparse_output=False).fit(train[["Destination"]])
