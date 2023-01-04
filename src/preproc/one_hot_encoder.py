@@ -4,11 +4,10 @@ SRC = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 sys.path.append(SRC)
 
 import utils
-import pandas as pd
 import pickle
 from sklearn.preprocessing import OneHotEncoder
 
-PATH = "data/pickles/one_hot/"
+PATH = utils.ROOT + "/data/pickles/one_hot/"
 
 train_raw = utils.load_train()
 train = train_raw.drop(["PassengerId"], axis = 1)
@@ -36,3 +35,4 @@ with open(PATH + "oh_cabin_deck.pck", "wb") as f:
 oh_cabin_side = OneHotEncoder(categories = "auto", drop="if_binary", sparse_output=False).fit(train[["Cabin_side"]])
 with open(PATH + "oh_cabin_side.pck", "wb") as f:
     pickle.dump(oh_cabin_side, file = f)
+    
