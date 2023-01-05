@@ -30,5 +30,6 @@ def generate_submission(labels, method, notes = ""):
 
     df["Transported"] = labels
 
-    name = "submissions/" + method + "/" + notes + "_" + str(datetime.datetime.now()).replace("-", "_")
-    df.to_csv(name.replace(" ", "_").replace(":", "-").replace(".", "-") + ".csv", header = ['PassengerId', 'Transported'], index = False)
+    name = "/submissions/" + method + "/" + notes + "_" + str(datetime.datetime.now()).replace("-", "_")
+    name = name.replace(" ", "_").replace(":", "-").replace(".", "-")
+    df.to_csv(ROOT + name + ".csv", header = ['PassengerId', 'Transported'], index = False)
