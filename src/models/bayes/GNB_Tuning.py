@@ -52,8 +52,8 @@ GNB = GaussianNB().fit(X = train_X, y = train_y)
 print('Classifying...')
 pred_labels = GNB.predict(X = test)
 
-# utils.generate_submission(
-#     labels = pred_labels, 
-#     method = 'bayes', 
-#     notes = 'GridSearch_varsmoothing'
-# )
+utils.generate_submission(
+    labels = pred_labels, 
+    method = 'bayes', 
+    notes = 'GridSearch_varsmoothing'
+)
