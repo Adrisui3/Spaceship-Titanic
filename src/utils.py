@@ -57,3 +57,8 @@ def generate_submission(labels, method, notes = ""):
     name = "/submissions/" + method + "/" + notes + "_" + str(datetime.datetime.now()).replace("-", "_")
     name = name.replace(" ", "_").replace(":", "-").replace(".", "-")
     df.to_csv(ROOT + name + ".csv", header = ['PassengerId', 'Transported'], index = False)
+    
+
+def encode_labels(labels):
+    return ['True' if x==1 else 'False' for x in labels]
+        
