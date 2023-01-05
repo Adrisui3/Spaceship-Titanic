@@ -24,6 +24,15 @@ def one_hot_encode(df):
             df = df.drop([var], axis = 1)
     return df
 
+def normalize(df):
+    filenames = ["data/pickles/norm/norm_age.pck", "data/pickles/norm/norm_RoomService.pck"]
+    numerical_variables = ["Age", "RoomService"]
+    for filename, var in zip(filenames, numerical_variables):
+        with open(file = ROOT + '/' + filename, mode = "rb") as f:
+            norm_e = pickle.load(file = f)
+            df[var] = norm_e.transform(df[[var]])
+    return df
+
 def generate_submission(labels, method, notes = ""):
     test = pd.read_csv(ROOT + "/data/test_pr.csv")
     df = pd.DataFrame(test.PassengerId) 
