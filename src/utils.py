@@ -24,11 +24,41 @@ def one_hot_encode(df):
             df = df.drop([var], axis = 1)
     return df
 
+def minmax_scaler_all_oh(df):    
+    with open(file = ROOT + "/data/pickles/scalers/minmax_scaler_all_oh.pck", mode = "rb") as f:
+        mmscaler = pickle.load(file = f)
+        df = mmscaler.transform(df)
+    return df
+
+def robust_scaler_all_oh(df):    
+    with open(file = ROOT + "/data/pickles/scalers/robust_scaler_all_oh.pck", mode = "rb") as f:
+        rscaler = pickle.load(file = f)
+        df = rscaler.transform(df)
+    return df
+
+def standard_scaler_all_oh(df):    
+    with open(file = ROOT + "/data/pickles/scalers/standard_scaler_all_oh.pck", mode = "rb") as f:
+        sscaler = pickle.load(file = f)
+        df = sscaler.transform(df)
+    return df
+
+def normalizer_all_oh(df):    
+    with open(file = ROOT + "/data/pickles/scalers/normalizer_all_oh.pck", mode = "rb") as f:
+        norm = pickle.load(file = f)
+        df = norm.transform(df)
+    return df
+
 def generate_submission(labels, method, notes = ""):
     test = pd.read_csv(ROOT + "/data/test_pr.csv")
     df = pd.DataFrame(test.PassengerId) 
 
     df["Transported"] = labels
 
-    name = "submissions/" + method + "/" + notes + "_" + str(datetime.datetime.now()).replace("-", "_")
-    df.to_csv(name.replace(" ", "_").replace(":", "-").replace(".", "-") + ".csv", header = ['PassengerId', 'Transported'], index = False)
+    name = "/submissions/" + method + "/" + notes + "_" + str(datetime.datetime.now()).replace("-", "_")
+    name = name.replace(" ", "_").replace(":", "-").replace(".", "-")
+    df.to_csv(ROOT + name + ".csv", header = ['PassengerId', 'Transported'], index = False)
+    
+
+def encode_labels(labels):
+    return ['True' if x==1 else 'False' for x in labels]
+        
