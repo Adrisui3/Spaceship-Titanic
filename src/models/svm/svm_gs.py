@@ -18,8 +18,8 @@ train_X = utils.standard_scaler_oh(df = train_X, merged=True)
 train_y = train_raw.Transported
 
 print("--- GRID SEARCH ---")
-parameters = {'C':[6, 7, 8, 9, 10, 11, 12, 13], 
-              'gamma': [0.015, 0.02, 0.025, 0.03, 0.04, 0.05]}
+parameters = {'C':np.linspace(start=5.0, stop=25.0, num = 25),
+              'gamma': np.linspace(start=0.001, stop=0.1, num = 25)}
 
 gs = GridSearchCV(estimator = SVC(random_state = 1234), param_grid = parameters, cv = 10, return_train_score = True, n_jobs = -1, verbose = 3).fit(X = train_X, y = train_y)
 print("Best score: ", gs.best_score_)
