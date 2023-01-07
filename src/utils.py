@@ -24,6 +24,38 @@ def one_hot_encode(df):
             df = df.drop([var], axis = 1)
     return df
 
+def minmax_scaler_oh(df, merged = False, nra = False):
+    filename = ROOT + "/data/pickles/scalers/minmax_scaler_" + ("nra_" if nra else "")
+    filename += "merged_oh.pck" if merged else "all_oh.pck"    
+    with open(file = filename, mode = "rb") as f:
+        mmscaler = pickle.load(file = f)
+        df = mmscaler.transform(df)
+    return df
+
+def robust_scaler_oh(df, merged = False, nra = False):
+    filename = ROOT + "/data/pickles/scalers/robust_scaler_" + ("nra_" if nra else "")
+    filename += "merged_oh.pck" if merged else "all_oh.pck"    
+    with open(file = filename, mode = "rb") as f:
+        rscaler = pickle.load(file = f)
+        df = rscaler.transform(df)
+    return df
+
+def standard_scaler_oh(df, merged = False, nra = False):
+    filename = ROOT + "/data/pickles/scalers/standard_scaler_" + ("nra_" if nra else "")
+    filename += "merged_oh.pck" if merged else "all_oh.pck"    
+    with open(file = filename, mode = "rb") as f:
+        sscaler = pickle.load(file = f)
+        df = sscaler.transform(df)
+    return df
+
+def normalizer_oh(df, merged = False, nra = False):    
+    filename = ROOT + "/data/pickles/scalers/normalizer_" + ("nra_" if nra else "")
+    filename += "merged_oh.pck" if merged else "all_oh.pck"
+    with open(file = filename, mode = "rb") as f:
+        norm = pickle.load(file = f)
+        df = norm.transform(df)
+    return df
+
 def generate_submission(labels, method, notes = ""):
     test = pd.read_csv(ROOT + "/data/test_pr.csv")
     df = pd.DataFrame(test.PassengerId) 
@@ -34,6 +66,12 @@ def generate_submission(labels, method, notes = ""):
     name = name.replace(" ", "_").replace(":", "-").replace(".", "-")
     df.to_csv(ROOT + name + ".csv", header = ['PassengerId', 'Transported'], index = False)
     
+def merge_numerical(df):
+    df["SM_FC"] = df["ShoppingMall"] + df["FoodCourt"]
+    df["VD_SP"] = df["VRDeck"] + df["Spa"]
+    df = df.drop(["ShoppingMall", "FoodCourt", "VRDeck", "Spa"], axis = 1)
+
+    return df
 
 def encode_labels(labels):
     return ['True' if x==1 else 'False' for x in labels]
