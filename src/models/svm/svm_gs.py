@@ -8,7 +8,6 @@ import utils
 import numpy as np
 from sklearn.svm import SVC, LinearSVC
 from sklearn.model_selection import GridSearchCV, cross_validate
-from sklearn.feature_selection import SelectFromModel
 from sklearn.metrics import classification_report
 
 train_raw = utils.load_train()
@@ -18,18 +17,18 @@ train_X = utils.standard_scaler_oh(df = train_X, merged=True)
 train_y = train_raw.Transported
 
 print("--- GRID SEARCH ---")
-parameters = {'C':np.linspace(start=5.0, stop=25.0, num = 25),
-              'gamma': np.linspace(start=0.001, stop=0.1, num = 25)}
+parameters = {'C': np.logspace(start = -2, stop = 10, base = 2),
+              'gamma': np.logspace(start = -9, stop = 3, base = 2)}
 
 gs = GridSearchCV(estimator = SVC(random_state = 1234), param_grid = parameters, cv = 10, return_train_score = True, n_jobs = -1, verbose = 3).fit(X = train_X, y = train_y)
 print("Best score: ", gs.best_score_)
 print("Best parameters: ", gs.best_params_)
 
 print("--- CROSS VALIDATION ---")
-cv = cross_validate(estimator = SVC(C = gs.best_params_['C'], gamma = gs.best_params_['gamma'], random_state = 1234), X = train_X, y = train_y, cv = 10, return_train_score = True, n_jobs = -1)
+cv = cross_validate(estimator = SVC(C = gs.best_params_["C"], gamma = gs.best_params_["gamma"], random_state = 1234), X = train_X, y = train_y, cv = 10, return_train_score = True, n_jobs = -1)
 print("Cross-validation train score: ", np.mean(cv["train_score"]))
 print("Cross-validation test score: ", np.mean(cv["test_score"]))
-svc = SVC(C = gs.best_params_['C'], gamma = gs.best_params_['gamma'], random_state = 1234).fit(X = train_X, y = train_y)
+svc = SVC(C = gs.best_params_["C"], gamma = gs.best_params_["gamma"], random_state = 1234).fit(X = train_X, y = train_y)
 print(classification_report(train_y, svc.predict(X = train_X)))
 
 test_raw = utils.load_test()
@@ -38,4 +37,4 @@ test = utils.merge_numerical(df = test)
 test = utils.standard_scaler_oh(df = test, merged=True)
 print("Predicting for test...")
 pred_labels = svc.predict(X = test)
-#utils.generate_submission(labels = pred_labels, method = "svm", notes = "gscv_standard_scaling_oh")
+#utils.generate_submission(labels = pred_labels, method = "svm", notes = "gscv_standard_scaling_oh_logspace")
