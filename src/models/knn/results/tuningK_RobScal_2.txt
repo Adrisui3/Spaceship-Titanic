@@ -1,6 +1,15 @@
-#Validación cruzada con 10 folds, solo 'distancia uniforme', mejor k variando métrica de distancia
+#Validación cruzada con 10 folds, solo 'distancia uniforme', mejor k variando métrica de distancia, robust scaler
 
-
+manhattan 0.7961640411094797 30
+euclidean 0.7966234144147718 32
+minkowski(p=3) 0.7978906921683001 45
+cosine 0.8019156647222996 39
+braycurtis 0.7984661984312791 50
+canberra 0.7769530309643796 19
+chebyshev 0.7951292938110922 17
+correlation 0.8012254804703517 41
+seuclidean 0.7848912080208457 25
+mahalanobis 0.6912446596034549] 6
 
 
 

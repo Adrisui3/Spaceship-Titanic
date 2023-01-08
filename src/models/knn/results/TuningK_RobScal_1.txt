@@ -1,4 +1,4 @@
-#Encontrando el mejor valor de k en función de la métrica de distancia y la ponderación de las distancias
+#Encontrando el mejor valor de k en función de la métrica de distancia y la ponderación de las distancias(weights= uniform o distance)
 #Se ha usado el robust_scaler predeterminado y CV con 10 folds
 
 
@@ -45,19 +45,6 @@ Para distancia =  cosine  y weights =  distance
 Mejor resultado: 0.7890291390553286 
  Para k= 96
 
-nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan 
-
-
-Para distancia =  haversine  y weights =  uniform
-Mejor resultado: 0 
- Para k= 96 
-
-nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan 
-
-
-Para distancia =  haversine  y weights =  distance
-Mejor resultado: 0 
- Para k= 96
 
 0.67077 0.67882 0.68826 0.68733 0.65582 0.69124 0.65985 0.66364 0.65973 0.66019 0.65352 0.65824 0.64835 0.65306 0.64651 0.65318 0.64501 0.64881 0.62395 0.64559 0.64041 0.64271 0.61981 0.64029 0.63765 0.64133 0.61694 0.62464 0.61671 0.6251 0.61567 0.62384 0.61383 0.61958 0.61222 0.61751 0.61038 0.61417 0.60773 0.61141 0.6075 0.61268 0.60635 0.61659 0.60716 0.61509 0.60911 0.61544 0.6075 0.6144 0.60853 0.61406 0.60853 0.61394 0.60853 0.61152 0.60704 0.6121 0.60198 0.6121 0.60129 0.60842 0.5983 0.60669 0.59657 0.59991 0.59082 0.59565 0.58829 0.59312 0.58449 0.5884 0.583 0.58541 0.58092 0.58323 0.57977 0.5815 0.57793 0.58115 0.5777 0.58115 0.57609 0.58069 0.57713 0.58253 0.57586 0.58161 0.57782 0.58265 0.57805 0.58357 0.57851 0.58564 0.57908 0.58403 0.5792 0.58207 0.57379 
 
