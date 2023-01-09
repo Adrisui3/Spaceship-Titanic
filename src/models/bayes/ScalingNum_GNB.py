@@ -55,7 +55,7 @@ pred_labels = gnb.predict(train_X_norm)
 test_raw = utils.load_test()
 test = utils.one_hot_encode(test_raw.drop(['PassengerId'], axis = 1))
 
-GNB = GaussianNB().fit(X = train_X, y = train_y)
+GNB = GaussianNB().fit(X = train_X_norm, y = train_y)
 print('Classifying...')
 pred_labels = GNB.predict(X = test)
 
