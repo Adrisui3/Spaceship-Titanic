@@ -6,13 +6,12 @@ from sklearn.utils import resample
 from sklearn.base import clone
 
 class GridSearchBaggingClassifier:
-    def __init__(self, weak_estimator, n_estimators, estimator_params = None, max_samples = 1.0, max_features = 1.0, grid_search = True, verbose = False, random_state = 1234):
+    def __init__(self, weak_estimator, n_estimators, estimator_params = None, max_samples = 1.0, max_features = 1.0, grid_search = True, verbose = False):
         self.__weak_estimator = weak_estimator
         self.__n_estimators = n_estimators
         self.__estimator_params = estimator_params
         self.__max_samples = max_samples
         self.__max_features = max_features
-        self.__random_state = random_state
         self.__gs = grid_search
         self.__verbose = verbose
         self.__unfitted_estimators = [clone(self.__weak_estimator) for _ in range(self.__n_estimators)]
