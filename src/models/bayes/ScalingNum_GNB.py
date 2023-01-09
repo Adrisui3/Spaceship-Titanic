@@ -51,6 +51,20 @@ gnb = GaussianNB().fit(X = train_X_norm, y = train_y)
 pred_labels = gnb.predict(train_X_norm)
 # print(classification_report(train_y, gnb.predict(train_X_norm)))
 
+# Testing Normalizer
+test_raw = utils.load_test()
+test = utils.one_hot_encode(test_raw.drop(['PassengerId'], axis = 1))
+
+GNB = GaussianNB().fit(X = train_X, y = train_y)
+print('Classifying...')
+pred_labels = GNB.predict(X = test)
+
+utils.generate_submission(
+    labels = pred_labels, 
+    method = 'bayes', 
+    notes = 'NormalizedNumerical_GNB'
+)
+
 print('\n--- MINMAX ---')
 train_X_mm = train_X.copy()
 train_X_mm.iloc[:, 0:6] =  Normalizer().fit_transform(train_X.iloc[:,0:6])
