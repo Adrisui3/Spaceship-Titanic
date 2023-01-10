@@ -6,7 +6,7 @@ sys.path.append(SRC)
 
 import utils
 import numpy as np
-from sklearn.svm import SVC, LinearSVC
+from sklearn.svm import SVC
 from sklearn.model_selection import GridSearchCV, cross_validate
 from sklearn.metrics import classification_report
 
