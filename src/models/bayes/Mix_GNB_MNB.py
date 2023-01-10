@@ -9,49 +9,50 @@ sys.path.append(SRC)
 import utils 
 import numpy as np
 from sklearn.model_selection import cross_validate
-from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import Normalizer
 from mixed_naive_bayes import MixedNB
 from sklearn.preprocessing import LabelEncoder
 # Training data load and OneHotEncoder
-print('Loading data...')
+print('--- LOADING DATA ---')
 train_raw = utils.load_train()
 train_X = utils.one_hot_encode(train_raw.drop(['Transported', 'PassengerId'], 
                                               axis = 1))
 
-# Encoding class
+num_features = np.arange(0,6)
+cat_features = np.arange(6,20)
+
+# Encoding target
 train_y = train_raw['Transported']
 le = LabelEncoder()
 train_y = le.fit_transform(np.array(train_y))
+# print(train_y)
 
-# Need to se which are the categorical features:
-# print(train_X.columns[np.arange(6,20,1)]) # categorical: [6:20])
+print('--- NORMALIZER ---')
+train_X.iloc[:,num_features] = Normalizer().fit_transform(train_X.iloc[:,num_features])
+# print(train_X.iloc[:,num_features].describe())
 
-# Mixed Naive Bayes attempt
-# print('Mixed Naive bayes over Train')
-# MNB = MixedNB(categorical_features=np.arange(6,20,1)).fit(train_X, train_y)
-# pred = MNB.predict(train_X)
-# print(accuracy_score(train_y, pred))
-
+print('--- CROSS VALIDATION ---')
 # cross validation:
-print('Cross validation with Mixed Naive Bayes...')
 cv = cross_validate(
-    estimator = MixedNB(categorical_features=np.arange(6,20,1)), 
+    estimator = MixedNB(categorical_features=list(cat_features)), 
     X = train_X,  y = train_y, 
     cv = 10, 
+    return_train_score=True, 
     n_jobs=-1, # use all the cores
     verbose=0 # show in terminal the process
 )
-print('Result of the cv: ', np.mean(cv['test_score']))
+print('Result of the cv in test: ', np.mean(cv['test_score']))
+print('Result of the cv in train: ', np.mean(cv['train_score']))
 
 #Classification of the test data
 test_raw = utils.load_test()
 test = utils.one_hot_encode(test_raw.drop(['PassengerId'], axis = 1))
 
-print('Training Gaussian NaiveBayes...')
-MNB = MixedNB().fit(X = train_X, y = train_y)
-print('Classifying...')
+print('--- TEST ---')
+MNB = MixedNB(categorical_features=list(cat_features)).fit(X = train_X, y = train_y)
 pred_labels = MNB.predict(X = test)
-pred_labels = np.array(pred_labels, dtype = 'bool')
+pred_labels = np.bool_(pred_labels)
+print(pred_labels)
 
 utils.generate_submission(
     labels = pred_labels, 
