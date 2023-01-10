@@ -1,4 +1,4 @@
-#Valor de k con el mejor SCV con 10 folds, variando el número de componentes, p y el tipo de preprocesado:
+#Valor de k con el mejor SCV con 10 folds, variando el número de componentes de PCA, p y el tipo de preprocesado:
 
 #-----------------Robust Scaler--------------------------------------------------
 4 explained variance: 0.911372
