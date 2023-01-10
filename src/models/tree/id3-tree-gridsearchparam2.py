@@ -27,19 +27,18 @@ train_y_numpy = train_y.to_numpy()
 skf = StratifiedKFold(n_splits=10)
 
 # Creamos el grid de parámetros
-param_grid = {'prune': [False, True], 'gain_ratio' : [False, True], 'is_repeating': [False, True]}
+param_grid = {'prune': [False, True], 'gain_ratio' : [False, True], 'is_repeating': [False, True], 'max_depth': list(range(15,25)), 'min_samples_split': list(range(50,70))}
 grid = ParameterGrid(param_grid)
 
 best_accuracy = 0
 mean_train_accuracy = []
 mean_test_accuracy = []
 i = 1
-
-# hacemos gridsearch con el modelo
+# hacemos gridsearch
 for params in grid:
     print('training '+str(i)+' of '+str(len(grid)))
     # Declaramos el árbol de decisión id3
-    id3 = Id3Estimator(prune=params['prune'],
+    id3 = Id3Estimator(max_depth=params['max_depth'], min_samples_split=params['min_samples_split'], prune=params['prune'],
                        gain_ratio=params['gain_ratio'], is_repeating=params['is_repeating'])
 
 
@@ -60,14 +59,6 @@ for params in grid:
         best_accuracy = np.mean(accuracy_test)
         best_params = params
 
-# El mejor modelo da
-# 0.7763775247014006
-# Con los parametros
-# {'gain_ratio': True, 'is_repeating': False, 'prune': False}
-
-# precisión:
-# para train: [0.8134004209181306, 0.7975639088713031, 0.9466109940877498, 0.8540207115011658, 0.8143718253709957, 0.8013345123458775, 0.9466109940877498, 0.8489334465357905]
-# para test: [0.7723538748462363, 0.7732767218232081, 0.745199000039681, 0.7626861367935135, 0.7763775247014006, 0.775456926312448, 0.7371493194714496, 0.7694739626734389]
 
 # Cargamos conjunto de test
 test_raw = utils.load_test()
@@ -75,7 +66,7 @@ test = utils.one_hot_encode(df = test_raw.drop(["PassengerId"], axis = 1))
 
 # Predicciones
 print("Training id3 classifier...")
-id3 = Id3Estimator(prune=best_params['prune'], gain_ratio=best_params['gain_ratio'], is_repeating=best_params['is_repeating']).fit(X = train_x.to_numpy(), y = train_y.to_numpy())
+id3 = Id3Estimator().fit(X = train_x.to_numpy(), y = train_y.to_numpy())
 print("Making predictions...")
 pred_labels = id3.predict(X = test.to_numpy())
 
