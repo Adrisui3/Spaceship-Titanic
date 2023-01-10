@@ -27,23 +27,38 @@ train_y_numpy = train_y.to_numpy()
 skf = StratifiedKFold(n_splits=10)
 
 # Creamos el grid de parámetros
+param_grid = {'prune': [False, True], 'gain_ratio' : [False, True], 'is_repeating': [False, True], 'max_depth': list(range(15,25)), 'min_samples_split': list(range(50,70))}
+grid = ParameterGrid(param_grid)
 
-# Declaramos el árbol de decisión id3
-id3 = Id3Estimator()
+best_accuracy = 0
+mean_train_accuracy = []
+mean_test_accuracy = []
+i = 1
 
-# entrenamos y evaluamos el modelo con validación cruzada
-accuracy_train = []
-accuracy_test = []
-for train, test in skf.split(train_x_numpy, train_y_numpy):
-    id3.fit(train_x_numpy[train], train_y_numpy[train])
-    pred_train = id3.predict(train_x_numpy[train])
-    accuracy_train.append(accuracy_score(train_y_numpy[train], pred_train))
-    pred_test = id3.predict(train_x_numpy[test])
-    accuracy_test.append(accuracy_score(train_y_numpy[test], pred_test))
+# hacemos gridsearch con el modelo
+for params in grid:
+    print('training '+str(i)+' of '+str(len(grid)))
+    # Declaramos el árbol de decisión id3
+    id3 = Id3Estimator(max_depth=params['max_depth'], min_samples_split=params['min_samples_split'], prune=params['prune'],
+                       gain_ratio=params['gain_ratio'], is_repeating=params['is_repeating'])
 
-np.mean(accuracy_train)
-np.mean(accuracy_test)
 
+    # entrenamos y evaluamos el modelo con validación cruzada
+    accuracy_train = []
+    accuracy_test = []
+    for train, test in skf.split(train_x_numpy, train_y_numpy):
+        id3.fit(train_x_numpy[train], train_y_numpy[train])
+        pred_train = id3.predict(train_x_numpy[train])
+        accuracy_train.append(accuracy_score(train_y_numpy[train], pred_train))
+        pred_test = id3.predict(train_x_numpy[test])
+        accuracy_test.append(accuracy_score(train_y_numpy[test], pred_test))
+
+    mean_train_accuracy.append(np.mean(accuracy_train))
+    mean_test_accuracy.append(np.mean(accuracy_test))
+    i += 1
+    if np.mean(accuracy_test)>best_accuracy:
+        best_accuracy = np.mean(accuracy_test)
+        best_params = params
 
 
 # Cargamos conjunto de test
