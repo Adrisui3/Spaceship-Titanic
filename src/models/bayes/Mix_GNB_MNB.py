@@ -28,14 +28,15 @@ train_y = le.fit_transform(np.array(train_y))
 # print(train_y)
 
 print('--- NORMALIZER ---')
-train_X.iloc[:,num_features] = Normalizer().fit_transform(train_X.iloc[:,num_features])
-# print(train_X.iloc[:,num_features].describe())
+train_X_norm = train_X.copy()
+train_X_norm.iloc[:,num_features] = Normalizer().fit_transform(train_X.iloc[:,num_features])
+# print(train_X_norm.iloc[:,num_features].describe())
 
 print('--- CROSS VALIDATION ---')
 # cross validation:
 cv = cross_validate(
     estimator = MixedNB(categorical_features=list(cat_features)), 
-    X = train_X,  y = train_y, 
+    X = train_X_norm,  y = train_y, 
     cv = 10, 
     return_train_score=True, 
     n_jobs=-1, # use all the cores
@@ -44,13 +45,15 @@ cv = cross_validate(
 print('Result of the cv in test: ', np.mean(cv['test_score']))
 print('Result of the cv in train: ', np.mean(cv['train_score']))
 
-#Classification of the test data
+print('--- TEST ---')
 test_raw = utils.load_test()
 test = utils.one_hot_encode(test_raw.drop(['PassengerId'], axis = 1))
 
-print('--- TEST ---')
-MNB = MixedNB(categorical_features=list(cat_features)).fit(X = train_X, y = train_y)
-pred_labels = MNB.predict(X = test)
+test_norm = test.copy()
+test_norm.iloc[:,num_features] = Normalizer().fit_transform(test.iloc[:,num_features])
+
+mixed = MixedNB(categorical_features=list(cat_features)).fit(train_X_norm, train_y)
+pred_labels = mixed.predict(test_norm)
 pred_labels = np.bool_(pred_labels)
 print(pred_labels)
 
