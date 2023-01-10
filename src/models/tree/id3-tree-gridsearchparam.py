@@ -13,6 +13,7 @@ from id3 import Id3Estimator
 from id3 import export_graphviz
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import accuracy_score
+from sklearn.model_selection import ParameterGrid
 
 # Cargamos conjunto de train
 train_raw = utils.load_train()
@@ -24,6 +25,8 @@ train_y_numpy = train_y.to_numpy()
 
 # Creamos los folds
 skf = StratifiedKFold(n_splits=10)
+
+# Creamos el grid de parámetros
 
 # Declaramos el árbol de decisión id3
 id3 = Id3Estimator()
@@ -51,6 +54,6 @@ test = utils.one_hot_encode(df = test_raw.drop(["PassengerId"], axis = 1))
 print("Training id3 classifier...")
 id3 = Id3Estimator().fit(X = train_x.to_numpy(), y = train_y.to_numpy())
 print("Making predictions...")
-pred_labels = id3.predict(X = test)
-true_labels = utils.encode_labels(pred_labels)
-utils.generate_submission(labels = true_labels, method = "tree", notes = "default_parameters")
+pred_labels = id3.predict(X = test.to_numpy())
+
+utils.generate_submission(labels = pred_labels, method = "tree", notes = "id3_gridsearch_parameters")
