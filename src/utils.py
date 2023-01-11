@@ -24,38 +24,37 @@ def one_hot_encode(df):
             df = df.drop([var], axis = 1)
     return df
 
-def normalize(df):
-    filenames = ["data/pickles/norm/norm_age.pck", "data/pickles/norm/norm_RoomService.pck"]
-    numerical_variables = ["Age", "RoomService"]
-    for filename, var in zip(filenames, numerical_variables):
-        with open(file = ROOT + '/' + filename, mode = "rb") as f:
-            norm_e = pickle.load(file = f)
-            df[var] = norm_e.transform(df[[var]])
-    return df
-
-def minmax_scaler_all_oh(df):    
-    with open(file = ROOT + "/data/pickles/scalers/minmax_scaler_all_oh.pck", mode = "rb") as f:
+def minmax_scaler_oh(df, merged = False, nra = False):
+    filename = ROOT + "/data/pickles/scalers/minmax_scaler_" + ("nra_" if nra else "")
+    filename += "merged_oh.pck" if merged else "all_oh.pck"    
+    with open(file = filename, mode = "rb") as f:
         mmscaler = pickle.load(file = f)
         df = mmscaler.transform(df)
-    return df
+    return pd.DataFrame(df)
 
-def robust_scaler_all_oh(df):    
-    with open(file = ROOT + "/data/pickles/scalers/robust_scaler_all_oh.pck", mode = "rb") as f:
+def robust_scaler_oh(df, merged = False, nra = False):
+    filename = ROOT + "/data/pickles/scalers/robust_scaler_" + ("nra_" if nra else "")
+    filename += "merged_oh.pck" if merged else "all_oh.pck"    
+    with open(file = filename, mode = "rb") as f:
         rscaler = pickle.load(file = f)
         df = rscaler.transform(df)
-    return df
+    return pd.DataFrame(df)
 
-def standard_scaler_all_oh(df):    
-    with open(file = ROOT + "/data/pickles/scalers/standard_scaler_all_oh.pck", mode = "rb") as f:
+def standard_scaler_oh(df, merged = False, nra = False):
+    filename = ROOT + "/data/pickles/scalers/standard_scaler_" + ("nra_" if nra else "")
+    filename += "merged_oh.pck" if merged else "all_oh.pck"    
+    with open(file = filename, mode = "rb") as f:
         sscaler = pickle.load(file = f)
         df = sscaler.transform(df)
-    return df
+    return pd.DataFrame(df)
 
-def normalizer_all_oh(df):    
-    with open(file = ROOT + "/data/pickles/scalers/normalizer_all_oh.pck", mode = "rb") as f:
+def normalizer_oh(df, merged = False, nra = False):    
+    filename = ROOT + "/data/pickles/scalers/normalizer_" + ("nra_" if nra else "")
+    filename += "merged_oh.pck" if merged else "all_oh.pck"
+    with open(file = filename, mode = "rb") as f:
         norm = pickle.load(file = f)
         df = norm.transform(df)
-    return df
+    return pd.DataFrame(df)
 
 def generate_submission(labels, method, notes = ""):
     test = pd.read_csv(ROOT + "/data/test_pr.csv")
@@ -67,6 +66,12 @@ def generate_submission(labels, method, notes = ""):
     name = name.replace(" ", "_").replace(":", "-").replace(".", "-")
     df.to_csv(ROOT + name + ".csv", header = ['PassengerId', 'Transported'], index = False)
     
+def merge_numerical(df):
+    df["SM_FC"] = df["ShoppingMall"] + df["FoodCourt"]
+    df["VD_SP"] = df["VRDeck"] + df["Spa"]
+    df = df.drop(["ShoppingMall", "FoodCourt", "VRDeck", "Spa"], axis = 1)
+
+    return df
 
 def encode_labels(labels):
     return ['True' if x==1 else 'False' for x in labels]
