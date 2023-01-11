@@ -7,10 +7,7 @@ import utils
 import pandas as pd
 import numpy as np
 import six
-import sys
-sys.modules['sklearn.externals.six'] = six # tenemos que hacer este apaño para que funcione el ID3, ya que internamente hace un import de sklearn.externals.six que no setá actualizado
-from id3 import Id3Estimator
-from id3 import export_graphviz
+from c45 import C45
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import ParameterGrid
