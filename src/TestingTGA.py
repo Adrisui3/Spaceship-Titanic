@@ -17,6 +17,13 @@ train_X = utils.one_hot_encode(df = train_raw.drop(["Transported", "PassengerId"
 
 trim_prop = 0.2
 
+print(TGA._trimmed_mean_1d(train_X.iloc[:,1], k=int(trim_prop*len(train_X))))
+
 print(TGA._trimmed_mean(train_X,trim_prop))
 
 print(np.apply_along_axis(TGA._trimmed_mean_1d, 0, train_X, k=int(trim_prop*len(train_X))))
+
+from sklearn.utils import check_array
+
+train_X_1 = check_array(train_X)
+

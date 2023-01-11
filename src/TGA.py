@@ -13,11 +13,6 @@ from sklearn.utils.extmath import squared_norm
 from sklearn.utils import as_float_array, check_array, check_random_state
 from sklearn.utils.validation import check_is_fitted
 
-def norm(x):
-    return squared_norm(x)
-
-def fast_dot(a,b):
-    return np.dot(a,b)
 
 def _trimmed_mean_1d(arr, k):
     """Calculate trimmed mean on a 1d array.
@@ -46,6 +41,7 @@ def _trimmed_mean_1d(arr, k):
     for elem in arr:
         if elem >= kth_smallest and elem <= kth_largest:
             cnt += 1
+            print(cnt)
             summation += elem
     return summation / cnt
 
@@ -96,18 +92,18 @@ def _reorth(basis, target, rows=None, alpha=0.5):
     """
     if rows is not None:
         basis = basis[rows]
-    norm_target = norm(target)
+    norm_target = squared_norm(target)
 
     norm_target_old = 0
     n_reorth = 0
 
     while norm_target < alpha * norm_target_old or n_reorth == 0:
         for row in basis:
-            t = fast_dot(row, target)
+            t = np.dot(row, target)
             target = target - t * row
 
         norm_target_old = norm_target
-        norm_target = norm(target)
+        norm_target = squared_norm(target)
         n_reorth += 1
 
         if n_reorth > 4:
@@ -204,7 +200,7 @@ class TGA(BaseEstimator, TransformerMixin):
         self._fit(X)
         if self.copy and self.center_ is not None:
             X = X - self.center_
-        return fast_dot(X, self.components_.T)
+        return np.dot(X, self.components_.T)
 
     def _fit(self, X):
         """Fit the model on X
@@ -218,8 +214,7 @@ class TGA(BaseEstimator, TransformerMixin):
         if self.trim_proportion < 0 or self.trim_proportion > 0.5:
             raise ValueError('`trim_proportion` must be between 0 and 0.5,'
                              ' got %s.' % self.trim_proportion)
-        
-        print(self.random_state)
+
         rng = check_random_state(self.random_state)
         X = check_array(X)
         n_samples, n_features = X.shape
@@ -246,21 +241,21 @@ class TGA(BaseEstimator, TransformerMixin):
         for k in range(n_components):
             # compute k'th principle component
             mu = rng.rand(n_features) - 0.5
-            mu = mu / norm(mu)
+            mu = mu / squared_norm(mu)
 
             # initialize using a few EM iterations
             for i in range(3):
-                dots = fast_dot(X, mu)
-                mu = fast_dot(dots.T, X)
-                mu = mu / norm(mu)
+                dots = np.dot(X, mu)
+                mu = np.dot(dots.T, X)
+                mu = mu / squared_norm(mu)
 
             # grassmann average
             for i in range(n_samples):
                 prev_mu = mu
-                dot_signs = np.sign(fast_dot(X, mu))
+                dot_signs = np.sign(np.dot(X, mu))
                 mu = _trimmed_mean(X * dot_signs[:, np.newaxis],
                                    self.trim_proportion)
-                mu = mu / norm(mu)
+                mu = mu / squared_norm(mu)
 
                 if np.max(np.abs(mu - prev_mu)) < self.tol:
                     break
@@ -268,12 +263,12 @@ class TGA(BaseEstimator, TransformerMixin):
             # store the estimated vector and possibly re-orthonormalize
             if k > 0:
                 mu = _reorth(self.components_[:k-1], mu)
-                mu = mu / norm(mu)
+                mu = mu / squared_norm(mu)
 
             self.components_[k] = mu
 
             if k < n_components - 1:
-                X = X - fast_dot(fast_dot(X, mu)[:, np.newaxis],
+                X = X - np.dot(np.dot(X, mu)[:, np.newaxis],
                                  mu[np.newaxis, :])
 
     def transform(self, X, y=None):
@@ -297,7 +292,7 @@ class TGA(BaseEstimator, TransformerMixin):
         X = check_array(X)
         if self.center_ is not None:
             X = X - self.center_
-        X_transformed = fast_dot(X, self.components_.T)
+        X_transformed = np.dot(X, self.components_.T)
         return X_transformed
 
     def inverse_transform(self, X):
@@ -316,7 +311,7 @@ class TGA(BaseEstimator, TransformerMixin):
         """
         check_is_fitted(self, 'center_')
 
-        X_original = fast_dot(X, self.components_)
+        X_original = np.dot(X, self.components_)
         if self.center_ is not None:
             X_original = X_original + self.center_
         return X_original
