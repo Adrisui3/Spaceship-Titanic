@@ -27,7 +27,7 @@ train_y_numpy = train_y.to_numpy()
 skf = StratifiedKFold(n_splits=10)
 
 # Creamos el grid de parámetros
-param_grid = {'prune': [False, True], 'gain_ratio' : [False, True], 'is_repeating': [False, True], 'max_depth': list(range(20,25)), 'min_samples_split': list(range(55,65))}
+param_grid = {'prune': [False, True], 'gain_ratio' : [False, True], 'is_repeating': [False, True], 'max_depth': list(range(15,35)), 'min_samples_split': list(range(45,65))}
 grid = ParameterGrid(param_grid)
 
 best_accuracy = 0
