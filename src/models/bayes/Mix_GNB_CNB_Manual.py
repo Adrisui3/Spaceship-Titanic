@@ -10,7 +10,7 @@ import utils
 import numpy as np
 from sklearn.model_selection import cross_validate
 from sklearn.metrics import accuracy_score
-from sklearn.naive_bayes import GaussianNB, BernoulliNB
+from sklearn.naive_bayes import GaussianNB, CategoricalNB
 from sklearn.preprocessing import Normalizer
 # Training data load and OneHotEncoder
 print('--- LOADING DATA ---')
@@ -45,18 +45,19 @@ gaussian_jll = gnb._joint_log_likelihood(test_num_norm)
 print('\n--- CATEGORICAL DATA ---')
 train_Xcat = train_X.iloc[:, cat_features].copy()
 
-test_cat = test.iloc[:, cat_features].copy()
+test_cat = test.iloc[:, list(cat_features)].copy()
+# print(cat_features)
 
-bnb = BernoulliNB().fit(X = train_Xcat, y = train_y)
-bernoulli_jll = bnb._joint_log_likelihood(test_cat) # not normalized
-log_prior = bnb.class_log_prior_
-# print(np.exp(log_prior))
+cnb = CategoricalNB(force_alpha=True).fit(X = train_Xcat, y = train_y)
+categorical_jll = cnb.predict_log_proba(test_cat) # not normalized
+log_prior = cnb.class_log_prior_
+# # print(np.exp(log_prior))
 
 
 print('\n--- JOINING PROBABILITIES ---')
 jlls = []
 jlls.append(gaussian_jll)
-jlls.append(bernoulli_jll)
+jlls.append(categorical_jll)
 jlls = np.hstack([jlls])
 
 jll = jlls.sum(axis = 0)
@@ -71,8 +72,9 @@ proba_norm = num/div
 pred_labels = np.bool_(np.argmax(proba_norm, axis = 1))
 print(pred_labels)
 
+
 utils.generate_submission(
     labels = pred_labels, 
     method = 'bayes', 
-    notes = 'ManualMixed_Gaussian_Bernoulli_NB'
+    notes = 'ManualMixed_Gaussian_Categorical_NB'
 )
