@@ -30,7 +30,7 @@ def minmax_scaler_oh(df, merged = False, nra = False):
     with open(file = filename, mode = "rb") as f:
         mmscaler = pickle.load(file = f)
         df = mmscaler.transform(df)
-    return df
+    return pd.DataFrame(df)
 
 def robust_scaler_oh(df, merged = False, nra = False):
     filename = ROOT + "/data/pickles/scalers/robust_scaler_" + ("nra_" if nra else "")
@@ -38,7 +38,7 @@ def robust_scaler_oh(df, merged = False, nra = False):
     with open(file = filename, mode = "rb") as f:
         rscaler = pickle.load(file = f)
         df = rscaler.transform(df)
-    return df
+    return pd.DataFrame(df)
 
 def standard_scaler_oh(df, merged = False, nra = False):
     filename = ROOT + "/data/pickles/scalers/standard_scaler_" + ("nra_" if nra else "")
@@ -46,7 +46,7 @@ def standard_scaler_oh(df, merged = False, nra = False):
     with open(file = filename, mode = "rb") as f:
         sscaler = pickle.load(file = f)
         df = sscaler.transform(df)
-    return df
+    return pd.DataFrame(df)
 
 def normalizer_oh(df, merged = False, nra = False):    
     filename = ROOT + "/data/pickles/scalers/normalizer_" + ("nra_" if nra else "")
@@ -54,7 +54,7 @@ def normalizer_oh(df, merged = False, nra = False):
     with open(file = filename, mode = "rb") as f:
         norm = pickle.load(file = f)
         df = norm.transform(df)
-    return df
+    return pd.DataFrame(df)
 
 def generate_submission(labels, method, notes = ""):
     test = pd.read_csv(ROOT + "/data/test_pr.csv")
