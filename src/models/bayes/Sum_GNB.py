@@ -18,7 +18,7 @@ train_raw = utils.load_train()
 train_X = utils.merge_numerical(train_raw)
 num_features = train_X.select_dtypes(exclude=['object', 'bool']).columns
 
-train_X = utils.one_hot_encode(train_raw.drop(['Transported', 'PassengerId'], 
+train_X = utils.one_hot_encode(train_X.drop(['Transported', 'PassengerId'], 
                                               axis = 1))
 train_y = train_raw['Transported']
 
@@ -44,18 +44,18 @@ pred_labels = gnb.predict(train_X_norm)
 # Testing Normalizer
 test_raw = utils.load_test()
 test = utils.merge_numerical(test_raw)
-test = utils.one_hot_encode(test_raw.drop(['PassengerId'], axis = 1))
+test = utils.one_hot_encode(test.drop(['PassengerId'], axis = 1))
 
 test_norm = test.copy()
-test_norm.loc[:, num_features] =  Normalizer().fit_transform(test.loc[:, num_features])
+test_norm.loc[:, num_features] = Normalizer().fit_transform(test.loc[:, num_features])
 
 GNB = GaussianNB().fit(X = train_X_norm, y = train_y)
 print('Classifying...')
 pred_labels = GNB.predict(X = test_norm)
 
-utils.generate_submission(
-    labels = pred_labels, 
-    method = 'bayes', 
-    notes = 'SumSomeNumerical_Normalized_GNB'
-)
+# utils.generate_submission(
+#     labels = pred_labels, 
+#     method = 'bayes', 
+#     notes = 'SumSomeNumerical_Normalized_GNB'
+# )
 
