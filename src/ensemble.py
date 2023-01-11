@@ -1,19 +1,18 @@
 import random
 import numpy as np
-from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score
 from sklearn.utils import resample
 from sklearn.base import clone
 
-class GridSearchBaggingClassifier:
-    def __init__(self, weak_estimator, n_estimators, estimator_params = None, max_samples = 1.0, max_features = 1.0, grid_search = True, verbose = False):
+class BaggingClassifier:
+    def __init__(self, weak_estimator, n_estimators, estimator_params = None, max_samples = 1.0, max_features = 1.0, verbose = False, random_state = None):
         self.__weak_estimator = weak_estimator
         self.__n_estimators = n_estimators
         self.__estimator_params = estimator_params
         self.__max_samples = max_samples
         self.__max_features = max_features
-        self.__gs = grid_search
         self.__verbose = verbose
+        self.__random_state = random_state
         self.__unfitted_estimators = [clone(self.__weak_estimator) for _ in range(self.__n_estimators)]
     
     def __bootstrap_samples(self, max_samples, n_samples, y):
@@ -23,15 +22,13 @@ class GridSearchBaggingClassifier:
         return random.sample(population = range(max_features), k = n_features)
     
     def __fit_estimators(self, X, y, n_samples, n_features):
-        # Fix verbosity
-        verbose = 3 if self.__verbose else 0
         #max samples and max features
         max_samples, max_features = X.shape
         # Fit every estimator separately
         self.__fitted_estimators = []
         self.__estimator_features = []
         self.__oob_scores = []
-        for i in range(self.__n_estimators):            
+        for i in range(self.__n_estimators):
             if self.__verbose:
                 print("--- Fitting model", i, " ---")
             
@@ -50,19 +47,11 @@ class GridSearchBaggingClassifier:
             # If no parameters have been provided, use default
             params = self.__weak_estimator.get_params() if not self.__estimator_params else self.__estimator_params
             
-            # Check if grid search is required
-            best_params = params
-            if self.__gs and self.__estimator_params:
-                # Perform grid search with 10 fold stratified cross validation to find the best parameters
-                gscv = GridSearchCV(estimator = self.__unfitted_estimators[i], param_grid = params, cv = 10, return_train_score = True, verbose = 0, n_jobs = -1).fit(X = X_bootstrap, y = y_bootstrap)
-                best_params = gscv.best_params_
-                if self.__verbose:
-                    print("\tBest found parameters: ", best_params)
-
             # Fit weak estimator with either the best set of parameters or the default one
-            if "probability" in best_params:
-                best_params["probability"] = True
-            estimator = self.__unfitted_estimators[i].set_params(**best_params).fit(X_bootstrap, y_bootstrap)
+            if "probability" in self.__weak_estimator.get_params():
+                params["probability"] = True
+            params["random_state"] = self.__random_state
+            estimator = self.__unfitted_estimators[i].set_params(**params).fit(X_bootstrap, y_bootstrap)
             self.__fitted_estimators.append(estimator)
 
             # Compute out of bag score
