@@ -29,7 +29,7 @@ train_y = train_raw.Transported
 
 params = {"n_neighbors":39, "p":2}
 max_features = math.sqrt(train_X.shape[0]) / train_X.shape[0]
-gsen = ensemble.BaggingClassifier(weak_estimator = KNeighborsClassifier(), n_estimators = 80000, estimator_params = params, verbose = True)
+gsen = ensemble.BaggingClassifier(weak_estimator = KNeighborsClassifier(), n_estimators = 90000, estimator_params = params, verbose = True)
 gsen.fit(X = train_X_RobScaled, y = train_y)
 train_preds = gsen.predict(X = train_X_RobScaled)
 print("Mean OOB accuracy:", gsen.get_mean_oob_accuracy())
@@ -44,4 +44,4 @@ test_scaled_array = RobScal.transform(test)
 test_scaled = pd.DataFrame(test_scaled_array,columns=colnames)
 
 pred_labels = gsen.predict(X = test_scaled)
-utils.generate_submission(labels = pred_labels, method = "ensemble", notes = "knn_euc_k39_merged_robscal_80000estimators")
+utils.generate_submission(labels = pred_labels, method = "ensemble", notes = "knn_euc_k39_merged_robscal_90000estimators")
