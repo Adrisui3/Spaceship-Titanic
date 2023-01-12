@@ -32,103 +32,103 @@ train_Xnorm.loc[:, num_features] = Normalizer().fit_transform(train_Xnorm.loc[:,
 test_norm = test.copy()
 test_norm.loc[:, num_features] = Normalizer().fit_transform(test_norm.loc[:, num_features])
 
-# # ------------------------------------------------------------------------------
-# print('--- UNIVARIATE SELECTION ---')
-# from sklearn.feature_selection import SelectKBest, chi2
-# treshold = 0.7
-# best_k = train_Xnorm.shape[1]
+# ------------------------------------------------------------------------------
+print('--- UNIVARIATE SELECTION ---')
+from sklearn.feature_selection import SelectKBest, chi2
+treshold = 0.7
+best_k = train_Xnorm.shape[1]
 
-# for k in range(3,18): 
-#     sel = SelectKBest(chi2, k = k).fit(train_Xnorm, train_y)
-#     train_Xnorm_bestfeat = sel.transform(train_Xnorm)
+for k in range(3,18): 
+    sel = SelectKBest(chi2, k = k).fit(train_Xnorm, train_y)
+    train_Xnorm_bestfeat = sel.transform(train_Xnorm)
 
-#     cv = cross_validate(
-#         estimator=GaussianNB(), 
-#         X = train_Xnorm_bestfeat,  y = train_y, 
-#         return_train_score = True, 
-#         cv = 10, 
-#         n_jobs=-1,
-#         verbose=0
+    cv = cross_validate(
+        estimator=GaussianNB(), 
+        X = train_Xnorm_bestfeat,  y = train_y, 
+        return_train_score = True, 
+        cv = 10, 
+        n_jobs=-1,
+        verbose=0
+    )
+    score = np.mean(cv['test_score'])
+    score_train = np.mean(cv['train_score'])
+    
+    # print('Number of features most important selected, k = ', k)
+    # print('Result of the cv in test: ', score)
+    # print('Result of the cv in train: ', score_train)
+    # print('\n')
+    
+    if score >= treshold: 
+        best_k = k 
+        treshold = score
+        best_train = score_train
+        best_sel = sel
+    
+print('best_k: ', best_k)
+print('Best score in test: ', treshold)
+print('Best score in train:', best_train)
+
+train_Xnorm_bestfeat = best_sel.transform(train_Xnorm)
+test_norm_bestfeat = best_sel.transform(test_norm)
+
+gnb = GaussianNB().fit(train_Xnorm_bestfeat, train_y)
+pred_labels = gnb.predict(test_norm_bestfeat)
+
+# if treshold > 0.79 and best_train > 0.79: 
+#     utils.generate_submission(
+#         labels = pred_labels, 
+#         method = 'bayes', 
+#         notes = 'BestFeatSelection_Univariate_GNB_norm'
 #     )
-#     score = np.mean(cv['test_score'])
-#     score_train = np.mean(cv['train_score'])
-    
-#     # print('Number of features most important selected, k = ', k)
-#     # print('Result of the cv in test: ', score)
-#     # print('Result of the cv in train: ', score_train)
-#     # print('\n')
-    
-#     if score >= treshold: 
-#         best_k = k 
-#         treshold = score
-#         best_train = score_train
-#         best_sel = sel
-    
-# print('best_k: ', best_k)
-# print('Best score in test: ', treshold)
-# print('Best score in train:', best_train)
-
-# train_Xnorm_bestfeat = best_sel.transform(train_Xnorm)
-# test_norm_bestfeat = best_sel.transform(test_norm)
-
-# gnb = GaussianNB().fit(train_Xnorm_bestfeat, train_y)
-# pred_labels = gnb.predict(test_norm_bestfeat)
-
-# # if treshold > 0.79 and best_train > 0.79: 
-# #     utils.generate_submission(
-# #         labels = pred_labels, 
-# #         method = 'bayes', 
-# #         notes = 'BestFeatSelection_Univariate_GNB_norm'
-# #     )
 
 
 # ------------------------------------------------------------------------------
-# print('--- BACKWARD ELIMINATION ---')
-# from sklearn.feature_selection import SequentialFeatureSelector
-# treshold = 0.7
-# best_k = train_Xnorm.shape[1]
+print('--- BACKWARD ELIMINATION ---')
+from sklearn.feature_selection import SequentialFeatureSelector
+treshold = 0.7
+best_k = train_Xnorm.shape[1]
 
-# for k in range(3,17): 
-#     sfs = SequentialFeatureSelector(
-#         GaussianNB(), 
-#         direction='backward',
-#         n_features_to_select=k,
-#         n_jobs=-1
-#     ).fit(train_Xnorm, train_y)
+for k in range(3,17): 
+    sfs = SequentialFeatureSelector(
+        GaussianNB(), 
+        direction='backward',
+        n_features_to_select=k,
+        n_jobs=-1
+    ).fit(train_Xnorm, train_y)
     
-#     train_Xnorm_bestfeat = sfs.transform(train_Xnorm)
+    train_Xnorm_bestfeat = sfs.transform(train_Xnorm)
 
-#     cv = cross_validate(
-#         estimator=GaussianNB(), 
-#         X = train_Xnorm_bestfeat,  y = train_y, 
-#         return_train_score = True, 
-#         cv = 10, 
-#         n_jobs=-1,
-#         verbose=0
-#     )
-#     score = np.mean(cv['test_score'])
-#     score_train = np.mean(cv['train_score'])
+    cv = cross_validate(
+        estimator=GaussianNB(), 
+        X = train_Xnorm_bestfeat,  y = train_y, 
+        return_train_score = True, 
+        cv = 10, 
+        n_jobs=-1,
+        verbose=0
+    )
+    score = np.mean(cv['test_score'])
+    score_train = np.mean(cv['train_score'])
     
-#     print('Number of features most important selected, k = ', k)
-#     print('Result of the cv in test: ', score)
-#     print('Result of the cv in train: ', score_train)
-#     print('\n')
+    print('Number of features most important selected, k = ', k)
+    print('Result of the cv in test: ', score)
+    print('Result of the cv in train: ', score_train)
+    print('\n')
     
-#     if score >= treshold: 
-#         best_k = k 
-#         treshold = score
-#         best_train = score_train
-#         best_sfs = sfs
+    if score >= treshold: 
+        best_k = k 
+        treshold = score
+        best_train = score_train
+        best_sfs = sfs
     
-# print('best_k: ', best_k)
-# print('Best score in test: ', treshold)
-# print('Best score in train:', best_train)
+print('best_k: ', best_k)
+print('Best score in test: ', treshold)
+print('Best score in train:', best_train)
 
-# train_Xnorm_bestfeat = best_sfs.transform(train_Xnorm)
-# test_norm_bestfeat = best_sfs.transform(test_norm)
+train_Xnorm_bestfeat = best_sfs.transform(train_Xnorm)
+test_norm_bestfeat = best_sfs.transform(test_norm)
 
-# gnb = GaussianNB().fit(train_Xnorm_bestfeat, train_y)
-# pred_labels = gnb.predict(test_norm_bestfeat)
+gnb = GaussianNB().fit(train_Xnorm_bestfeat, train_y)
+pred_labels = gnb.predict(test_norm_bestfeat)
 
 # if treshold > 0.79 and best_train > 0.79: 
 #     utils.generate_submission(
