@@ -38,11 +38,12 @@ def _trimmed_mean_1d(arr, k):
 
     cnt = 0
     summation = 0.0
+    
+
     for elem in arr:
         if elem >= kth_smallest and elem <= kth_largest:
             cnt += 1
-            print(cnt)
-            summation += elem
+            summation += elem  
     return summation / cnt
 
 
@@ -228,6 +229,7 @@ class TGA(BaseEstimator, TransformerMixin):
             raise ValueError("`centering` must be 'mean' or 'median', "
                              "got %s" % self.centering)
         X -= self.center_
+        print('X=',X)
 
         if self.n_components is None:
             n_components = X.shape[1]
@@ -242,12 +244,19 @@ class TGA(BaseEstimator, TransformerMixin):
             # compute k'th principle component
             mu = rng.rand(n_features) - 0.5
             mu = mu / squared_norm(mu)
+            print('mu_0=\n',mu)
 
             # initialize using a few EM iterations
             for i in range(3):
-                dots = np.dot(X, mu)
-                mu = np.dot(dots.T, X)
-                mu = mu / squared_norm(mu)
+                print('mu=\n',mu)
+                if np.all(mu==0):
+                    mu = mu
+                else:
+                    dots = np.dot(X, mu)
+                    print('dots=\n',dots)
+                
+                    mu = np.dot(dots.T, X)
+                    mu = mu / squared_norm(mu)
 
             # grassmann average
             for i in range(n_samples):
@@ -255,7 +264,11 @@ class TGA(BaseEstimator, TransformerMixin):
                 dot_signs = np.sign(np.dot(X, mu))
                 mu = _trimmed_mean(X * dot_signs[:, np.newaxis],
                                    self.trim_proportion)
-                mu = mu / squared_norm(mu)
+                
+                if np.all(mu==0):
+                    mu = mu
+                else:
+                    mu = mu / squared_norm(mu)
 
                 if np.max(np.abs(mu - prev_mu)) < self.tol:
                     break

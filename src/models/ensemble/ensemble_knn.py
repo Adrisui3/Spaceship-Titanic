@@ -13,8 +13,11 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 
 from sklearn.preprocessing import RobustScaler
+from sklearn.preprocessing import Normalizer
+
 
 train_raw = utils.load_train()
+train_raw = utils.merge_numerical(train_raw)
 train_X = utils.one_hot_encode(df = train_raw.drop(["Transported", "PassengerId"], axis = 1))
 
 RobScal = RobustScaler()
@@ -26,13 +29,14 @@ train_y = train_raw.Transported
 
 params = {"n_neighbors":39, "p":2}
 max_features = math.sqrt(train_X.shape[0]) / train_X.shape[0]
-gsen = ensemble.BaggingClassifier(weak_estimator = KNeighborsClassifier(), n_estimators = 10, estimator_params = params, verbose = True)
+gsen = ensemble.BaggingClassifier(weak_estimator = KNeighborsClassifier(), n_estimators = 80000, estimator_params = params, verbose = True)
 gsen.fit(X = train_X_RobScaled, y = train_y)
 train_preds = gsen.predict(X = train_X_RobScaled)
 print("Mean OOB accuracy:", gsen.get_mean_oob_accuracy())
 print("Train score: ", accuracy_score(train_y, train_preds))
 
 test_raw = utils.load_test()
+test_raw = utils.merge_numerical(test_raw)
 test = utils.one_hot_encode(df = test_raw.drop(["PassengerId"], axis = 1))
 
 colnames = test.columns
@@ -40,4 +44,4 @@ test_scaled_array = RobScal.transform(test)
 test_scaled = pd.DataFrame(test_scaled_array,columns=colnames)
 
 pred_labels = gsen.predict(X = test_scaled)
-#utils.generate_submission(labels = pred_labels, method = "ensemble", notes = "decision_tree_test_max_features_depth5")
+utils.generate_submission(labels = pred_labels, method = "ensemble", notes = "knn_euc_k39_merged_robscal_80000estimators")
