@@ -17,3 +17,4 @@ yellowbrick
 caimcaim
 imblearn
 opencv-python
+mixed-naive-bayes
