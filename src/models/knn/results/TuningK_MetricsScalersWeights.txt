@@ -1,0 +1,91 @@
+#SCV con 10 folds, mejor valor de k en términos del preprocesado, métrica de distancia y pesos en la distancia.
+
+Para RobustScaler data
+Pesos: uniform 
+
+Distance metric, CV score, k_optim
+manhattan 0.7961640411094797 30
+euclidean 0.7966234144147718 32
+minkowski(p=3) 0.7978906921683001 45
+cosine 0.8019156647222996 39
+braycurtis 0.7984661984312791 50
+canberra 0.7769530309643796 19
+chebyshev 0.7951292938110922 17
+correlation 0.8012254804703517 41
+seuclidean 0.7848912080208457 25
+mahalanobis 0.6912446596034549 6
+
+Para RobustScaler data
+Pesos: distance 
+
+Distance metric, CV score, k_optim
+manhattan 0.7841983783712286 76
+euclidean 0.7851192412999485 27
+minkowski(p=3) 0.7851184476806476 20
+cosine 0.7890291390553286 96
+braycurtis 0.7861538563284526 34
+canberra 0.766827110035316 15
+chebyshev 0.7861537240585691 49
+correlation 0.7867287012420141 99
+seuclidean 0.7763763342724495 23
+mahalanobis 0.6963107284102483 34
+
+Para StandardScaler data
+Pesos: uniform 
+
+Distance metric, CV score, k_optim
+manhattan 0.7894899673293387 30
+euclidean 0.7859245003505152 19
+minkowski(p=3) 0.7843134531698478 17
+cosine 0.7883402775022155 26
+braycurtis 0.7897215718952951 30
+canberra 0.7850049601206301 42
+chebyshev 0.7768384852452944 19
+correlation 0.7896055712074916 23
+seuclidean 0.7847757364125763 25
+mahalanobis 0.6883737417827335 86
+
+Para StandardScaler data
+Pesos: distance 
+
+Distance metric, CV score, k_optim
+manhattan 0.7783311508802561 31
+euclidean 0.7775270822586405 23
+minkowski(p=3) 0.7756868113699191 25
+cosine 0.7748818168591194 61
+braycurtis 0.7799418012512731 28
+canberra 0.7743067074057908 19
+chebyshev 0.7726953956853564 23
+correlation 0.776722484557491 34
+seuclidean 0.7763763342724495 23
+mahalanobis 0.680664127084904 91
+
+Para Normalizer data
+Pesos: uniform 
+
+Distance metric, CV score, k_optim
+manhattan 0.8005346348689866 47
+euclidean 0.7991526791264897 33
+minkowski(p=3) 0.7989227940690184 33
+cosine 0.7996125815113158 31
+braycurtis 0.8012241577715169 47
+canberra 0.7901830615187228 31
+chebyshev 0.7988087774294671 23
+correlation 0.7992680184648757 28
+seuclidean 0.796854357631311 53
+mahalanobis 0.7646409534013201 19
+
+Para Normalizer data
+Pesos: distance 
+
+Distance metric, CV score, k_optim
+manhattan 0.787533960292581 99
+euclidean 0.7879934658677565 67
+minkowski(p=3) 0.7878786556089044 78
+cosine 0.7817822044098779 98
+braycurtis 0.7879933335978732 98
+canberra 0.7814377736333215 21
+chebyshev 0.7879937304075235 96
+correlation 0.7813230956443526 94
+seuclidean 0.7883389548033808 76
+mahalanobis 0.7618782323452773 80

@@ -47,10 +47,14 @@ class BaggingClassifier:
             # If no parameters have been provided, use default
             params = self.__weak_estimator.get_params() if not self.__estimator_params else self.__estimator_params
             
-            # Fit weak estimator with either the best set of parameters or the default one
+            # Set fixed parameters
             if "probability" in self.__weak_estimator.get_params():
                 params["probability"] = True
-            params["random_state"] = self.__random_state
+            
+            if "random_state" in self.__weak_estimator.get_params():
+                params["random_state"] = self.__random_state
+            
+            # Fit weak estimator with either the best set of parameters or the default one
             estimator = self.__unfitted_estimators[i].set_params(**params).fit(X_bootstrap, y_bootstrap)
             self.__fitted_estimators.append(estimator)
 
