@@ -8,8 +8,14 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 def load_train():
     return pd.read_csv(ROOT + '/data/train_pr.csv')
 
+def load_train_KnnImp():
+    return pd.read_csv(ROOT + '/data/train_pr_KnnImputed.csv')
+
 def load_test():
     return pd.read_csv(ROOT + "/data/test_pr.csv")
+
+def load_test_KnnImp():
+    return pd.read_csv(ROOT + "/data/test_pr_KnnImputed.csv")
 
 def one_hot_encode(df):
     filenames = ["data/pickles/one_hot/oh_destination.pck", "data/pickles/one_hot/oh_home_planet.pck", 

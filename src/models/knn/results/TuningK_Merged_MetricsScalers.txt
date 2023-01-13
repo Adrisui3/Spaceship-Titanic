@@ -1,0 +1,43 @@
+# MERGED NUMERICS, SCV con 10 folds, mejor valor de k en términos del preprocesado y métrica de distancia
+
+Para RobustScaler data
+
+Distance metric, CV score, k_optim
+manhattan 0.8011135801489357 49
+euclidean 0.8005382061558404 48
+minkowski(p=3) 0.799618004576538 45
+cosine 0.7992702670528947 45
+braycurtis 0.800306866129651 46
+canberra 0.7884566749996693 29
+chebyshev 0.7923685568033015 32
+correlation 0.7990401174556566 30
+seuclidean 0.7911024694787244 27
+mahalanobis 0.7175944076293268 98
+
+Para StandardScaler data
+
+Distance metric, CV score, k_optim
+manhattan 0.7958181553642052 31
+euclidean 0.791907728529291 27
+minkowski(p=3) 0.7889168419242623 19
+cosine 0.7925980450511223 19
+braycurtis 0.7975438805338412 31
+canberra 0.7947824821766332 31
+chebyshev 0.7807512929381109 19
+correlation 0.794898350594553 19
+seuclidean 0.7906425670938984 17
+mahalanobis 0.6723803288229303 56
+
+Para Normalizer data
+
+Distance metric, CV score, k_optim
+manhattan 0.8038698199806886 34
+euclidean 0.8015683240083066 30
+minkowski(p=3) 0.8015692498974907 25
+cosine 0.8024890546671429 27
+braycurtis 0.8031810906974591 48
+canberra 0.7998448474266894 33
+chebyshev 0.8009948017935796 25
+correlation 0.8019134161342804 32
+seuclidean 0.8001888813935955 31
+mahalanobis 0.7815561551790273 25
