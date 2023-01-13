@@ -15,23 +15,19 @@ from sklearn.preprocessing import Normalizer, StandardScaler
 from sklearn.model_selection import cross_validate
 
 print('--- LOAD DATA ---')
-train_raw = pd.read_csv(ROOT + '/data/train_nooutliers.csv')
-train_X = utils.one_hot_encode(train_raw.drop(['Transported', 'PassengerId'], 
-                                              axis = 1))
-train_y = train_raw['Transported']
+train_X = pd.read_csv(ROOT + '/data/train_discretize_oh.csv')
+train_y = utils.load_train()['Transported']
 
-num_features = train_raw.select_dtypes(exclude=['object', 'bool']).columns
-cat_features = train_X.drop(num_features, axis = 1).columns
+test_raw = pd.read_csv(ROOT + '/data/test_discretize_oh.csv')
 
-test_raw = utils.load_test()
-test = utils.one_hot_encode(test_raw.drop(['PassengerId'], axis = 1))
-
-print('--- NORMALIZER ---')
-train_Xnorm = train_X.copy()
-train_Xnorm.loc[:, num_features] = Normalizer().fit_transform(train_Xnorm.loc[:, num_features])
-
-test_norm = test.copy()
-test_norm.loc[:, num_features] = Normalizer().fit_transform(test_norm.loc[:, num_features])
-
-
-
+print('--- CROSS VALIDATION --- ')
+cv = cross_validate(
+    estimator=MixedNB(categorical_features='all'),
+    X = train_X, y = train_y, 
+    return_train_score=True, 
+    cv = 10, 
+    n_jobs = -1, 
+    verbose = 1
+)
+print('Result of the cv in test: ', np.mean(cv['test_score']))
+print('Result of the cv in train: ', np.mean(cv['train_score']))
