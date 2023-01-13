@@ -24,37 +24,41 @@ def one_hot_encode(df):
             df = df.drop([var], axis = 1)
     return df
 
-def minmax_scaler_oh(df, merged = False, nra = False):
+def minmax_scaler_oh(df, merged = False, nra = False, onlynum = False):
     filename = ROOT + "/data/pickles/scalers/minmax_scaler_" + ("nra_" if nra else "")
-    filename += "merged_oh.pck" if merged else "all_oh.pck"    
+    filename += "merged" if merged else "all"
+    filename += "_onlynum_oh.pck" if (onlynum and merged and nra) else "_oh.pck"    
     with open(file = filename, mode = "rb") as f:
         mmscaler = pickle.load(file = f)
-        df = mmscaler.transform(df)
-    return pd.DataFrame(df)
+        df2 = mmscaler.transform(df)
+    return pd.DataFrame(df2, columns=df.columns)
 
-def robust_scaler_oh(df, merged = False, nra = False):
+def robust_scaler_oh(df, merged = False, nra = False, onlynum = False):
     filename = ROOT + "/data/pickles/scalers/robust_scaler_" + ("nra_" if nra else "")
-    filename += "merged_oh.pck" if merged else "all_oh.pck"    
+    filename += "merged" if merged else "all" 
+    filename += "_onlynum_oh.pck" if (onlynum and merged and nra) else "_oh.pck"
     with open(file = filename, mode = "rb") as f:
         rscaler = pickle.load(file = f)
-        df = rscaler.transform(df)
-    return pd.DataFrame(df)
+        df2 = rscaler.transform(df)
+    return pd.DataFrame(df2, columns=df.columns)
 
-def standard_scaler_oh(df, merged = False, nra = False):
+def standard_scaler_oh(df, merged = False, nra = False, onlynum = False):
     filename = ROOT + "/data/pickles/scalers/standard_scaler_" + ("nra_" if nra else "")
-    filename += "merged_oh.pck" if merged else "all_oh.pck"    
+    filename += "merged" if merged else "all" 
+    filename += "_onlynum_oh.pck" if (onlynum and merged and nra) else "_oh.pck"
     with open(file = filename, mode = "rb") as f:
         sscaler = pickle.load(file = f)
-        df = sscaler.transform(df)
-    return pd.DataFrame(df)
+        df2 = sscaler.transform(df)
+    return pd.DataFrame(df2, columns=df.columns)
 
-def normalizer_oh(df, merged = False, nra = False):    
+def normalizer_oh(df, merged = False, nra = False, onlynum = False):    
     filename = ROOT + "/data/pickles/scalers/normalizer_" + ("nra_" if nra else "")
-    filename += "merged_oh.pck" if merged else "all_oh.pck"
+    filename += "merged" if merged else "all" 
+    filename += "_onlynum_oh.pck" if (onlynum and merged and nra) else "_oh.pck"
     with open(file = filename, mode = "rb") as f:
         norm = pickle.load(file = f)
-        df = norm.transform(df)
-    return pd.DataFrame(df)
+        df2 = norm.transform(df)
+    return pd.DataFrame(df2, columns=df.columns)
 
 def generate_submission(labels, method, notes = ""):
     test = pd.read_csv(ROOT + "/data/test_pr.csv")
