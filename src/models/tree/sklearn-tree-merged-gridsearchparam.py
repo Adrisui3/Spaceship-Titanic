@@ -11,7 +11,7 @@ from sklearn.model_selection import GridSearchCV
 
 # Cargamos conjunto de train
 train_raw = utils.load_train()
-train_x = utils.normalizer_oh(utils.merge_numerical(utils.one_hot_encode(df = train_raw.drop(['Transported', 'PassengerId'], axis=1))), merged=True)
+train_x = utils.merge_numerical(utils.one_hot_encode(df = train_raw.drop(['Transported', 'PassengerId'], axis=1)))
 train_y = train_raw.Transported
 
 
@@ -25,21 +25,21 @@ dtc_gs = GridSearchCV(estimator=DecisionTreeClassifier(random_state=1234), param
 
 dtc_gs.fit(X = train_x, y = train_y)
 dtc_gs.best_score_
-# mejor resultado con 0.8013393648400197
+# mejor resultado con 0.7894938031559595
 dtc_gs.best_params_
-# {'ccp_alpha': 0.0004,
+# {'ccp_alpha': 0.0001,
 # 'criterion': 'gini',
-# 'max_depth': 10,
+# 'max_depth': 17,
 # 'max_features': 'sqrt',
-# 'min_samples_leaf': 18,
-# 'min_samples_split': 59,
+# 'min_samples_leaf': 10,
+# 'min_samples_split': 45,
 # 'splitter': 'best'}
-# Mejora la precisión un poco
+# No mejora, tiene que ser con normalización
 
 best_parameters = dtc_gs.best_params_
 # Cargamos conjunto de test
 test_raw = utils.load_test()
-test = utils.normalizer_oh(utils.merge_numerical(utils.one_hot_encode(df = test_raw.drop(["PassengerId"], axis = 1))), merged=True)
+test = utils.merge_numerical(utils.one_hot_encode(df = test_raw.drop(["PassengerId"], axis = 1)))
 
 # Predicciones
 print("Training DecisionTreeClassifier...")

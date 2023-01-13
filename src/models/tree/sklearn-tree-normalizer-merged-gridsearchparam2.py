@@ -16,9 +16,9 @@ train_y = train_raw.Transported
 
 
 # GridSerach para mejores parametros
-grid_parameters = {'criterion':['gini'], 'splitter':['best'], 'max_depth':list(range(10,26)), 'min_samples_split':list(range(45,71)), 
-                   'min_samples_leaf':list(range(5,20)), 'max_features':['sqrt'],  
-                   'ccp_alpha':[0.0001,0.0002,0.0003,0.0004,0.0005]}
+grid_parameters = {'criterion':['gini', 'entropy', 'log_loss'], 'splitter':['best','random'], 'max_depth':list(range(5,15)), 'min_samples_split':list(range(50,71)), 
+                   'min_samples_leaf':list(range(15,20)), 'max_features':['None', 'sqrt', 'log2'],  
+                   'ccp_alpha':[0.00035,0.0004,0.00045]}
 
 dtc_gs = GridSearchCV(estimator=DecisionTreeClassifier(random_state=1234), param_grid=grid_parameters,scoring='accuracy',
                       n_jobs=-1, cv=10, verbose=3, return_train_score=True)
@@ -34,7 +34,7 @@ dtc_gs.best_params_
 # 'min_samples_leaf': 18,
 # 'min_samples_split': 59,
 # 'splitter': 'best'}
-# Mejora la precisión un poco
+# No mejora nada, se ha intentado buscar los parámetros con 2 o 3 parámetros para luego afinar los numéricos
 
 best_parameters = dtc_gs.best_params_
 # Cargamos conjunto de test

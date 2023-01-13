@@ -16,25 +16,24 @@ train_y = train_raw.Transported
 
 
 # GridSerach para mejores parametros
-grid_parameters = {'criterion':['gini'], 'splitter':['best'], 'max_depth':list(range(10,26)), 'min_samples_split':list(range(45,71)), 
-                   'min_samples_leaf':list(range(5,20)), 'max_features':['sqrt'],  
-                   'ccp_alpha':[0.0001,0.0002,0.0003,0.0004,0.0005]}
+grid_parameters = {'criterion':['gini'], 'splitter':['best'], 'max_depth':list(range(2,31)), 'min_samples_split':list(range(50,91)), 
+                   'min_samples_leaf':list(range(15,40)), 'max_features':['sqrt'], 'ccp_alpha':[0.00038,0.00039,0.0004,0.00041,0.00042]}
 
 dtc_gs = GridSearchCV(estimator=DecisionTreeClassifier(random_state=1234), param_grid=grid_parameters,scoring='accuracy',
                       n_jobs=-1, cv=10, verbose=3, return_train_score=True)
 
 dtc_gs.fit(X = train_x, y = train_y)
 dtc_gs.best_score_
-# mejor resultado con 0.8013393648400197
+# mejor resultado con 0.8015695144372577
 dtc_gs.best_params_
-# {'ccp_alpha': 0.0004,
+# {'ccp_alpha': 0.00039,
 # 'criterion': 'gini',
 # 'max_depth': 10,
 # 'max_features': 'sqrt',
 # 'min_samples_leaf': 18,
 # 'min_samples_split': 59,
 # 'splitter': 'best'}
-# Mejora la precisión un poco
+# Mejora muy poco debido a la afinación del parámetro ccp_alpha, el resto permanece igual
 
 best_parameters = dtc_gs.best_params_
 # Cargamos conjunto de test
@@ -49,4 +48,4 @@ dtc = DecisionTreeClassifier(criterion = best_parameters['criterion'], max_depth
 print("Making predictions...")
 pred_labels = dtc.predict(X = test)
 true_labels = utils.encode_labels(pred_labels)
-utils.generate_submission(labels = true_labels, method = "tree", notes = "normalizer_merged_gridSearch_parameters")
+utils.generate_submission(labels = true_labels, method = "tree", notes = "normalizer_merged_gridSearch_parameters3")
