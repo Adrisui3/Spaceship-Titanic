@@ -133,6 +133,8 @@ class SAMMERClassifier:
         self.__estimator_params["probability"] = True
     
     def fit(self, X, y):
+        X, y = X.to_numpy(), y.to_numpy()
+        
         # Check that the weak estimator has the probability parameter
         self.__check_probas()
         
@@ -177,3 +179,29 @@ class SAMMERClassifier:
                 sample_weights /= np.sum(sample_weights)
         
         return self
+    
+    def __compute_probas(self, X):
+        return np.array([self.__estimators[m].predict_proba(X) for m in range(self.__n_estimators)])
+
+    def predict(self, X):
+        X = X.to_numpy()
+        probas = self.__compute_probas(X)
+        probas_weighted = np.zeros(shape = (X.shape[0], self.__K))
+        
+        # Weight predictions according to estimator's reliability
+        for h, prob in zip(self.__estimator_h, probas):
+            probas_weighted += h * prob
+        
+        # For each observation, return the most likely label
+        preds = []
+        for probas in probas_weighted:
+            preds.append(np.argmax(probas))
+        
+        return [self.__classes[pred_idx] for pred_idx in preds]
+    
+    def score(self, X, y):
+        return accuracy_score(y, self.predict(X = X))
+    
+    def get_params(self, deep = False):
+        return {"n_estimators":self.__n_estimators, "weak_estimator":self.__weak_estimator, 
+                "estimator_params":self.__estimator_params, "learning_rate":self.__learning_rate}
