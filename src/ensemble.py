@@ -125,9 +125,20 @@ class SAMMERClassifier:
         self.__learning_rate = learning_rate
         self.__verbose = verbose
     
+    def __check_params(self):
+        # If no parameters have been provided, use default
+        self.__estimator_params = self.__weak_estimator.get_params() if not self.__estimator_params else self.__estimator_params
+
+        # Set probability parameter if available
+        if "probability" in self.__weak_estimator.get_params():
+            self.__estimator_params["probability"] = True
+
     def fit(self, X, y):
         X, y = X.to_numpy(), y.to_numpy()
-        
+
+        # Check weak estimator parameters
+        self.__check_params()
+
         # Retrieve number of classes
         unique_y = np.unique(y, return_inverse = True)
         self.__classes = unique_y[0]
