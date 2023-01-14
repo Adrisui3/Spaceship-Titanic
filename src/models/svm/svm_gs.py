@@ -18,17 +18,18 @@ train_y = train_raw.Transported
 
 print("--- GRID SEARCH ---")
 parameters = {'C': np.logspace(start = -2, stop = 10, base = 2),
-              'gamma': np.logspace(start = -9, stop = 3, base = 2)}
+              'gamma': np.logspace(start = -9, stop = 3, base = 2),
+              'random_state':[1234]}
 
-gs = GridSearchCV(estimator = SVC(random_state = 1234), param_grid = parameters, cv = 10, return_train_score = True, n_jobs = -1, verbose = 3).fit(X = train_X, y = train_y)
+gs = GridSearchCV(estimator = SVC(), param_grid = parameters, cv = 10, return_train_score = True, n_jobs = -1, verbose = 3).fit(X = train_X, y = train_y)
 print("Best score: ", gs.best_score_)
 print("Best parameters: ", gs.best_params_)
 
 print("--- CROSS VALIDATION ---")
-cv = cross_validate(estimator = SVC(C = gs.best_params_["C"], gamma = gs.best_params_["gamma"], random_state = 1234), X = train_X, y = train_y, cv = 10, return_train_score = True, n_jobs = -1)
+cv = cross_validate(estimator = SVC().set_params(**gs.best_params_), X = train_X, y = train_y, cv = 10, return_train_score = True, n_jobs = -1)
 print("Cross-validation train score: ", np.mean(cv["train_score"]))
 print("Cross-validation test score: ", np.mean(cv["test_score"]))
-svc = SVC(C = gs.best_params_["C"], gamma = gs.best_params_["gamma"], random_state = 1234).fit(X = train_X, y = train_y)
+svc = SVC().set_params(**gs.best_params_).fit(X = train_X, y = train_y)
 print(classification_report(train_y, svc.predict(X = train_X)))
 
 test_raw = utils.load_test()
