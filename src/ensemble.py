@@ -5,7 +5,9 @@ from sklearn.metrics import accuracy_score
 from sklearn.utils import resample
 from sklearn.base import clone
 
-# BAGGING
+#####################################
+# Bagging algorithm with soft voting#
+#####################################
 
 class BaggingClassifier:
     def __init__(self, weak_estimator, n_estimators, estimator_params = None, max_samples = 1.0, max_features = 1.0, verbose = False, random_state = None):
@@ -53,9 +55,6 @@ class BaggingClassifier:
             # Set fixed parameters
             if "probability" in self.__weak_estimator.get_params():
                 params["probability"] = True
-            
-            if "random_state" in self.__weak_estimator.get_params():
-                params["random_state"] = self.__random_state
             
             # Fit weak estimator with either the best set of parameters or the default one
             estimator = self.__unfitted_estimators[i].set_params(**params).fit(X_bootstrap, y_bootstrap)
@@ -118,7 +117,7 @@ class BaggingClassifier:
 #############################################################################################
 
 class SAMMERClassifier:
-    def __init__(self, weak_estimator, n_estimators, estimator_params = None, learning_rate = 1.0):
+    def __init__(self, weak_estimator, n_estimators, estimator_params = None, learning_rate = 1.0, verbose = False):
         self.__n_estimators = n_estimators
         self.__weak_estimator = weak_estimator
         self.__estimators = [clone(weak_estimator) for _ in range(self.__n_estimators)]
@@ -145,25 +144,20 @@ class SAMMERClassifier:
 
         # Label encode y
         enc_y = unique_y[1]
-        
-        # Initialize estimator weights
-        self.__estimator_h = []
 
         # Uniformly initialize sample weights 
         sample_weights = np.full(X.shape[0], 1/X.shape[0])
         
         # For every estimator...
         for m in range(self.__n_estimators):
-            print("--- Fitting estimator ", m, " ---")
+            if verbose:
+                print("--- Fitting estimator ", m, " ---")
+            
             # Step 2.a -> Fit the estimator using current weights
             self.__estimators[m].set_params(**self.__estimator_params).fit(X = X, y = y, sample_weight = sample_weights)
 
             # Step 2.b -> Predict the weighted class probability estimates
             probas = self.__estimators[m].predict_proba(X = X)
-
-            # Step 2.c -> Compute the weight of the estimator.
-            probas_log = np.log(probas)
-            self.__estimator_h.append((self.__K - 1) * (probas_log - (probas_log.sum(axis = 1)[:, np.newaxis] / self.__K)))
 
             # If it's not the last estimator...
             if m < self.__n_estimators - 1:
@@ -183,21 +177,30 @@ class SAMMERClassifier:
     def __compute_probas(self, X):
         return np.array([self.__estimators[m].predict_proba(X) for m in range(self.__n_estimators)])
 
-    def predict(self, X):
-        X = X.to_numpy()
-        probas = self.__compute_probas(X)
-        probas_weighted = np.zeros(shape = (X.shape[0], self.__K))
+    def __compute_estimators_h(self, X):
+        # Reset h values
+        self.__estimator_h = []
         
-        # Weight predictions according to estimator's reliability
-        for h, prob in zip(self.__estimator_h, probas):
-            probas_weighted += h * prob
+        # Compute probabilities
+        estimator_probas = self.__compute_probas(X = X)
+        for probas in estimator_probas:
+            # Step 2.c -> Compute the weight of the estimator.
+            probas_log = np.log(probas)
+            self.__estimator_h.append((self.__K - 1) * (probas_log - (probas_log.sum(axis = 1)[:, np.newaxis] / self.__K)))
+
+    def predict(self, X):
+        # Compute estimator weights
+        self.__compute_estimators_h(X = X)
+        
+        # Step 3. -> Compute outputs
+        preds = sum(h for h in self.__estimator_h)
         
         # For each observation, return the most likely label
-        preds = []
-        for probas in probas_weighted:
-            preds.append(np.argmax(probas))
-        
-        return [self.__classes[pred_idx] for pred_idx in preds]
+        idx_classes = []
+        for pred in preds:
+            idx_classes.append(np.argmax(pred))
+
+        return [self.__classes[idx] for idx in idx_classes]
     
     def score(self, X, y):
         return accuracy_score(y, self.predict(X = X))

@@ -10,7 +10,7 @@ from sklearn.svm import SVC
 from sklearn.model_selection import GridSearchCV, cross_validate
 from sklearn.metrics import classification_report
 
-train_raw = utils.load_train()
+train_raw = utils.load_train_KnnImp()
 train_X = utils.one_hot_encode(df = train_raw.drop(["Transported", "PassengerId"], axis = 1))
 train_X = utils.merge_numerical(df = train_X)
 train_X = utils.standard_scaler_oh(df = train_X, merged=True)
@@ -38,4 +38,4 @@ test = utils.merge_numerical(df = test)
 test = utils.standard_scaler_oh(df = test, merged=True)
 print("Predicting for test...")
 pred_labels = svc.predict(X = test)
-#utils.generate_submission(labels = pred_labels, method = "svm", notes = "gscv_standard_scaling_oh_logspace")
+#utils.generate_submission(labels = pred_labels, method = "svm", notes = "gscv_standard_scaling_oh_logspace_knn_input")
