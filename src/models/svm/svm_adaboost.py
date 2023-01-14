@@ -23,4 +23,5 @@ sammer = ensemble.SAMMERClassifier(weak_estimator = SVC(), n_estimators = 50, es
 
 print("--- CROSS VALIDATION ---")
 cv = utils.stratified_cross_validation(estimator = sammer, X = train_X, y = train_y)
-print("Cross-validation results:", cv)
+print("Cross-validation train score: ", np.mean(cv["train_score"]))
+print("Cross-validation test score: ", np.mean(cv["test_score"]))
