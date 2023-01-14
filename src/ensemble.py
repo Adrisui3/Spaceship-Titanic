@@ -1,8 +1,13 @@
 import random
 import numpy as np
+from scipy.special import xlogy
 from sklearn.metrics import accuracy_score
 from sklearn.utils import resample
 from sklearn.base import clone
+
+#####################################
+# Bagging algorithm with soft voting#
+#####################################
 
 class BaggingClassifier:
     def __init__(self, weak_estimator, n_estimators, estimator_params = None, max_samples = 1.0, max_features = 1.0, verbose = False, random_state = None):
@@ -50,9 +55,6 @@ class BaggingClassifier:
             # Set fixed parameters
             if "probability" in self.__weak_estimator.get_params():
                 params["probability"] = True
-            
-            if "random_state" in self.__weak_estimator.get_params():
-                params["random_state"] = self.__random_state
             
             # Fit weak estimator with either the best set of parameters or the default one
             estimator = self.__unfitted_estimators[i].set_params(**params).fit(X_bootstrap, y_bootstrap)
@@ -108,3 +110,101 @@ class BaggingClassifier:
     
     def get_estimator_weights(self):
         return self.__estimator_weights
+    
+
+#############################################################################################
+# SAMME.R algorithm from J. Zhu, H. Zou, S. Rosset, T. Hastie. “Multi-class AdaBoost”, 2009.#
+#############################################################################################
+
+class SAMMERClassifier:
+    def __init__(self, weak_estimator, n_estimators, estimator_params = None, learning_rate = 1.0, verbose = False):
+        self.__n_estimators = n_estimators
+        self.__weak_estimator = weak_estimator
+        self.__estimators = [clone(weak_estimator) for _ in range(self.__n_estimators)]
+        self.__estimator_params = estimator_params
+        self.__learning_rate = learning_rate
+    
+    def __check_probas(self):
+        if not "probability" in self.__weak_estimator.get_params():
+            raise Exception("The selected weak estimator does not have predict_proba method!")
+
+        self.__estimator_params = self.__weak_estimator.get_params() if not self.__estimator_params else self.__estimator_params
+        self.__estimator_params["probability"] = True
+    
+    def fit(self, X, y):
+        X, y = X.to_numpy(), y.to_numpy()
+        
+        # Check that the weak estimator has the probability parameter
+        self.__check_probas()
+        
+        # Retrieve number of classes
+        unique_y = np.unique(y, return_inverse = True)
+        self.__classes = unique_y[0]
+        self.__K = len(self.__classes)
+
+        # Label encode y
+        enc_y = unique_y[1]
+
+        # Uniformly initialize sample weights 
+        sample_weights = np.full(X.shape[0], 1/X.shape[0])
+        
+        # For every estimator...
+        for m in range(self.__n_estimators):
+            if verbose:
+                print("--- Fitting estimator ", m, " ---")
+            
+            # Step 2.a -> Fit the estimator using current weights
+            self.__estimators[m].set_params(**self.__estimator_params).fit(X = X, y = y, sample_weight = sample_weights)
+
+            # Step 2.b -> Predict the weighted class probability estimates
+            probas = self.__estimators[m].predict_proba(X = X)
+
+            # If it's not the last estimator...
+            if m < self.__n_estimators - 1:
+                # Recodify labels as proposed in eq.(11)
+                recod_y = np.full((X.shape[0], self.__K), -1/(self.__K - 1))
+                for r, c in zip(range(X.shape[0]), enc_y):
+                    recod_y[r, c] = 1.0
+                
+                # Step 2.d -> Update sample weights
+                sample_weights *= np.exp(-self.__learning_rate * ((self.__K - 1) / self.__K) * xlogy(recod_y, probas).sum(axis = 1))
+                
+                # Step 2.e -> Normalize weights
+                sample_weights /= np.sum(sample_weights)
+        
+        return self
+    
+    def __compute_probas(self, X):
+        return np.array([self.__estimators[m].predict_proba(X) for m in range(self.__n_estimators)])
+
+    def __compute_estimators_h(self, X):
+        # Reset h values
+        self.__estimator_h = []
+        
+        # Compute probabilities
+        estimator_probas = self.__compute_probas(X = X)
+        for probas in estimator_probas:
+            # Step 2.c -> Compute the weight of the estimator.
+            probas_log = np.log(probas)
+            self.__estimator_h.append((self.__K - 1) * (probas_log - (probas_log.sum(axis = 1)[:, np.newaxis] / self.__K)))
+
+    def predict(self, X):
+        # Compute estimator weights
+        self.__compute_estimators_h(X = X)
+        
+        # Step 3. -> Compute outputs
+        preds = sum(h for h in self.__estimator_h)
+        
+        # For each observation, return the most likely label
+        idx_classes = []
+        for pred in preds:
+            idx_classes.append(np.argmax(pred))
+
+        return [self.__classes[idx] for idx in idx_classes]
+    
+    def score(self, X, y):
+        return accuracy_score(y, self.predict(X = X))
+    
+    def get_params(self, deep = False):
+        return {"n_estimators":self.__n_estimators, "weak_estimator":self.__weak_estimator, 
+                "estimator_params":self.__estimator_params, "learning_rate":self.__learning_rate}
