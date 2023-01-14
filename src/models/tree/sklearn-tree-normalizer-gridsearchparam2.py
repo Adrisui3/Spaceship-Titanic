@@ -34,7 +34,7 @@ dtc_gs.best_params_
 # 'min_samples_leaf': 19,
 # 'min_samples_split': 64,
 # 'splitter': 'best'}
-# Cambia tanto la precisión como los parámetros
+# No se han obtenido mejores parámetros
 
 best_parameters = dtc_gs.best_params_
 # Cargamos conjunto de test
