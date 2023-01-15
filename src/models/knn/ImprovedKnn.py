@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jan 13 19:47:31 2023
-
 @author: marcosesquivelgonzalez
 
-Se intenta implementar un nuevo knn basado en el paper:
+Se implementa un nuevo knn basado en el paper:
     An Improved kNN Based on Class Contribution and Feature Weighting
     -HUANG Jie1,2, WEI Yongqing3,*,YI Jing2,4 and LIU Mengdi1,
+    
 """
 
 import os
@@ -18,24 +17,28 @@ sys.path.append(SRC)
 
 import utils
 from sklearn.preprocessing import RobustScaler
+from sklearn.preprocessing import Normalizer
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import cross_validate
 from sklearn.metrics import pairwise_distances
 import numpy as np
 import pandas as pd
 
+#train_raw = pd.read_csv('/Users/marcosesquivelgonzalez/Desktop/Master C.Datos/Projects/MDatos_PreprocClasif/Spaceship-Titanic/data/train_pr_KnnImputed_RobScal.csv')
 train_raw = utils.load_train_KnnImp()
 train_raw = utils.merge_numerical(train_raw) 
 train_y = train_raw.Transported
 train_X = utils.one_hot_encode(df = train_raw.drop(["Transported", "PassengerId"], axis = 1))
 colnames_train = train_X.columns
 
+#test_raw = pd.read_csv('/Users/marcosesquivelgonzalez/Desktop/Master C.Datos/Projects/MDatos_PreprocClasif/Spaceship-Titanic/data/test_pr_KnnImputed_RobScal.csv')
 test_raw = utils.load_test_KnnImp()
 test_raw = utils.merge_numerical(test_raw)
 test = utils.one_hot_encode(df = test_raw.drop(["PassengerId"], axis = 1))
 colnames_tst = test.columns
 
-RobScal = RobustScaler()
+RobScal = Normalizer()
+#RobScal = RobustScaler()
 
 train_scaled_array = RobScal.fit_transform(train_X)
 train_scaled = pd.DataFrame(train_scaled_array,columns=train_X.columns)
@@ -128,10 +131,10 @@ def improved_knn(n_neighbors,train,train_classes,test,weights=Disc_i_norm):
             
         else:              
             #Para la clase TRUE:
-            CT_True = n_neighbors/number_TrueLabels + 1/number_TrueLabels*np.mean( kminor_j_dist[j_targets==True] )
+            CT_True = n_neighbors/number_TrueLabels + np.mean( kminor_j_dist[j_targets==True] )/number_TrueLabels
             
             #Para la clase FALSE:
-            CT_False = n_neighbors/number_FalseLabels + 1/number_FalseLabels*np.mean( kminor_j_dist[j_targets==False] )
+            CT_False = n_neighbors/number_FalseLabels + np.mean( kminor_j_dist[j_targets==False] )/number_FalseLabels
         
             if CT_True < CT_False:
                 predicted[j] = 1
@@ -145,18 +148,18 @@ def improved_knn(n_neighbors,train,train_classes,test,weights=Disc_i_norm):
 
 #--------------Probamos si se comporta parecido al knn de sklearn como checkeo:
 """
-prediction = improved_knn(n_neighbors=56, train=train_scaled, train_classes=train_y, test=test_scaled)
+prediction = improved_knn(n_neighbors=30, train=train_scaled, train_classes=train_y, test=test_scaled)
 
-knn = KNeighborsClassifier(n_neighbors=56)
-knn.fit(train_scaled,train_y)
-prediction2 = knn.predict(test_scaled)
+#knn = KNeighborsClassifier(n_neighbors=56)
+#knn.fit(train_scaled,train_y)
+#prediction2 = knn.predict(test_scaled)
 
-print(np.mean(prediction==prediction2))
+#print(np.mean(prediction==prediction2))
          
 #Tiene unos resultados parecidos, parece bien implementado
 
 #---------------_Submission con el mejor valor de k -------------------
 
 predicted_labels = utils.encode_labels(prediction)
-utils.generate_submission(labels = predicted_labels, method = "knn", notes = "RobScal_k_56_ImprovedKnnV2_merged_knnImp") 
+utils.generate_submission(labels = predicted_labels, method = "knn", notes = "RobScal_k_49_ImprovedKnn_merged_knnImp") 
 """

@@ -1,0 +1,63 @@
+#Optimizando el valor de k en términos de la distancia intercuartil usada por RobustScaler y el valor de p
+#Datos imputados por moda y sin mergear numéricas 
+
+Para low = 10 , high = 90
+scoreCV, k, p
+0.7969 30 1
+0.7963 30 2
+Para low = 11 , high = 89
+scoreCV, k, p
+0.7958 30 1
+0.7971 49 2
+Para low = 12 , high = 88
+scoreCV, k, p
+0.7965 31 1
+0.7970 45 2
+Para low = 13 , high = 87
+scoreCV, k, p
+0.7957 45 1
+0.7977 45 2
+Para low = 14 , high = 86
+scoreCV, k, p
+0.7972 45 1
+0.7973 46 2
+Para low = 15 , high = 85
+scoreCV, k, p
+0.7963 45 1
+0.7981 49 2
+Para low = 16 , high = 84
+scoreCV, k, p
+0.7969 41 1
+0.7973 48 2
+Para low = 17 , high = 83
+scoreCV, k, p
+0.7964 29 1
+0.7964 31 2
+Para low = 18 , high = 82
+scoreCV, k, p
+0.7954 46 1
+0.7977 45 2
+Para low = 19 , high = 81
+scoreCV, k, p
+0.7957 48 1
+0.7979 37 2
+Para low = 20 , high = 80
+scoreCV, k, p
+0.7971 45 1
+0.7972 31 2
+Para low = 21 , high = 79
+scoreCV, k, p
+0.7970 48 1
+0.7982 31 2
+Para low = 22 , high = 78
+scoreCV, k, p
+0.7960 46 1
+0.7990 31 2
+Para low = 23 , high = 77
+scoreCV, k, p
+0.7964 31 1
+0.7987 29 2
+Para low = 24 , high = 76
+scoreCV, k, p
+0.7962 47 1
+0.7971 31 2

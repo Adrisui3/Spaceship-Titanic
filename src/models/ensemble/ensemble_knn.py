@@ -32,7 +32,7 @@ gsen.fit(train_X_RobScaled,train_y)
 #cv = utils.stratified_cross_validation(estimator = gsen, X = train_X, y = train_y,verbose=True)
 
 #print(cv)
-
+"""
 test_raw = utils.load_test_KnnImp()
 test_raw = utils.merge_numerical(test_raw)
 test = utils.one_hot_encode(df = test_raw.drop(["PassengerId"], axis = 1))
@@ -43,3 +43,4 @@ test_scaled = pd.DataFrame(test_scaled_array,columns=colnames_tst)
 
 pred_labels = gsen.predict(X = test_scaled)
 utils.generate_submission(labels = pred_labels, method = "ensemble", notes = "RobScal_k_58_correlation_merged_KnnImp_5000estimators")
+"""

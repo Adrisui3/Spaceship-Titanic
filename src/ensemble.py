@@ -123,20 +123,30 @@ class SAMMERClassifier:
         self.__estimators = [clone(weak_estimator) for _ in range(self.__n_estimators)]
         self.__estimator_params = estimator_params
         self.__learning_rate = learning_rate
+<<<<<<< HEAD
         
     def __check_probas(self):
         if not "probability" in self.__weak_estimator.get_params():
             raise Exception("The selected weak estimator does not have predict_proba method!")
 
-        self.__estimator_params = self.__weak_estimator.get_params() if not self.__estimator_params else self.__estimator_params
-        self.__estimator_params["probability"] = True
+=======
+        self.__verbose = verbose
     
+    def __check_params(self):
+        # If no parameters have been provided, use default
+>>>>>>> main
+        self.__estimator_params = self.__weak_estimator.get_params() if not self.__estimator_params else self.__estimator_params
+
+        # Set probability parameter if available
+        if "probability" in self.__weak_estimator.get_params():
+            self.__estimator_params["probability"] = True
+
     def fit(self, X, y):
         X, y = X.to_numpy(), y.to_numpy()
-        
-        # Check that the weak estimator has the probability parameter
-        self.__check_probas()
-        
+
+        # Check weak estimator parameters
+        self.__check_params()
+
         # Retrieve number of classes
         unique_y = np.unique(y, return_inverse = True)
         self.__classes = unique_y[0]
@@ -150,7 +160,7 @@ class SAMMERClassifier:
         
         # For every estimator...
         for m in range(self.__n_estimators):
-            if verbose:
+            if self.__verbose:
                 print("--- Fitting estimator ", m, " ---")
             
             # Step 2.a -> Fit the estimator using current weights

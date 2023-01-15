@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 from sklearn.impute import KNNImputer
 from sklearn.preprocessing import OrdinalEncoder
-from sklearn.preprocessing import Normalizer
+from sklearn.preprocessing import RobustScaler
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 
@@ -46,9 +46,9 @@ test_encoded[cat_columns] = enc.transform(test_raw[cat_columns])
 colnames = train_encoded.columns
 
 
-NormScal = Normalizer()
+RobScal = RobustScaler()
 
-train_EncScal_array = NormScal.fit_transform(train_encoded)
+train_EncScal_array = RobScal.fit_transform(train_encoded)
 train_EncScal = pd.DataFrame(train_EncScal_array,columns=colnames)
 
 imputer = KNNImputer(n_neighbors=30)
@@ -57,7 +57,7 @@ train_EncScalImp = imputer.fit_transform(train_EncScal)
 train_EncScalImp = pd.DataFrame(train_EncScalImp,columns=colnames)
 
 #---------------------Quito estandarizacion y codificación-----------------------------
-train_EncImp_array = NormScal.inverse_transform(train_EncScalImp)
+train_EncImp_array = RobScal.inverse_transform(train_EncScalImp)
 train_EncImp = pd.DataFrame(train_EncImp_array,columns=colnames)
 
 
@@ -70,12 +70,12 @@ train_Imp[cat_columns] = enc.inverse_transform(train_EncImp[cat_columns])
 train_encoded_forTst = train_EncImp.drop(['Transported'],axis=1)
 colnames_tst = train_encoded_forTst.columns
 
-NormScal = Normalizer()
+RobScal = RobustScaler()
 
-train_EncScal_array_forTst = NormScal.fit_transform(train_encoded_forTst)
+train_EncScal_array_forTst = RobScal.fit_transform(train_encoded_forTst)
 train_EncScal_forTst = pd.DataFrame(train_EncScal_array_forTst,columns=colnames_tst)
 
-test_EncScal_array = NormScal.transform(test_encoded)
+test_EncScal_array = RobScal.transform(test_encoded)
 test_EncScal = pd.DataFrame(test_EncScal_array,columns = colnames_tst)
 
 imputer_forTst= KNNImputer(n_neighbors=30).fit(train_EncScal_forTst)
@@ -84,7 +84,7 @@ test_EncScalImp_array = imputer_forTst.transform(test_EncScal)
 test_EncScalImp = pd.DataFrame(test_EncScalImp_array, columns=colnames_tst)
 
 #---------------------------Quito estandarización y codificación a test-------------------------- 
-test_EncImp_array = NormScal.inverse_transform(test_EncScalImp)
+test_EncImp_array = RobScal.inverse_transform(test_EncScalImp)
 test_EncImp = pd.DataFrame(test_EncImp_array,columns=colnames_tst)
 
 test_Imp = test_EncImp.copy()
@@ -107,8 +107,8 @@ train_Imp['Transported'] = train_Imp['Transported'].astype('bool')
 
 #--------------------------Exporto en csv los imputados-------------------
 
-train_Imp.to_csv(ROOT + '/data/train_pr_KnnImputed_NormScal.csv',index=False)
-test_Imp.to_csv(ROOT + '/data/test_pr_KnnImputed_NormScal.csv',index=False)
+train_Imp.to_csv(ROOT + '/data/train_pr_KnnImputed_RobScal.csv',index=False)
+test_Imp.to_csv(ROOT + '/data/test_pr_KnnImputed_RobScal.csv',index=False)
 
 
 
