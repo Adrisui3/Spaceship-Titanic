@@ -13,6 +13,9 @@ def load_train():
 def load_train_KnnImp():
     return pd.read_csv(ROOT + '/data/train_pr_KnnImputed.csv')
 
+def load_train_nooutliers():
+    return pd.read_csv(ROOT + '/data/train_nooutliers.csv')
+
 def load_test():
     return pd.read_csv(ROOT + "/data/test_pr.csv")
 

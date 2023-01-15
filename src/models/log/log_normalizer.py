@@ -9,8 +9,6 @@ import utils
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_validate
-from sklearn.model_selection import GridSearchCV as GS_CV
-from sklearn.preprocessing import Normalizer
 import pandas as pd
 
 train_raw = utils.load_train()
@@ -28,7 +26,7 @@ train_y = train_raw.Transported
 
 # print(train_y)
 
-cv = cross_validate(estimator = LogisticRegression(random_state = 1234, max_iter=1, solver = "newton-cholesky", C = 2, tol = 0.0001, fit_intercept=False), X = train_X, y = train_y, cv = 10, n_jobs = -1, verbose = 5)
+cv = cross_validate(estimator = LogisticRegression(random_state = 1234, max_iter=1, solver = "newton-cholesky", C = 1, tol = 0.0001, fit_intercept=False), X = train_X, y = train_y, cv = 10, n_jobs = -1, verbose = 5)
 print("Cross-validation test score: ", np.mean(cv["test_score"]))
 
 #--------------- CREAR PREDICCIONES PARA EL TEST ---------------------------------
@@ -47,7 +45,7 @@ print("Training LogisticRegression...")
 # log = LogisticRegression(verbose=True, random_state=1234, max_iter = 1,solver = "newton-cholesky").fit(X = train_X, y = train_y)
 # log = LogisticRegression(verbose=True, random_state=1234, max_iter = 1,solver = "newton-cholesky", fit_intercept=False, C = 1, tol = 0.0001).fit(X = train_X, y = train_y)
 # log = LogisticRegression(verbose=True, random_state = 1234, max_iter=1, solver = "newton-cholesky", C = 8, tol = 0.0001, fit_intercept=False).fit(X = train_X, y = train_y)
-log = LogisticRegression(verbose=True, random_state = 1234, max_iter=1, solver = "newton-cholesky", C = 2, tol = 0.0001, fit_intercept=False).fit(X = train_X, y = train_y)
+log = LogisticRegression(verbose=True, random_state = 1234, max_iter=1, solver = "newton-cholesky", C = 1, tol = 0.0001, fit_intercept=False).fit(X = train_X, y = train_y)
 print("Making predictions...")
 pred_labels = log.predict(X = test)
 print(pred_labels)

@@ -51,7 +51,7 @@ StandScal = StandardScaler()
 train_EncScal_array = StandScal.fit_transform(train_encoded)
 train_EncScal = pd.DataFrame(train_EncScal_array,columns=colnames)
 
-imputer = KNNImputer(n_neighbors=30)
+imputer = KNNImputer(n_neighbors=23)
 
 train_EncScalImp = imputer.fit_transform(train_EncScal)
 train_EncScalImp = pd.DataFrame(train_EncScalImp,columns=colnames)
@@ -78,7 +78,7 @@ train_EncScal_forTst = pd.DataFrame(train_EncScal_array_forTst,columns=colnames_
 test_EncScal_array = StandScal.transform(test_encoded)
 test_EncScal = pd.DataFrame(test_EncScal_array,columns = colnames_tst)
 
-imputer_forTst= KNNImputer(n_neighbors=30).fit(train_EncScal_forTst)
+imputer_forTst= KNNImputer(n_neighbors=23).fit(train_EncScal_forTst)
 
 test_EncScalImp_array = imputer_forTst.transform(test_EncScal)
 test_EncScalImp = pd.DataFrame(test_EncScalImp_array, columns=colnames_tst)
