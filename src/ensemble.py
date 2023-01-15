@@ -123,7 +123,7 @@ class SAMMERClassifier:
         self.__estimators = [clone(weak_estimator) for _ in range(self.__n_estimators)]
         self.__estimator_params = estimator_params
         self.__learning_rate = learning_rate
-    
+        
     def __check_probas(self):
         if not "probability" in self.__weak_estimator.get_params():
             raise Exception("The selected weak estimator does not have predict_proba method!")
