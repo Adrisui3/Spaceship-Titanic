@@ -27,22 +27,29 @@ train_y = train_raw.Transported
 
 # print(train_y)
 
-params = {'max_iter': 1, 'solver': 'newton-cholesky', 'C' : 1, 'tol' : 0.0001, 'fit_intercept' : False}
+params = {'max_iter': 5, 'solver': 'newton-cholesky', 'C' : 1, 'tol' : 0.0001, 'fit_intercept' : False}
 
 train_sc = []
 test_sc = []
+lr_list = []
 
-for lr in np.arange(0.01,0.21, 0.01):
-    gsen = ensemble.SAMMERClassifier(weak_estimator = LogisticRegression(), n_estimators = 50, estimator_params = params, learning_rate = lr, verbose = False)
+for lr in np.arange(0.001,0.002, 0.001):
+    gsen = ensemble.SAMMERClassifier(weak_estimator = LogisticRegression(verbose=False), n_estimators = 50, estimator_params = params, learning_rate = lr, verbose = False)
     cv = utils.stratified_cross_validation(estimator=gsen, X = train_X, y = train_y, verbose=False)
 
-    cv
     print("--- LEARNING RATE:", lr)
     print("\tCross-validation train score: ", np.mean(cv["train_score"]))
     print("\tCross-validation test score: ", np.mean(cv["test_score"]))
     train_sc.append(np.mean(cv['train_score']))
     test_sc.append(np.mean(cv["test_score"]))
+    lr_list.append(lr)
     np.mean(cv['test_score'])
+
+print("RESULTADOS:")
+
+print(test_sc)
+print(train_sc)
+print(lr_list)
 
 # train_preds = gsen.predict(X = train_X)
 # # print("Mean OOB accuracy:", gsen.get_mean_oob_accuracy())
