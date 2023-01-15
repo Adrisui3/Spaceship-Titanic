@@ -157,6 +157,10 @@ class SAMMERClassifier:
             if self.__verbose:
                 print("--- Fitting estimator ", m, " ---")
             
+            sum_weights = np.sum(sample_weights)
+            if not np.isfinite(sum_weights) or sum_weights <= 0:
+                break
+            
             # Create new estimator
             self.__estimators.append(clone(self.__weak_estimator))
 
@@ -177,10 +181,6 @@ class SAMMERClassifier:
                 np.clip(probas, np.finfo(probas.dtype).eps, None, out=probas)
                 sample_weights *= np.exp(-self.__learning_rate * ((self.__K - 1) / self.__K) * xlogy(recod_y, probas).sum(axis = 1))
                 
-                sum_weights = np.sum(sample_weights)
-                if not np.isfinite(sum_weights) or sum_weights <= 0:
-                    break
-
                 # Step 2.e -> Normalize weights
                 sample_weights /= np.sum(sample_weights)
         
