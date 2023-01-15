@@ -120,7 +120,6 @@ class SAMMERClassifier:
     def __init__(self, weak_estimator, n_estimators, estimator_params = None, learning_rate = 1.0, verbose = False):
         self.__n_estimators = n_estimators
         self.__weak_estimator = weak_estimator
-        self.__estimators = [clone(weak_estimator) for _ in range(self.__n_estimators)]
         self.__estimator_params = estimator_params
         self.__learning_rate = learning_rate
         self.__verbose = verbose
@@ -149,12 +148,18 @@ class SAMMERClassifier:
 
         # Uniformly initialize sample weights 
         sample_weights = np.full(X.shape[0], 1/X.shape[0])
+
+        # Clean estimator if any
+        self.__estimators = []
         
         # For every estimator...
         for m in range(self.__n_estimators):
             if self.__verbose:
                 print("--- Fitting estimator ", m, " ---")
             
+            # Create new estimator
+            self.__estimators.append(clone(self.__weak_estimator))
+
             # Step 2.a -> Fit the estimator using current weights
             self.__estimators[m].set_params(**self.__estimator_params).fit(X = X, y = y, sample_weight = sample_weights)
 
@@ -169,15 +174,20 @@ class SAMMERClassifier:
                     recod_y[r, c] = 1.0
                 
                 # Step 2.d -> Update sample weights
+                np.clip(probas, np.finfo(probas.dtype).eps, None, out=probas)
                 sample_weights *= np.exp(-self.__learning_rate * ((self.__K - 1) / self.__K) * xlogy(recod_y, probas).sum(axis = 1))
                 
+                sum_weights = np.sum(sample_weights)
+                if not np.isfinite(sum_weights) or sum_weights <= 0:
+                    break
+
                 # Step 2.e -> Normalize weights
                 sample_weights /= np.sum(sample_weights)
         
         return self
     
     def __compute_probas(self, X):
-        return np.array([self.__estimators[m].predict_proba(X) for m in range(self.__n_estimators)])
+        return np.array([est.predict_proba(X) for est in self.__estimators])
 
     def __compute_estimators_h(self, X):
         # Reset h values
@@ -187,6 +197,7 @@ class SAMMERClassifier:
         estimator_probas = self.__compute_probas(X = X)
         for probas in estimator_probas:
             # Step 2.c -> Compute the weight of the estimator.
+            np.clip(probas, np.finfo(probas.dtype).eps, None, out=probas)
             probas_log = np.log(probas)
             self.__estimator_h.append((self.__K - 1) * (probas_log - (probas_log.sum(axis = 1)[:, np.newaxis] / self.__K)))
 
