@@ -1,4 +1,4 @@
-#Valor de k con el mejor SCV con 10 folds, variando el número de componentes de PCA, p y el tipo de preprocesado. También se prueba con LDA.
+#Valor de k con el mejor SCV con 10 folds, variando el número de componentes de PCA, p y el tipo de preprocesado. También se prueba con Kernel-PCA y LDA.
 #knn_DimRed.py
 El número mínimo de PCA's para RobustScaler llegue al 90% de varianza: 4
 
@@ -189,39 +189,3 @@ El número mínimo de KPCA's para RobustScaler llegue al 90% de varianza: 5
  LDA con StandardScaler:
 
 0.77615,57,1
-
-RobustPCA:
-
-iteration: 1, error: 162.9850046281814
-iteration: 200, error: 0.7322382475183238
-iteration: 400, error: 0.30421082823408857
-iteration: 600, error: 0.4593952135892661
-iteration: 800, error: 0.5092247570423416
-iteration: 1000, error: 1.1694973307706908
-iteration: 1200, error: 1.5874278420453218
-iteration: 1400, error: 0.29646871524187296
-iteration: 1600, error: 0.42655005698669707
-iteration: 1800, error: 0.8616092809752754
-iteration: 2000, error: 1.1306813809823724
-iteration: 2200, error: 0.36076496254307533
-iteration: 2400, error: 0.5263391104876004
-iteration: 2600, error: 1.4457512022627048
-iteration: 2800, error: 1.352448238580595
-iteration: 3000, error: 0.028583960908651163
-iteration: 3069, error: 0.022987053287789296
- · 2 components, explained variance: 1.0
- · 3 components, explained variance: 1.0
- · 4 components, explained variance: 1.0
- · 5 components, explained variance: 1.0
- · 6 components, explained variance: 1.0
- · 7 components, explained variance: 1.0
- · 8 components, explained variance: 1.0
- · 9 components, explained variance: 1.0
- · 10 components, explained variance: 1.0
- · 11 components, explained variance: 1.0
- · 12 components, explained variance: 1.0
- · 13 components, explained variance: 1.0
- · 14 components, explained variance: 1.0
- · 15 components, explained variance: 1.0
- · 16 components, explained variance: 1.0
-0.70540,18,2

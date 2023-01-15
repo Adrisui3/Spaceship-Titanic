@@ -122,10 +122,18 @@ class SAMMERClassifier:
         self.__weak_estimator = weak_estimator
         self.__estimator_params = estimator_params
         self.__learning_rate = learning_rate
+<<<<<<< HEAD
+        
+    def __check_probas(self):
+        if not "probability" in self.__weak_estimator.get_params():
+            raise Exception("The selected weak estimator does not have predict_proba method!")
+
+=======
         self.__verbose = verbose
     
     def __check_params(self):
         # If no parameters have been provided, use default
+>>>>>>> main
         self.__estimator_params = self.__weak_estimator.get_params() if not self.__estimator_params else self.__estimator_params
 
         # Set probability parameter if available

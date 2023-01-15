@@ -17,7 +17,7 @@ train_y = train_raw.Transported
 sammer = ensemble.SAMMERClassifier(weak_estimator = SVC(), n_estimators = 5)
 sammer.fit(X = train_X, y = train_y)
 preds = sammer.predict(X = train_X)
-print("Train score: ", accuracy_score(train_y, train_preds))
+print("Train score: ", accuracy_score(train_y, preds))
 
 test_raw = utils.load_test()
 test = utils.one_hot_encode(df = test_raw.drop(["PassengerId"], axis = 1))
