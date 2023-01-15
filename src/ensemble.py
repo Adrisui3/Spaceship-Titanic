@@ -174,6 +174,7 @@ class SAMMERClassifier:
                     recod_y[r, c] = 1.0
                 
                 # Step 2.d -> Update sample weights
+                np.clip(probas, np.finfo(probas.dtype).eps, None, out=probas)
                 sample_weights *= np.exp(-self.__learning_rate * ((self.__K - 1) / self.__K) * xlogy(recod_y, probas).sum(axis = 1))
                 
                 sum_weights = np.sum(sample_weights)
@@ -196,10 +197,13 @@ class SAMMERClassifier:
         estimator_probas = self.__compute_probas(X = X)
         for probas in estimator_probas:
             # Step 2.c -> Compute the weight of the estimator.
+            np.clip(probas, np.finfo(probas.dtype).eps, None, out=probas)
             probas_log = np.log(probas)
             self.__estimator_h.append((self.__K - 1) * (probas_log - (probas_log.sum(axis = 1)[:, np.newaxis] / self.__K)))
 
     def predict(self, X):
+        X = X.to_numpy()
+        
         # Compute estimator weights
         self.__compute_estimators_h(X = X)
         
