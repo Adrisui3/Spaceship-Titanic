@@ -26,6 +26,14 @@ class BaggingClassifier:
     def __bootstrap_features(self, max_features, n_features):
         return random.sample(population = range(max_features), k = n_features)
     
+    def __check_params(self):
+        # If no parameters have been provided, use default
+        self.__estimator_params = self.__weak_estimator.get_params() if not self.__estimator_params else self.__estimator_params
+
+        # Set probability parameter if available
+        if "probability" in self.__weak_estimator.get_params():
+            self.__estimator_params["probability"] = True
+
     def __fit_estimators(self, X, y, n_samples, n_features):
         #max samples and max features
         max_samples, max_features = X.shape
@@ -49,15 +57,8 @@ class BaggingClassifier:
             # Sample out of bag set
             X_oob, y_oob = X.iloc[oob_samples_indices, features_indices], y.iloc[oob_samples_indices]
             
-            # If no parameters have been provided, use default
-            params = self.__weak_estimator.get_params() if not self.__estimator_params else self.__estimator_params
-            
-            # Set fixed parameters
-            if "probability" in self.__weak_estimator.get_params():
-                params["probability"] = True
-            
-            # Fit weak estimator with either the best set of parameters or the default one
-            estimator = self.__unfitted_estimators[i].set_params(**params).fit(X_bootstrap, y_bootstrap)
+            # Fit weak estimator with either the speficied parameters
+            estimator = self.__unfitted_estimators[i].set_params(**self.__estimator_params).fit(X_bootstrap, y_bootstrap)
             self.__fitted_estimators.append(estimator)
 
             # Compute out of bag score
@@ -74,6 +75,9 @@ class BaggingClassifier:
         n_samples = max(1, int(X.shape[0] * self.__max_samples))
         # Find the number of features used for the random subspace
         n_features = max(1, int(X.shape[1] * self.__max_features))
+
+        # Set estimator parameters
+        self.__check_params()
 
         # Fit estimators
         self.__fit_estimators(X = X, y = y, n_samples = n_samples, n_features = n_features)
@@ -153,7 +157,7 @@ class SAMMERClassifier:
         # For every estimator...
         for m in range(self.__n_estimators):
             if self.__verbose:
-                print("--- Fitting estimator ", m, " ---")
+                print("--- Fitting estimator", m, " ---")
             
             # Step 2.a -> Fit the estimator using current weights
             self.__estimators[m].set_params(**self.__estimator_params).fit(X = X, y = y, sample_weight = sample_weights)
