@@ -2,6 +2,8 @@ import pandas as pd
 import os
 import datetime
 import pickle
+from sklearn.model_selection import StratifiedKFold
+from sklearn.metrics import accuracy_score
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 
@@ -81,4 +83,30 @@ def merge_numerical(df):
 
 def encode_labels(labels):
     return ['True' if x==1 else 'False' for x in labels]
+
+
+def stratified_cross_validation(estimator, X, y, n_folds = 10, random_state = None, verbose = False):
+    cv = {"test_score":[], "train_score":[]}
+    skf = StratifiedKFold(n_splits = n_folds, random_state = random_state)
+    for i, (train_idx, test_idx) in enumerate(skf.split(X = X, y = y)):
+        Xi_train, yi_train = X.loc[train_idx], y.loc[train_idx]
+        Xi_test, yi_test = X.loc[test_idx], y.loc[test_idx]
+
+        # Fit estimator
+        est = estimator.fit(X = Xi_train, y = yi_train)
+
+        # Predict
+        train_preds = estimator.predict(X = Xi_train)
+        acc_train = accuracy_score(yi_train, train_preds)
+        test_preds = estimator.predict(X = Xi_test)
+        acc_test = accuracy_score(yi_test, test_preds)
+
+        # Store results
+        cv["train_score"].append(acc_train)
+        cv["test_score"].append(acc_test)
         
+        # Print current state
+        if verbose:
+            print("Fold: [", i + 1, "/", n_folds,"] -> scores = (train =", acc_train, ", test=", acc_test, ")")
+
+    return cv
