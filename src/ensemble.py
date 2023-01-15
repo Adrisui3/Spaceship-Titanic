@@ -186,7 +186,7 @@ class SAMMERClassifier:
         return self
     
     def __compute_probas(self, X):
-        return np.array([self.__estimators[m].predict_proba(X) for m in range(self.__n_estimators)])
+        return np.array([est.predict_proba(X) for est in self.__estimators])
 
     def __compute_estimators_h(self, X):
         # Reset h values
