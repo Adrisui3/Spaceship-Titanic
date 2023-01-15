@@ -136,7 +136,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 0146_01,Earth,False,TRAPPIST-1e,56.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 0147_01,Earth,True,TRAPPIST-1e,50.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 0148_01,Mars,False,TRAPPIST-1e,42.0,False,1072.0,0.0,10.0,0.0,76.00000000000003,False,F,P
-0149_01,Earth,True,55 Cancri e,25.566666666666666,False,0.0,0.0,0.0,0.0,0.0,True,G,S
+0149_01,Earth,True,55 Cancri e,19.866666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 0151_01,Earth,True,55 Cancri e,38.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 0152_01,Earth,False,PSO J318.5-22,41.0,False,0.0,0.0,0.0,0.0,607.0,False,F,P
 0160_01,Earth,False,TRAPPIST-1e,22.0,False,4119.0,0.0,0.0,0.0,61.0,False,G,P
@@ -248,7 +248,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 0267_01,Earth,False,TRAPPIST-1e,13.0,False,118.0,0.0,0.0,754.0,1.0,False,F,S
 0269_01,Earth,False,55 Cancri e,47.0,False,0.0,231.00000000000003,592.0,0.0,0.0,True,F,S
 0270_01,Earth,False,TRAPPIST-1e,63.0,False,0.0,24.999999999999943,128.0,0.0,1240.0,False,F,P
-0275_01,Europa,True,55 Cancri e,33.8,False,0.0,0.0,0.0,0.0,0.0,True,D,S
+0275_01,Europa,True,55 Cancri e,33.66666666666667,False,0.0,0.0,0.0,0.0,0.0,True,D,S
 0277_01,Earth,False,55 Cancri e,50.0,False,44.0,2390.0,0.0,53.0,0.0,True,F,P
 0278_01,Earth,False,TRAPPIST-1e,35.0,False,0.0,0.0,0.0,888.0,107.16666666666671,False,F,P
 0278_02,Earth,False,TRAPPIST-1e,45.0,False,0.0,97.0,0.0,14.0,333.0,False,G,P
@@ -281,12 +281,12 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 0309_01,Earth,False,TRAPPIST-1e,18.0,False,1194.0,0.0,157.0,6.0,0.0,False,F,S
 0310_01,Europa,False,TRAPPIST-1e,67.0,False,238.23333333333335,230.0,0.0,4476.0,241.0,False,C,P
 0313_01,Earth,False,PSO J318.5-22,60.0,False,6.999999999999972,540.0,0.9999999999999716,0.0,4.0,True,F,P
-0313_02,Earth,True,55 Cancri e,20.666666666666668,False,0.0,0.0,0.0,0.0,0.0,True,G,P
+0313_02,Earth,True,55 Cancri e,18.7,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 0313_03,Earth,False,55 Cancri e,49.0,False,331.0,0.0,0.0,318.0,0.0,True,F,P
 0313_04,Earth,False,55 Cancri e,0.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 0314_01,Earth,False,55 Cancri e,26.0,False,386.0,0.0,74.0,0.0,1330.0,False,G,P
 0315_01,Earth,True,PSO J318.5-22,35.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
-0316_01,Europa,False,TRAPPIST-1e,24.0,False,0.0,2628.0,443.4999999999999,170.0,0.0,True,B,S
+0316_01,Europa,False,TRAPPIST-1e,24.0,False,0.0,2628.0,443.49999999999994,170.0,0.0,True,B,S
 0316_02,Europa,True,TRAPPIST-1e,20.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 0320_01,Earth,False,TRAPPIST-1e,18.0,False,0.0,1.9999999999999432,0.0,1130.6333333333332,0.0,False,G,S
 0320_02,Earth,False,TRAPPIST-1e,21.0,False,0.0,4.999999999999943,3.0,0.0,370.79999999999995,False,G,S
@@ -324,7 +324,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 0359_01,Earth,False,PSO J318.5-22,26.0,False,148.0,0.0,453.0,0.0,88.0,False,F,S
 0360_01,Earth,False,TRAPPIST-1e,15.0,False,358.0,212.0,33.0,0.0,112.0,False,F,S
 0361_01,Earth,False,55 Cancri e,33.0,False,0.0,36.0,0.0,280.0,417.0,True,F,S
-0365_01,Earth,False,55 Cancri e,20.93333333333333,False,0.0,0.0,0.0,685.0,21.0,False,G,S
+0365_01,Earth,False,55 Cancri e,20.833333333333332,False,0.0,0.0,0.0,685.0,21.0,False,G,S
 0368_01,Mars,False,TRAPPIST-1e,26.0,False,2832.0,107.0,4447.0,15.0,4.0,False,F,P
 0368_02,Mars,True,TRAPPIST-1e,61.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 0369_01,Earth,False,TRAPPIST-1e,24.0,False,0.0,0.0,592.0,177.0,58.0,True,G,S
@@ -481,7 +481,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 0516_01,Europa,False,55 Cancri e,55.0,False,113.0,2492.0000000000005,41.0,0.0,2376.0,False,A,S
 0517_01,Earth,False,TRAPPIST-1e,31.666666666666668,False,1445.0,0.0,0.9999999999999716,2.0,73.0,False,F,P
 0518_01,Europa,True,TRAPPIST-1e,35.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
-0519_01,Earth,True,TRAPPIST-1e,26.4,False,0.0,0.0,0.0,0.0,0.0,True,G,S
+0519_01,Earth,True,TRAPPIST-1e,20.46666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 0520_01,Earth,False,TRAPPIST-1e,55.0,False,62.0,266.1333333333333,0.0,0.0,555.6333333333333,False,G,S
 0521_01,Earth,False,TRAPPIST-1e,23.0,False,39.0,263.0,0.0,0.0,158.66666666666666,True,E,S
 0522_01,Earth,False,TRAPPIST-1e,42.0,False,0.0,0.0,750.0,0.0,156.0,False,E,P
@@ -492,13 +492,13 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 0528_01,Europa,False,TRAPPIST-1e,46.0,False,0.0,1119.0,0.0,3427.0,6595.0,False,C,P
 0529_01,Earth,True,PSO J318.5-22,26.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 0531_01,Earth,True,55 Cancri e,1.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
-0531_02,Earth,True,55 Cancri e,20.666666666666668,False,0.0,0.0,0.0,0.0,0.0,True,G,P
+0531_02,Earth,True,55 Cancri e,18.7,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 0533_01,Mars,False,TRAPPIST-1e,33.0,False,20.0,0.0,384.0,557.0,0.0,False,D,P
 0534_01,Europa,False,TRAPPIST-1e,34.0,False,97.99999999999999,715.0,29.0,5732.0,1902.0,False,B,P
 0534_02,Europa,False,TRAPPIST-1e,49.0,False,3573.0,1308.0,316.0,641.0,25.0,False,B,P
 0537_01,Earth,False,TRAPPIST-1e,22.0,False,0.0,4.999999999999943,0.0,320.0,352.0,False,G,P
 0538_01,Earth,False,TRAPPIST-1e,28.0,False,0.0,1073.0,0.0,0.0,5.0,True,F,P
-0539_01,Europa,True,TRAPPIST-1e,30.1,False,0.0,0.0,0.0,0.0,0.0,True,C,P
+0539_01,Europa,True,TRAPPIST-1e,29.566666666666666,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 0539_02,Europa,True,55 Cancri e,36.0,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 0539_03,Europa,True,55 Cancri e,30.0,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 0539_04,Europa,True,TRAPPIST-1e,49.0,False,0.0,0.0,0.0,0.0,0.0,True,C,P
@@ -533,7 +533,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 0566_01,Mars,True,TRAPPIST-1e,13.0,False,0.0,0.0,0.0,0.0,0.0,True,E,S
 0567_01,Earth,True,TRAPPIST-1e,14.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 0568_01,Europa,False,TRAPPIST-1e,33.0,False,1908.0,33.0,0.0,1.0,4.0,False,D,S
-0568_02,Europa,True,55 Cancri e,33.8,False,0.0,0.0,0.0,0.0,0.0,True,D,S
+0568_02,Europa,True,55 Cancri e,33.66666666666667,False,0.0,0.0,0.0,0.0,0.0,True,D,S
 0569_01,Earth,False,TRAPPIST-1e,23.0,False,0.0,334.0,310.0,0.0,0.0,True,F,P
 0570_01,Europa,False,TRAPPIST-1e,36.0,True,530.0,5085.0,0.9999999999999716,146.0,872.0,True,C,S
 0571_01,Europa,True,55 Cancri e,22.0,False,0.0,0.0,0.0,0.0,0.0,True,C,P
@@ -651,7 +651,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 0680_03,Earth,True,TRAPPIST-1e,5.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 0682_01,Mars,True,TRAPPIST-1e,38.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 0683_01,Mars,False,TRAPPIST-1e,30.0,False,269.0,96.0,252.0,0.0,0.0,False,F,P
-0684_01,Mars,False,TRAPPIST-1e,4.233333333333327,False,0.0,0.0,0.0,0.0,0.0,True,F,P
+0684_01,Mars,False,TRAPPIST-1e,5.333333333333329,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 0684_02,Mars,False,TRAPPIST-1e,0.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 0684_03,Mars,True,TRAPPIST-1e,20.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 0685_01,Earth,False,TRAPPIST-1e,41.0,False,1.0,922.0,4.0,55.0,15.0,False,E,P
@@ -664,7 +664,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 0691_01,Mars,False,TRAPPIST-1e,19.0,False,164.0,0.0,783.0,0.0,0.0,False,E,S
 0691_02,Mars,False,TRAPPIST-1e,21.0,False,505.0,0.0,1952.0,0.0,0.0,False,F,S
 0691_03,Mars,True,TRAPPIST-1e,23.0,False,0.0,0.0,0.0,0.0,0.0,True,E,S
-0693_01,Europa,True,55 Cancri e,35.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
+0693_01,Europa,True,55 Cancri e,35.0,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 0693_02,Europa,False,TRAPPIST-1e,34.0,False,0.0,3488.0,0.0,4343.0,38.0,False,C,S
 0696_01,Earth,False,TRAPPIST-1e,22.0,False,0.0,581.0,226.0,74.0,0.0,True,G,S
 0697_01,Earth,False,55 Cancri e,24.0,False,21.0,0.0,689.0,12.0,0.0,True,F,P
@@ -915,7 +915,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 0984_04,Earth,True,TRAPPIST-1e,30.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 0984_05,Earth,False,55 Cancri e,20.0,False,0.0,11.0,0.0,136.0,1088.0,False,F,S
 0984_06,Earth,True,TRAPPIST-1e,22.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
-0984_07,Earth,True,PSO J318.5-22,24.1,False,0.0,0.0,0.0,0.0,0.0,False,G,S
+0984_07,Earth,True,PSO J318.5-22,21.566666666666666,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 0984_08,Earth,True,TRAPPIST-1e,71.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 0985_01,Earth,False,55 Cancri e,18.0,False,5.999999999999972,0.0,516.7,12.0,704.0,True,E,P
 0987_01,Earth,False,TRAPPIST-1e,16.0,False,3.0,0.0,35.0,150.0,478.0,False,F,P
@@ -1000,7 +1000,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 1062_01,Earth,False,TRAPPIST-1e,26.0,False,0.0,773.0,48.0,0.0,149.0,False,F,P
 1063_01,Earth,False,TRAPPIST-1e,38.0,False,0.0,3262.0,0.0,295.0,1374.0,True,B,P
 1063_02,Europa,True,TRAPPIST-1e,15.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
-1065_01,Mars,True,TRAPPIST-1e,21.96666666666667,False,0.0,0.0,0.0,0.0,0.0,True,F,S
+1065_01,Mars,True,TRAPPIST-1e,35.766666666666666,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 1066_01,Mars,True,TRAPPIST-1e,35.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 1068_01,Earth,True,PSO J318.5-22,38.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 1071_01,Earth,False,TRAPPIST-1e,35.0,False,415.0,1328.0,0.0,14.0,60.0,False,T,P
@@ -1202,7 +1202,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 1281_01,Earth,True,TRAPPIST-1e,14.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 1282_01,Earth,True,PSO J318.5-22,18.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 1283_01,Earth,False,TRAPPIST-1e,19.0,False,5.999999999999972,27.766666666666595,0.9999999999999716,714.0,0.0,False,G,S
-1284_01,Mars,True,PSO J318.5-22,26.9,False,0.0,0.0,0.0,0.0,0.0,True,F,S
+1284_01,Mars,True,PSO J318.5-22,25.933333333333334,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 1285_01,Earth,False,55 Cancri e,36.0,False,286.0,415.0,16.0,0.0,0.0,False,F,P
 1286_01,Mars,True,TRAPPIST-1e,10.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 1287_01,Mars,True,TRAPPIST-1e,1.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
@@ -1268,7 +1268,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 1345_01,Earth,False,TRAPPIST-1e,25.0,False,1174.0000000000002,0.0,18.0,721.0,0.0,False,F,S
 1347_01,Earth,False,TRAPPIST-1e,67.0,False,0.0,761.0,0.0,1.0,0.0,True,F,P
 1348_01,Europa,False,TRAPPIST-1e,22.0,False,0.0,1531.0,0.0,369.0,2969.0,False,B,S
-1348_02,Europa,True,TRAPPIST-1e,34.666666666666664,False,0.0,0.0,0.0,0.0,0.0,True,B,S
+1348_02,Europa,True,TRAPPIST-1e,29.2,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 1350_01,Earth,True,55 Cancri e,27.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 1350_02,Earth,False,TRAPPIST-1e,14.0,False,1489.0,1.9999999999999432,126.0,460.0,72.0,False,F,S
 1350_03,Earth,False,PSO J318.5-22,42.0,False,491.0,106.0,8.0,202.0,0.0,False,G,S
@@ -1394,7 +1394,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 1458_01,Europa,False,TRAPPIST-1e,46.0,False,0.0,0.0,2019.9999999999998,323.0,0.0,False,G,S
 1460_01,Earth,False,PSO J318.5-22,19.0,False,171.83333333333334,905.0,387.0,0.0,0.0,True,F,P
 1460_02,Earth,True,PSO J318.5-22,13.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
-1461_01,Earth,True,TRAPPIST-1e,26.366666666666667,False,0.0,0.0,0.0,0.0,0.0,False,G,S
+1461_01,Earth,True,TRAPPIST-1e,23.03333333333333,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 1462_01,Earth,True,TRAPPIST-1e,30.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 1463_01,Earth,False,PSO J318.5-22,23.0,False,200.0,414.0,72.99999999999999,1.0,1.0,False,F,S
 1465_01,Earth,False,PSO J318.5-22,63.0,False,356.0,287.0,0.0,0.0,248.0,False,G,P
@@ -1484,7 +1484,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 1572_02,Earth,False,TRAPPIST-1e,25.0,False,4.0,0.0,146.0,723.0,0.0,False,F,P
 1573_01,Mars,False,TRAPPIST-1e,55.0,False,938.0,0.0,82.0,0.0,162.0,False,D,S
 1576_01,Mars,False,TRAPPIST-1e,28.0,False,641.0000000000001,0.0,372.0,0.0,16.0,False,E,P
-1577_01,Earth,False,PSO J318.5-22,23.0,False,0.0,169.0,752.0666666666668,0.0,0.0,True,F,P
+1577_01,Earth,False,PSO J318.5-22,23.0,False,0.0,169.0,752.0666666666667,0.0,0.0,True,F,P
 1578_01,Earth,False,TRAPPIST-1e,22.0,False,0.0,24.0,0.0,176.0,783.0,False,E,P
 1579_01,Earth,False,55 Cancri e,26.0,False,333.0,1819.0,0.0,1.0,0.0,True,F,P
 1580_01,Earth,False,TRAPPIST-1e,13.0,False,0.0,0.0,8.0,0.0,714.0,False,G,S
@@ -1501,7 +1501,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 1592_01,Europa,False,TRAPPIST-1e,35.0,False,305.0,3621.0,0.0,320.0,341.0,True,C,S
 1592_02,Europa,False,55 Cancri e,47.0,False,16.0,2127.0,1487.0,0.0,196.0,True,C,S
 1593_01,Earth,False,TRAPPIST-1e,23.0,False,5.0,51.0,0.0,732.0,0.0,False,E,S
-1594_01,Earth,False,TRAPPIST-1e,26.433333333333334,False,0.0,3.0,0.0,2.0,923.0,True,G,P
+1594_01,Earth,False,TRAPPIST-1e,26.633333333333333,False,0.0,3.0,0.0,2.0,923.0,True,G,P
 1595_01,Europa,False,55 Cancri e,27.0,False,0.0,4342.0,0.0,417.4666666666667,36.0,True,C,P
 1596_01,Europa,True,TRAPPIST-1e,23.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 1597_01,Earth,True,TRAPPIST-1e,31.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
@@ -1629,7 +1629,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 1723_01,Earth,False,TRAPPIST-1e,15.0,False,852.0,0.0,0.0,135.0,0.0,False,E,S
 1724_01,Europa,False,55 Cancri e,59.0,False,8.000000000000028,1563.0,0.0,73.0,31.0,True,A,S
 1725_01,Earth,False,TRAPPIST-1e,24.0,False,0.0,200.99999999999997,0.0,0.0,603.0,False,F,S
-1727_01,Mars,True,PSO J318.5-22,25.7,False,0.0,0.0,0.0,0.0,0.0,True,F,P
+1727_01,Mars,True,PSO J318.5-22,28.3,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 1727_02,Mars,False,55 Cancri e,52.0,False,1279.0,0.0,1061.0,359.0,0.0,False,D,P
 1728_01,Earth,False,TRAPPIST-1e,38.0,False,553.0,0.0,0.0,87.0,243.0,False,G,P
 1729_01,Earth,False,TRAPPIST-1e,26.0,False,21.0,0.0,499.0,568.0,0.0,True,F,P
@@ -1893,7 +1893,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 2022_01,Earth,False,PSO J318.5-22,36.0,False,0.0,809.0,0.0,86.0,0.0,False,F,S
 2024_01,Earth,False,TRAPPIST-1e,0.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 2024_02,Earth,False,55 Cancri e,17.0,False,44.0,1535.0,10.0,51.0,0.0,True,E,S
-2026_01,Earth,True,TRAPPIST-1e,26.4,False,0.0,0.0,0.0,0.0,0.0,True,G,S
+2026_01,Earth,True,TRAPPIST-1e,20.46666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 2026_02,Earth,True,PSO J318.5-22,15.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 2026_03,Earth,False,TRAPPIST-1e,20.0,False,0.0,4.0,429.0,0.0,287.0,False,G,S
 2027_01,Earth,False,55 Cancri e,19.0,False,30.00000000000003,1.0,1051.0,0.0,6.0,True,F,P
@@ -1914,7 +1914,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 2052_01,Mars,False,TRAPPIST-1e,31.0,False,162.0,1211.0,4.0,0.0,1.0,True,E,S
 2053_01,Europa,False,55 Cancri e,26.0,False,281.0,741.0,13.000000000000028,0.0,4724.0,False,C,P
 2054_01,Europa,False,55 Cancri e,39.0,False,0.0,2284.9666666666662,0.0,1528.0,1119.0,False,C,P
-2055_01,Earth,False,TRAPPIST-1e,9.466666666666661,False,0.0,0.0,0.0,0.0,0.0,False,G,P
+2055_01,Earth,False,TRAPPIST-1e,10.833333333333332,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 2055_02,Earth,False,PSO J318.5-22,32.0,False,0.0,58.0,0.0,0.0,642.0,True,G,P
 2055_03,Earth,True,TRAPPIST-1e,25.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 2055_04,Earth,False,TRAPPIST-1e,6.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
@@ -2226,7 +2226,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 2384_04,Earth,False,TRAPPIST-1e,4.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 2384_05,Earth,True,TRAPPIST-1e,17.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 2384_06,Earth,False,TRAPPIST-1e,30.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
-2384_07,Earth,True,TRAPPIST-1e,11.0,False,0.0,0.0,0.0,0.0,0.0,True,E,P
+2384_07,Earth,True,TRAPPIST-1e,11.0,False,0.0,0.0,0.0,0.0,0.0,True,D,P
 2385_01,Mars,False,TRAPPIST-1e,23.0,False,1772.9999999999998,0.0,78.0,0.0,3.0,False,F,S
 2387_01,Earth,False,TRAPPIST-1e,58.0,False,145.36666666666667,400.0,0.0,690.0,490.0,True,E,P
 2389_01,Earth,False,TRAPPIST-1e,22.0,False,0.0,46.0,0.0,676.0,0.0,False,G,S
@@ -2281,7 +2281,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 2449_02,Mars,True,TRAPPIST-1e,27.0,False,0.0,0.0,0.0,0.0,0.0,False,E,P
 2449_03,Mars,True,TRAPPIST-1e,7.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 2451_01,Earth,True,PSO J318.5-22,16.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
-2452_01,Earth,False,55 Cancri e,42.0,False,526.0,1.9999999999999432,28.0,161.0,311.0333333333333,False,F,S
+2452_01,Earth,False,55 Cancri e,42.0,False,526.0,1.9999999999999432,28.0,161.0,311.03333333333336,False,F,S
 2453_01,Mars,True,TRAPPIST-1e,27.0,False,0.0,0.0,0.0,0.0,0.0,True,E,P
 2454_01,Earth,False,TRAPPIST-1e,19.0,False,0.0,0.0,0.0,157.0,644.0,False,F,P
 2455_01,Mars,False,TRAPPIST-1e,42.0,False,554.0,0.0,1168.0,0.0,275.0,False,F,S
@@ -2432,13 +2432,13 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 2602_02,Mars,False,55 Cancri e,0.0,False,0.0,0.0,0.0,0.0,0.0,True,E,P
 2602_03,Mars,True,TRAPPIST-1e,25.0,False,0.0,0.0,0.0,0.0,0.0,False,E,P
 2605_01,Mars,True,55 Cancri e,43.0,False,0.0,0.0,0.0,0.0,0.0,True,D,S
-2606_01,Earth,False,TRAPPIST-1e,30.966666666666665,False,900.0,0.0,0.0,0.0,1.0,False,F,P
+2606_01,Earth,False,TRAPPIST-1e,30.96666666666667,False,900.0,0.0,0.0,0.0,1.0,False,F,P
 2606_02,Earth,False,TRAPPIST-1e,45.0,False,10.000000000000028,16.000000000000057,801.0,73.0,142.9,False,F,P
 2607_01,Europa,True,TRAPPIST-1e,63.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 2607_02,Europa,True,TRAPPIST-1e,17.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 2607_03,Europa,False,55 Cancri e,35.0,False,0.0,1471.0,2.0,445.0,533.0,True,B,S
 2607_04,Europa,False,TRAPPIST-1e,12.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
-2609_01,Earth,True,PSO J318.5-22,24.933333333333334,False,0.0,0.0,0.0,0.0,0.0,True,G,S
+2609_01,Earth,True,PSO J318.5-22,18.7,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 2616_01,Earth,False,TRAPPIST-1e,17.0,False,0.0,604.0,0.0,0.0,218.0,False,F,P
 2617_01,Earth,False,PSO J318.5-22,32.0,False,59.0,0.0,469.0,0.0,0.0,False,G,P
 2618_01,Europa,True,TRAPPIST-1e,23.0,False,0.0,0.0,0.0,0.0,0.0,True,E,P
@@ -2495,7 +2495,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 2676_01,Europa,False,55 Cancri e,34.0,False,3551.0,1284.0,1865.0,90.00000000000003,0.0,True,B,P
 2677_01,Europa,False,TRAPPIST-1e,51.0,False,0.0,302.0,0.0,1367.0,669.0,False,D,S
 2678_01,Earth,False,TRAPPIST-1e,21.0,False,0.0,680.0,0.0,9.999999999999943,0.0,True,F,S
-2679_01,Earth,True,TRAPPIST-1e,26.366666666666667,False,0.0,0.0,0.0,0.0,0.0,False,G,S
+2679_01,Earth,True,TRAPPIST-1e,23.03333333333333,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 2682_01,Earth,False,TRAPPIST-1e,31.0,False,880.0,0.0,0.0,8.0,0.0,False,G,P
 2683_01,Europa,False,TRAPPIST-1e,36.0,False,2.0,1297.0,0.0,4.0,0.0,True,A,S
 2684_01,Europa,False,TRAPPIST-1e,39.0,False,0.0,7116.000000000001,0.0,13208.0,1515.0,False,B,P
@@ -2508,7 +2508,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 2693_01,Europa,False,TRAPPIST-1e,57.0,False,0.0,1514.0,0.0,72.0,1393.0,False,A,P
 2693_02,Europa,False,55 Cancri e,36.0,True,11.0,79.0,0.0,210.0,1895.0000000000002,False,A,P
 2693_03,Europa,False,TRAPPIST-1e,55.0,False,0.0,846.0,0.0,263.0,2024.0,False,A,P
-2693_04,Europa,True,55 Cancri e,30.566666666666666,False,0.0,0.0,0.0,0.0,0.0,False,A,P
+2693_04,Europa,True,55 Cancri e,29.9,False,0.0,0.0,0.0,0.0,0.0,False,A,P
 2695_01,Mars,False,TRAPPIST-1e,18.0,False,947.0,0.0,4.0,4.0,0.0,False,E,S
 2697_01,Mars,False,TRAPPIST-1e,27.0,False,1893.0,487.0,4.0,0.0,0.0,False,D,S
 2698_01,Europa,False,TRAPPIST-1e,50.0,False,0.0,2684.0,0.0,153.0,1751.0,False,C,P
@@ -2564,7 +2564,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 2750_01,Earth,False,TRAPPIST-1e,18.0,False,600.0000000000001,0.0,0.0,179.0,11.0,True,F,P
 2751_01,Mars,True,PSO J318.5-22,41.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 2752_01,Earth,False,TRAPPIST-1e,9.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
-2752_02,Earth,True,PSO J318.5-22,23.7,False,0.0,0.0,0.0,0.0,0.0,False,G,P
+2752_02,Earth,True,PSO J318.5-22,25.666666666666668,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 2752_03,Earth,False,TRAPPIST-1e,58.0,False,0.0,82.0,0.0,758.0,0.0,True,E,P
 2753_01,Earth,False,PSO J318.5-22,39.0,False,0.0,0.0,0.0,0.0,906.9999999999999,False,E,S
 2754_01,Earth,False,TRAPPIST-1e,13.0,False,910.9999999999999,1.0,0.0,74.0,0.0,False,E,P
@@ -2667,7 +2667,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 2858_01,Europa,True,TRAPPIST-1e,36.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 2858_02,Europa,True,TRAPPIST-1e,16.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 2858_03,Europa,True,TRAPPIST-1e,40.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
-2859_01,Europa,True,55 Cancri e,37.56666666666666,False,0.0,0.0,0.0,0.0,0.0,True,C,P
+2859_01,Europa,True,55 Cancri e,39.86666666666667,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 2860_01,Earth,False,PSO J318.5-22,18.0,False,154.0,21.999999999999943,77.0,1053.0,0.0,True,F,S
 2861_01,Earth,False,TRAPPIST-1e,17.0,False,5.0,756.0,0.0,0.0,0.0,True,F,S
 2862_01,Mars,True,TRAPPIST-1e,32.0,False,0.0,0.0,0.0,0.0,0.0,True,E,S
@@ -2761,7 +2761,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 2966_01,Earth,False,TRAPPIST-1e,21.0,False,2.0,417.0,323.0,0.0,84.0,True,E,P
 2968_01,Earth,True,TRAPPIST-1e,43.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 2969_01,Earth,False,PSO J318.5-22,37.0,False,221.0,0.0,32.0,38.0,516.0,False,G,P
-2970_01,Earth,False,TRAPPIST-1e,29.266666666666666,False,740.0,82.0,6.0,146.5666666666666,1.0,False,F,P
+2970_01,Earth,False,TRAPPIST-1e,29.266666666666666,False,740.0,82.0,6.0,146.56666666666666,1.0,False,F,P
 2971_01,Europa,False,TRAPPIST-1e,38.0,False,0.0,3135.0,0.0,26.0,3.0,True,T,P
 2972_01,Earth,False,TRAPPIST-1e,14.0,False,0.0,1.0,1441.0,0.0,190.0,True,E,P
 2975_01,Earth,False,PSO J318.5-22,20.0,False,0.0,0.0,585.0,0.0,10.0,False,F,S
@@ -2848,7 +2848,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3071_01,Europa,True,TRAPPIST-1e,16.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 3071_02,Europa,False,TRAPPIST-1e,26.0,False,0.0,706.5999999999999,8.0,21.0,6023.0,False,B,S
 3073_01,Mars,True,TRAPPIST-1e,36.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
-3076_01,Earth,True,PSO J318.5-22,22.3,False,0.0,0.0,0.0,0.0,0.0,True,G,P
+3076_01,Earth,True,PSO J318.5-22,23.9,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 3079_01,Earth,False,55 Cancri e,22.0,False,35.0,0.0,36.0,581.0,0.0,False,F,P
 3080_01,Earth,False,TRAPPIST-1e,40.0,False,0.0,0.0,0.0,822.0,2.0,False,F,S
 3081_01,Europa,False,55 Cancri e,50.0,False,0.0,1547.0,0.0,1784.0,1.0,True,C,S
@@ -2921,7 +2921,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3163_01,Mars,False,TRAPPIST-1e,13.0,False,1007.0000000000001,0.0,142.0,295.0,0.0,False,F,P
 3163_02,Mars,False,55 Cancri e,43.0,False,4.0,0.0,1834.0,1.0,66.0,False,F,P
 3164_01,Earth,True,TRAPPIST-1e,39.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
-3166_01,Mars,True,TRAPPIST-1e,25.966666666666665,False,0.0,0.0,0.0,0.0,0.0,True,F,P
+3166_01,Mars,True,TRAPPIST-1e,27.033333333333335,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 3168_01,Earth,False,TRAPPIST-1e,24.0,False,0.0,7.0,548.0,4.0,0.0,True,F,P
 3169_01,Earth,False,TRAPPIST-1e,26.0,False,207.0,350.0,74.0,0.0,3.0,True,F,S
 3171_01,Earth,True,55 Cancri e,22.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
@@ -2997,7 +2997,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3238_01,Mars,True,TRAPPIST-1e,26.0,False,0.0,0.0,0.0,0.0,0.0,False,E,S
 3239_01,Earth,True,TRAPPIST-1e,30.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 3240_01,Earth,False,TRAPPIST-1e,17.0,False,0.0,382.0,402.0,0.0,7.0,False,E,S
-3241_01,Earth,True,TRAPPIST-1e,17.433333333333334,False,0.0,0.0,0.0,0.0,0.0,False,G,P
+3241_01,Earth,True,TRAPPIST-1e,20.433333333333334,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 3243_01,Earth,False,55 Cancri e,10.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 3247_01,Earth,False,TRAPPIST-1e,25.0,False,764.0,16.000000000000057,0.0,8.0,0.0,False,E,P
 3248_01,Earth,False,TRAPPIST-1e,21.0,False,0.0,457.1333333333333,0.0,0.0,0.0,False,G,P
@@ -3049,7 +3049,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3292_05,Europa,True,TRAPPIST-1e,34.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 3293_01,Mars,False,TRAPPIST-1e,20.0,False,914.9999999999999,11.999999999999943,25.0,205.0,311.0,True,F,S
 3294_01,Earth,True,PSO J318.5-22,28.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
-3294_02,Earth,True,TRAPPIST-1e,17.433333333333334,False,0.0,0.0,0.0,0.0,0.0,False,G,P
+3294_02,Earth,True,TRAPPIST-1e,20.433333333333334,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 3295_01,Earth,False,55 Cancri e,20.0,False,2598.0,927.0,0.0,866.0,2.0,False,G,P
 3296_01,Earth,False,55 Cancri e,44.0,False,632.0,0.0,101.0,5.0,0.0,True,F,S
 3297_01,Earth,False,TRAPPIST-1e,64.0,False,313.0,782.0,8.0,0.0,0.0,False,F,P
@@ -3181,7 +3181,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3428_01,Europa,True,55 Cancri e,53.0,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 3428_02,Europa,False,TRAPPIST-1e,27.0,False,0.0,18481.0,0.0,2.0,3875.0,True,C,P
 3430_01,Earth,False,TRAPPIST-1e,74.0,False,0.0,193.0,581.0,0.0,0.0,True,G,S
-3431_01,Mars,True,TRAPPIST-1e,25.966666666666665,False,0.0,0.0,0.0,0.0,0.0,True,F,P
+3431_01,Mars,True,TRAPPIST-1e,27.033333333333335,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 3432_01,Earth,False,PSO J318.5-22,23.0,False,381.0,0.0,137.0,104.0,8.0,False,F,P
 3433_01,Europa,False,55 Cancri e,74.0,False,0.0,1026.0,0.0,6616.0,119.0,False,C,P
 3434_01,Earth,True,TRAPPIST-1e,23.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
@@ -3221,7 +3221,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3467_01,Earth,False,TRAPPIST-1e,51.0,False,90.0,0.0,0.0,881.0,0.0,False,F,P
 3468_01,Earth,True,TRAPPIST-1e,64.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 3469_01,Europa,True,TRAPPIST-1e,41.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
-3470_01,Earth,True,TRAPPIST-1e,26.366666666666667,False,0.0,0.0,0.0,0.0,0.0,False,G,S
+3470_01,Earth,True,TRAPPIST-1e,23.03333333333333,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 3470_02,Earth,True,55 Cancri e,16.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 3473_01,Earth,False,TRAPPIST-1e,20.0,False,0.0,880.0,5.0,25.0,490.0,False,F,S
 3474_01,Europa,True,TRAPPIST-1e,31.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
@@ -3257,7 +3257,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3495_02,Europa,False,TRAPPIST-1e,34.0,False,0.0,6229.0,0.0,2279.0,587.0,True,C,S
 3495_03,Europa,True,55 Cancri e,26.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 3495_04,Europa,True,TRAPPIST-1e,15.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
-3496_01,Mars,True,TRAPPIST-1e,25.966666666666665,False,0.0,0.0,0.0,0.0,0.0,True,F,P
+3496_01,Mars,True,TRAPPIST-1e,27.033333333333335,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 3496_02,Mars,False,TRAPPIST-1e,27.0,False,542.0,0.0,1231.0,0.0,1.0,False,F,P
 3497_01,Mars,False,TRAPPIST-1e,38.0,True,66.0,0.0,991.0000000000001,0.0,0.0,False,D,P
 3499_01,Earth,False,TRAPPIST-1e,21.0,False,196.0,4.999999999999943,674.0,12.0,20.0,False,G,P
@@ -3387,7 +3387,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3642_01,Earth,False,TRAPPIST-1e,46.0,False,105.0,335.0,0.0,72.0,388.0,False,F,P
 3644_01,Mars,True,TRAPPIST-1e,36.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 3645_01,Mars,True,TRAPPIST-1e,42.0,False,0.0,0.0,0.0,0.0,0.0,True,D,P
-3645_02,Mars,True,TRAPPIST-1e,35.46666666666667,False,0.0,0.0,0.0,0.0,0.0,True,D,P
+3645_02,Mars,True,TRAPPIST-1e,35.03333333333333,False,0.0,0.0,0.0,0.0,0.0,True,D,P
 3645_03,Mars,True,TRAPPIST-1e,16.0,False,0.0,0.0,0.0,0.0,0.0,True,D,P
 3645_04,Mars,True,TRAPPIST-1e,43.0,False,0.0,0.0,0.0,0.0,0.0,True,D,P
 3645_05,Mars,True,TRAPPIST-1e,40.0,False,0.0,0.0,0.0,0.0,0.0,True,D,P
@@ -3440,7 +3440,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3706_02,Mars,False,TRAPPIST-1e,18.0,False,131.0,0.0,979.9999999999999,1.0,0.0,True,F,P
 3707_01,Earth,False,TRAPPIST-1e,18.0,False,622.0,53.0,8.0,47.0,39.0,False,G,S
 3707_02,Earth,False,PSO J318.5-22,22.0,False,0.0,0.0,889.0000000000001,0.0,0.0,True,G,S
-3708_01,Earth,True,55 Cancri e,20.666666666666668,False,0.0,0.0,0.0,0.0,0.0,True,G,P
+3708_01,Earth,True,55 Cancri e,18.7,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 3710_01,Earth,False,55 Cancri e,35.0,False,432.0,0.0,377.0,0.0,0.0,False,G,P
 3710_02,Earth,False,TRAPPIST-1e,8.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 3710_03,Earth,True,55 Cancri e,5.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
@@ -3451,7 +3451,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3713_02,Europa,True,55 Cancri e,39.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 3713_03,Europa,True,TRAPPIST-1e,18.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 3714_01,Mars,False,TRAPPIST-1e,45.0,False,47.99999999999997,1652.0,761.0,138.0,0.0,False,F,S
-3714_02,Mars,False,PSO J318.5-22,33.0,False,33.0,397.0,354.0,606.0333333333335,0.0,False,D,S
+3714_02,Mars,False,PSO J318.5-22,33.0,False,33.0,397.0,354.0,606.0333333333333,0.0,False,D,S
 3715_01,Earth,True,PSO J318.5-22,2.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 3715_02,Earth,True,TRAPPIST-1e,1.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 3715_03,Earth,False,TRAPPIST-1e,2.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
@@ -3485,7 +3485,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3747_02,Europa,True,TRAPPIST-1e,26.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 3747_03,Europa,False,TRAPPIST-1e,53.0,False,0.0,3377.0,0.0,193.0,5563.0,False,B,P
 3747_04,Europa,True,55 Cancri e,18.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
-3748_01,Mars,True,TRAPPIST-1e,25.966666666666665,False,0.0,0.0,0.0,0.0,0.0,True,F,P
+3748_01,Mars,True,TRAPPIST-1e,27.033333333333335,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 3749_01,Europa,True,55 Cancri e,45.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 3749_02,Europa,True,TRAPPIST-1e,32.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 3750_01,Earth,False,TRAPPIST-1e,18.0,False,64.0,0.0,3.0,3440.0,5.0,False,F,P
@@ -3536,7 +3536,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3789_01,Earth,True,TRAPPIST-1e,15.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 3790_01,Earth,True,TRAPPIST-1e,13.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 3793_01,Earth,True,55 Cancri e,23.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
-3795_01,Europa,True,55 Cancri e,34.4,False,0.0,0.0,0.0,0.0,0.0,True,C,S
+3795_01,Europa,True,55 Cancri e,39.8,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 3796_01,Europa,False,55 Cancri e,33.0,False,90.0,26830.0,0.0,27.0,703.0,True,B,P
 3797_01,Europa,False,TRAPPIST-1e,26.0,False,0.0,0.0,0.0,0.0,0.0,False,B,P
 3798_01,Europa,True,TRAPPIST-1e,67.0,False,0.0,0.0,0.0,0.0,0.0,True,E,S
@@ -3581,7 +3581,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3850_06,Europa,False,TRAPPIST-1e,31.0,False,0.0,1565.0,0.0,97.0,1678.0,True,C,S
 3850_07,Europa,True,55 Cancri e,25.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 3851_01,Europa,False,TRAPPIST-1e,57.0,False,205.0,4415.0,0.0,1589.0,305.0,False,C,P
-3852_01,Mars,True,TRAPPIST-1e,25.966666666666665,False,0.0,0.0,0.0,0.0,0.0,True,F,P
+3852_01,Mars,True,TRAPPIST-1e,27.033333333333335,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 3853_01,Earth,False,PSO J318.5-22,18.0,False,16.0,6.000000000000057,735.0,0.0,0.0,True,F,S
 3854_01,Earth,True,TRAPPIST-1e,33.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 3856_01,Earth,False,PSO J318.5-22,23.0,False,339.0,754.0,7.000000000000028,0.0,0.0,True,F,S
@@ -3704,7 +3704,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 3977_01,Earth,False,TRAPPIST-1e,19.0,False,46.0,0.0,675.0,0.0,0.0,True,E,P
 3980_01,Earth,True,TRAPPIST-1e,22.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 3981_01,Earth,False,PSO J318.5-22,33.0,False,400.0,270.0,33.0,0.0,0.0,False,F,P
-3984_01,Earth,True,PSO J318.5-22,24.933333333333334,False,0.0,0.0,0.0,0.0,0.0,True,G,S
+3984_01,Earth,True,PSO J318.5-22,18.7,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 3985_01,Earth,False,TRAPPIST-1e,50.0,False,667.0,0.0,0.0,11.0,170.0,False,G,P
 3986_01,Mars,False,TRAPPIST-1e,54.0,False,1217.0,0.0,0.9999999999999716,4.0,0.0,False,F,S
 3986_02,Mars,False,TRAPPIST-1e,43.0,False,1448.0,0.0,150.0,0.0,0.0,False,F,S
@@ -3757,7 +3757,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 4016_01,Earth,False,55 Cancri e,34.0,False,309.0,542.0,0.0,0.0,55.0,False,E,S
 4017_01,Mars,False,TRAPPIST-1e,21.0,False,0.0,0.0,0.0,0.0,0.0,False,E,S
 4017_02,Mars,True,TRAPPIST-1e,30.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
-4017_03,Mars,True,TRAPPIST-1e,27.3,False,0.0,0.0,0.0,0.0,0.0,True,F,S
+4017_03,Mars,True,TRAPPIST-1e,24.766666666666666,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 4017_04,Mars,True,TRAPPIST-1e,26.0,False,0.0,0.0,0.0,0.0,0.0,False,E,S
 4017_05,Mars,False,TRAPPIST-1e,23.0,False,931.0,0.0,134.0,0.0,421.0,False,F,S
 4018_01,Earth,False,TRAPPIST-1e,20.0,False,725.8666666666667,1.0,0.0,20.0,42.0,False,F,S
@@ -3773,7 +3773,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 4030_03,Earth,False,TRAPPIST-1e,0.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 4030_04,Earth,True,TRAPPIST-1e,21.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 4030_05,Earth,False,TRAPPIST-1e,8.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
-4031_01,Europa,True,55 Cancri e,37.56666666666666,False,0.0,0.0,0.0,0.0,0.0,True,C,P
+4031_01,Europa,True,55 Cancri e,39.86666666666667,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 4031_02,Europa,True,TRAPPIST-1e,27.0,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 4032_01,Earth,False,PSO J318.5-22,13.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 4033_01,Europa,False,55 Cancri e,49.0,False,2025.0,7167.0,0.0,2456.0,47.0,True,C,S
@@ -3785,7 +3785,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 4039_01,Earth,False,TRAPPIST-1e,24.0,False,714.0,0.0,4.0,49.0,11.0,False,F,S
 4040_01,Earth,True,TRAPPIST-1e,34.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 4042_01,Europa,False,TRAPPIST-1e,1.0,False,0.0,0.0,0.0,0.0,0.0,True,A,S
-4042_02,Europa,True,55 Cancri e,30.9,False,0.0,0.0,0.0,0.0,0.0,True,A,S
+4042_02,Europa,True,55 Cancri e,31.866666666666667,False,0.0,0.0,0.0,0.0,0.0,True,A,S
 4042_03,Europa,True,55 Cancri e,26.0,False,0.0,0.0,0.0,0.0,0.0,True,A,S
 4043_01,Earth,False,TRAPPIST-1e,29.433333333333334,False,0.0,0.0,0.0,32.0,1577.0,False,E,P
 4044_01,Mars,False,TRAPPIST-1e,32.0,False,536.0,0.0,736.0,118.0,0.0,False,F,S
@@ -3810,7 +3810,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 4066_02,Europa,True,TRAPPIST-1e,22.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 4068_01,Europa,False,TRAPPIST-1e,27.0,False,206.6,1381.0,0.0,148.0,2181.0,False,D,S
 4069_01,Earth,False,55 Cancri e,24.0,False,0.0,0.0,2433.0,0.0,53.00000000000003,True,F,S
-4071_01,Europa,True,PSO J318.5-22,31.333333333333332,False,0.0,0.0,0.0,0.0,0.0,True,B,P
+4071_01,Europa,True,PSO J318.5-22,26.6,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 4071_02,Europa,True,55 Cancri e,22.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 4072_01,Earth,True,TRAPPIST-1e,60.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 4075_01,Europa,False,TRAPPIST-1e,38.0,False,1901.0,1276.0,0.0,7561.000000000001,12.0,False,C,S
@@ -3830,7 +3830,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 4096_01,Mars,False,TRAPPIST-1e,46.0,False,949.0,0.0,128.0,3.0,41.0,True,F,P
 4097_01,Earth,False,TRAPPIST-1e,15.0,False,0.0,840.0,123.0,0.0,20.0,False,E,P
 4098_01,Earth,True,TRAPPIST-1e,30.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
-4099_01,Earth,True,TRAPPIST-1e,22.366666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,P
+4099_01,Earth,True,TRAPPIST-1e,20.8,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 4101_01,Mars,False,TRAPPIST-1e,38.0,False,1100.0,43.0,163.0,3.0,0.0,False,F,S
 4102_01,Europa,True,TRAPPIST-1e,48.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 4103_01,Earth,True,TRAPPIST-1e,31.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
@@ -3847,7 +3847,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 4114_01,Mars,True,TRAPPIST-1e,31.0,False,0.0,0.0,0.0,0.0,0.0,True,E,S
 4115_01,Earth,True,PSO J318.5-22,19.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 4116_01,Earth,False,TRAPPIST-1e,21.0,False,40.0,0.0,736.0,0.0,0.0,True,F,S
-4120_01,Earth,True,PSO J318.5-22,24.1,False,0.0,0.0,0.0,0.0,0.0,False,G,S
+4120_01,Earth,True,PSO J318.5-22,21.566666666666666,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 4125_01,Earth,True,PSO J318.5-22,22.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 4127_01,Europa,True,TRAPPIST-1e,23.0,False,0.0,0.0,0.0,0.0,1.1368683772161603e-13,True,B,P
 4128_01,Mars,False,TRAPPIST-1e,54.0,True,111.0,0.0,1144.0,8.0,23.0,False,F,P
@@ -3906,7 +3906,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 4176_06,Mars,True,TRAPPIST-1e,13.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 4176_07,Mars,False,55 Cancri e,24.0,False,612.0,326.0,46.0,87.0,0.0,True,F,P
 4177_01,Europa,True,TRAPPIST-1e,32.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
-4177_02,Europa,True,55 Cancri e,35.800000000000004,False,0.0,0.0,0.0,0.0,0.0,True,B,S
+4177_02,Europa,True,55 Cancri e,33.233333333333334,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 4177_03,Europa,False,55 Cancri e,44.0,False,36.0,588.0,0.0,1675.0,3597.0,False,B,S
 4178_01,Earth,False,TRAPPIST-1e,19.0,False,0.0,0.0,4.0,6.0,773.0,False,G,P
 4179_01,Europa,False,TRAPPIST-1e,30.0,True,0.0,1172.0,183.0,90.99999999999997,0.0,True,A,S
@@ -4363,7 +4363,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 4643_01,Earth,False,TRAPPIST-1e,36.0,False,194.63333333333333,724.0,0.0,0.0,0.0,True,F,P
 4644_01,Earth,False,55 Cancri e,13.0,False,8.000000000000028,1385.0,1445.0,250.0,8.0,True,F,S
 4645_01,Europa,False,TRAPPIST-1e,48.0,False,0.0,9633.0,0.0,1.0,2.0,True,B,S
-4645_02,Europa,True,TRAPPIST-1e,34.666666666666664,False,0.0,0.0,0.0,0.0,0.0,True,B,S
+4645_02,Europa,True,TRAPPIST-1e,29.2,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 4646_01,Earth,False,PSO J318.5-22,22.0,False,141.0,16.000000000000057,0.0,177.0,336.0,True,F,S
 4648_01,Earth,False,TRAPPIST-1e,39.0,False,290.0,0.0,84.0,266.0,0.0,True,F,S
 4649_01,Earth,False,TRAPPIST-1e,45.0,False,1399.0,226.00000000000003,0.0,0.0,0.0,False,E,P
@@ -4809,7 +4809,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 5132_01,Earth,False,TRAPPIST-1e,42.0,False,5049.0,477.0,0.0,0.0,0.0,False,G,P
 5133_01,Earth,False,55 Cancri e,36.0,False,0.0,0.0,846.0,0.0,0.0,True,G,P
 5133_02,Earth,True,PSO J318.5-22,24.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
-5133_03,Earth,True,PSO J318.5-22,22.3,False,0.0,0.0,0.0,0.0,0.0,True,G,P
+5133_03,Earth,True,PSO J318.5-22,23.9,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 5133_04,Earth,False,55 Cancri e,19.0,False,107.0,0.0,505.0,48.0,0.0,False,F,P
 5133_05,Earth,False,TRAPPIST-1e,26.0,False,0.0,910.0,13.000000000000028,9.999999999999943,15.0,False,F,P
 5133_06,Earth,True,55 Cancri e,19.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
@@ -4899,7 +4899,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 5220_01,Mars,False,TRAPPIST-1e,21.0,False,2205.9999999999995,0.0,353.0,0.0,19.0,False,D,P
 5221_01,Earth,False,TRAPPIST-1e,25.0,False,0.0,528.0,8.0,153.0,0.0,False,F,P
 5223_01,Mars,False,55 Cancri e,47.0,False,275.0,0.0,1147.0,24.0,0.0,True,F,S
-5223_02,Mars,True,PSO J318.5-22,34.46666666666667,False,0.0,0.0,0.0,0.0,0.0,True,F,S
+5223_02,Mars,True,PSO J318.5-22,32.5,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 5223_03,Mars,True,TRAPPIST-1e,8.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 5224_01,Earth,False,TRAPPIST-1e,24.0,False,0.0,0.0,56.0,564.0,880.0,False,F,S
 5225_01,Mars,True,TRAPPIST-1e,30.0,False,0.0,0.0,0.0,0.0,0.0,True,E,S
@@ -5085,7 +5085,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 5427_03,Mars,False,TRAPPIST-1e,25.0,False,948.0,0.0,0.9999999999999716,170.0,0.0,False,F,P
 5430_01,Earth,True,TRAPPIST-1e,19.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 5431_01,Earth,False,55 Cancri e,33.0,False,2.0,0.0,0.0,263.93333333333334,720.0,True,E,S
-5434_01,Earth,True,TRAPPIST-1e,27.3,False,0.0,0.0,0.0,0.0,0.0,True,G,P
+5434_01,Earth,True,TRAPPIST-1e,22.8,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 5435_01,Mars,False,TRAPPIST-1e,50.0,False,846.0,0.0,280.0,280.0,0.0,False,F,P
 5436_01,Earth,False,TRAPPIST-1e,30.0,False,0.0,0.0,0.0,2.0,827.0,False,F,P
 5437_01,Mars,False,TRAPPIST-1e,44.0,False,1267.0,18.0,0.0,3.0,0.0,True,F,P
@@ -5281,7 +5281,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 5637_01,Earth,False,TRAPPIST-1e,43.0,False,1.0,8.0,0.0,0.0,715.0,False,F,P
 5639_01,Earth,False,TRAPPIST-1e,22.0,False,19.0,9.000000000000057,0.0,0.0,594.0,True,G,S
 5640_01,Europa,True,TRAPPIST-1e,27.0,False,0.0,0.0,0.0,0.0,0.0,True,E,S
-5642_01,Europa,True,55 Cancri e,35.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
+5642_01,Europa,True,PSO J318.5-22,35.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 5642_02,Europa,True,55 Cancri e,37.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 5643_01,Mars,False,TRAPPIST-1e,24.0,False,158.0,0.0,1594.0,1.0,0.0,True,F,S
 5643_02,Mars,False,55 Cancri e,18.0,False,2803.0,0.0,17.0,0.0,0.0,False,F,S
@@ -5332,7 +5332,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 5698_01,Earth,False,TRAPPIST-1e,14.0,False,0.0,0.0,325.0,247.0,305.0,False,F,S
 5698_02,Earth,False,TRAPPIST-1e,26.0,False,178.0,0.0,3.0,0.0,704.0,True,G,S
 5700_01,Earth,True,TRAPPIST-1e,47.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
-5701_01,Mars,True,TRAPPIST-1e,34.300000000000004,False,0.0,0.0,0.0,0.0,0.0,True,D,S
+5701_01,Mars,True,TRAPPIST-1e,34.43333333333333,False,0.0,0.0,0.0,0.0,0.0,True,D,S
 5702_01,Earth,True,55 Cancri e,28.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 5704_01,Earth,True,TRAPPIST-1e,22.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 5705_01,Earth,True,TRAPPIST-1e,17.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
@@ -5348,7 +5348,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 5714_02,Earth,False,TRAPPIST-1e,12.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 5714_03,Earth,False,TRAPPIST-1e,0.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 5714_04,Earth,True,TRAPPIST-1e,19.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
-5714_05,Earth,True,TRAPPIST-1e,22.366666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,P
+5714_05,Earth,True,TRAPPIST-1e,20.8,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 5716_01,Earth,False,PSO J318.5-22,29.0,False,0.0,173.0,0.0,0.0,1155.0,True,F,S
 5717_01,Earth,False,TRAPPIST-1e,59.0,False,0.0,664.0,0.0,144.0,141.0,True,G,P
 5718_01,Earth,True,TRAPPIST-1e,20.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
@@ -5368,7 +5368,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 5732_01,Earth,False,TRAPPIST-1e,20.0,False,0.0,0.0,53.0,2.0,754.0,False,G,P
 5733_01,Earth,False,55 Cancri e,34.0,False,0.0,1745.0,6.0,5.0,37.0,True,G,P
 5733_02,Earth,False,PSO J318.5-22,28.0,False,0.0,0.0,0.0,1191.0,109.0,False,F,P
-5735_01,Earth,True,TRAPPIST-1e,25.433333333333334,False,0.0,0.0,0.0,0.0,0.0,True,E,P
+5735_01,Earth,True,TRAPPIST-1e,24.833333333333332,False,0.0,0.0,0.0,0.0,0.0,True,E,P
 5736_01,Earth,False,TRAPPIST-1e,23.0,False,1.0,148.06666666666666,0.9999999999999716,0.0,618.0,False,F,P
 5737_01,Europa,False,TRAPPIST-1e,39.0,False,0.0,11856.0,13.000000000000028,39.0,3.0,True,C,S
 5737_02,Europa,False,TRAPPIST-1e,35.0,False,0.0,7636.0,0.0,353.0,705.0,True,C,S
@@ -5410,7 +5410,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 5776_01,Earth,False,TRAPPIST-1e,21.0,False,0.0,128.0,209.0,4.0,383.0,False,F,S
 5777_01,Earth,False,PSO J318.5-22,46.0,False,559.0000000000001,24.999999999999943,114.53333333333333,22.0,765.0,False,F,P
 5778_01,Earth,False,TRAPPIST-1e,36.0,False,0.0,0.0,0.0,0.0,906.9999999999999,False,G,P
-5779_01,Earth,False,TRAPPIST-1e,15.0,False,0.0,706.0,0.0,80.56666666666666,0.0,True,G,S
+5779_01,Earth,False,TRAPPIST-1e,15.0,False,0.0,706.0,0.0,80.56666666666663,0.0,True,G,S
 5780_01,Europa,False,TRAPPIST-1e,33.0,False,2233.0,6408.0,325.2,23.0,273.0,True,B,P
 5780_02,Europa,True,TRAPPIST-1e,35.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 5780_03,Europa,True,55 Cancri e,21.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
@@ -5487,7 +5487,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 5854_01,Earth,False,TRAPPIST-1e,36.0,False,0.0,75.0,106.0,0.0,1903.0,True,F,S
 5855_01,Earth,False,TRAPPIST-1e,64.0,False,0.0,623.0,1827.0,0.0,0.0,True,F,P
 5855_02,Earth,False,PSO J318.5-22,41.0,False,0.0,0.0,687.0,0.0,65.0,True,G,P
-5856_01,Europa,True,55 Cancri e,28.866666666666667,False,0.0,0.0,0.0,0.0,0.0,True,B,P
+5856_01,Europa,True,55 Cancri e,27.3,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 5856_02,Europa,True,TRAPPIST-1e,27.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 5857_01,Europa,False,TRAPPIST-1e,30.633333333333333,False,0.0,1.9999999999999432,64.0,139.0,3831.0000000000005,False,E,S
 5858_01,Earth,False,55 Cancri e,22.0,False,483.0,0.0,0.0,304.0,21.0,True,G,S
@@ -5574,7 +5574,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 5933_01,Mars,False,TRAPPIST-1e,34.0,False,1547.0,485.0,97.0,59.0,0.0,False,F,S
 5934_01,Earth,False,TRAPPIST-1e,29.0,False,89.0,1725.0,90.66666666666669,0.0,3.0,True,G,P
 5938_01,Earth,False,55 Cancri e,14.0,False,0.0,0.0,52.0,0.0,128.6,True,E,S
-5938_02,Earth,True,TRAPPIST-1e,26.4,False,0.0,0.0,0.0,0.0,0.0,True,G,S
+5938_02,Earth,True,TRAPPIST-1e,20.46666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 5939_01,Europa,False,TRAPPIST-1e,30.0,False,628.0,0.0,544.0,0.0,126.0,False,E,S
 5941_01,Earth,False,TRAPPIST-1e,28.4,False,72.0,914.0,0.0,0.0,7.0,True,E,S
 5944_01,Earth,True,PSO J318.5-22,32.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
@@ -5619,7 +5619,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 5976_01,Mars,False,TRAPPIST-1e,33.0,False,3090.0,0.0,808.0,0.0,0.0,False,D,S
 5977_01,Europa,False,TRAPPIST-1e,28.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 5977_02,Europa,False,55 Cancri e,57.0,False,200.0,9.000000000000057,0.0,875.7666666666668,24133.0,False,B,S
-5977_03,Europa,False,TRAPPIST-1e,26.7,False,0.0,0.0,0.0,0.0,0.0,True,B,S
+5977_03,Europa,False,TRAPPIST-1e,26.666666666666668,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 5977_04,Europa,False,TRAPPIST-1e,46.0,False,0.0,3259.0,761.0,4423.0,0.0,False,B,S
 5980_01,Europa,False,55 Cancri e,19.0,False,0.0,5647.4,0.0,2.0,8.999999999999943,True,C,S
 5981_01,Mars,False,TRAPPIST-1e,27.0,False,441.0,0.0,397.0,471.0,0.0,False,F,S
@@ -5660,7 +5660,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6016_02,Earth,False,TRAPPIST-1e,20.0,False,3.0,0.0,0.0,806.0,0.0,False,G,P
 6017_01,Mars,True,TRAPPIST-1e,34.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 6017_02,Mars,True,TRAPPIST-1e,13.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
-6019_01,Earth,False,TRAPPIST-1e,27.53333333333333,False,0.0,839.0,0.0,36.0,5.0,True,F,S
+6019_01,Earth,False,TRAPPIST-1e,27.533333333333335,False,0.0,839.0,0.0,36.0,5.0,True,F,S
 6020_01,Earth,True,55 Cancri e,39.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 6020_02,Earth,True,TRAPPIST-1e,0.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 6020_03,Earth,False,TRAPPIST-1e,10.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
@@ -5680,7 +5680,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6028_05,Europa,False,TRAPPIST-1e,28.0,False,0.0,6921.000000000001,0.0,29.0,45.0,True,A,P
 6029_01,Earth,False,TRAPPIST-1e,25.0,False,0.0,30.0,19.99999999999997,0.0,941.0,False,E,S
 6030_01,Earth,False,TRAPPIST-1e,5.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
-6030_02,Earth,True,TRAPPIST-1e,26.4,False,0.0,0.0,0.0,0.0,0.0,True,G,S
+6030_02,Earth,True,TRAPPIST-1e,20.46666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 6030_03,Earth,False,TRAPPIST-1e,13.0,False,852.0,147.0,7.000000000000028,0.0,1.0,True,G,S
 6030_04,Earth,False,TRAPPIST-1e,30.0,False,0.0,0.0,47.000000000000014,703.0,4.0,True,G,S
 6030_05,Earth,True,TRAPPIST-1e,15.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
@@ -5780,7 +5780,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6121_01,Europa,False,TRAPPIST-1e,28.0,False,0.0,4585.0,0.0,2.0,35.0,True,C,S
 6121_02,Europa,False,TRAPPIST-1e,55.0,False,915.9999999999999,1056.0,0.0,1677.0,593.0,False,C,S
 6122_01,Earth,False,55 Cancri e,36.0,False,0.0,0.0,700.0,0.0,0.0,True,F,P
-6123_01,Mars,True,TRAPPIST-1e,25.966666666666665,False,0.0,0.0,0.0,0.0,0.0,True,F,P
+6123_01,Mars,True,TRAPPIST-1e,27.033333333333335,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 6124_01,Earth,False,PSO J318.5-22,37.0,False,0.0,0.0,834.0,0.0,8.0,True,G,P
 6126_01,Europa,True,55 Cancri e,50.0,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 6127_01,Europa,False,TRAPPIST-1e,27.0,False,551.0,1436.0,0.0,462.0,309.0,False,E,S
@@ -5797,7 +5797,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6137_04,Earth,True,TRAPPIST-1e,3.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 6137_05,Earth,True,TRAPPIST-1e,2.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 6137_06,Earth,False,TRAPPIST-1e,6.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
-6138_01,Mars,False,TRAPPIST-1e,19.9,False,236.0,699.0,332.0,31.0,0.0,True,E,S
+6138_01,Mars,False,TRAPPIST-1e,19.7,False,236.0,699.0,332.0,31.0,0.0,True,E,S
 6139_01,Europa,False,TRAPPIST-1e,0.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 6139_02,Europa,True,TRAPPIST-1e,4.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 6139_03,Europa,False,TRAPPIST-1e,58.0,False,0.0,1073.0,336.7666666666667,803.0,988.0,True,C,S
@@ -5810,7 +5810,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6145_01,Europa,False,55 Cancri e,31.666666666666668,False,3478.0,10.0,0.0,105.0,2383.0,False,C,S
 6146_01,Europa,False,TRAPPIST-1e,31.0,False,0.0,0.0,0.0,0.0,0.0,False,B,P
 6148_01,Mars,True,TRAPPIST-1e,43.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
-6148_02,Mars,True,TRAPPIST-1e,27.3,False,0.0,0.0,0.0,0.0,0.0,True,F,S
+6148_02,Mars,True,TRAPPIST-1e,24.766666666666666,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 6149_01,Earth,False,TRAPPIST-1e,15.0,False,1682.0,103.0,0.0,0.0,3.0,True,G,S
 6150_01,Earth,False,TRAPPIST-1e,18.0,False,0.0,784.0,8.0,11.0,0.0,True,F,S
 6152_01,Europa,True,TRAPPIST-1e,33.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
@@ -5833,7 +5833,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6173_01,Europa,True,TRAPPIST-1e,23.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 6174_01,Earth,False,55 Cancri e,24.0,False,0.0,479.0,116.0,1.0,37.0,False,F,P
 6174_02,Earth,True,PSO J318.5-22,4.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
-6174_03,Earth,True,TRAPPIST-1e,17.433333333333334,False,0.0,0.0,0.0,0.0,0.0,False,G,P
+6174_03,Earth,True,TRAPPIST-1e,20.433333333333334,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 6175_01,Earth,False,TRAPPIST-1e,18.0,False,628.0,0.0,0.0,31.0,150.0,False,G,P
 6175_02,Earth,True,TRAPPIST-1e,21.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 6175_03,Earth,False,TRAPPIST-1e,27.0,False,12.0,0.0,0.0,873.0,0.0,False,G,P
@@ -5941,7 +5941,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6302_04,Earth,True,PSO J318.5-22,3.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 6302_05,Earth,False,55 Cancri e,35.0,False,1669.0,0.0,7.000000000000028,0.0,90.0,False,G,P
 6302_06,Earth,False,55 Cancri e,12.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
-6302_07,Earth,True,TRAPPIST-1e,22.366666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,P
+6302_07,Earth,True,TRAPPIST-1e,20.8,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 6304_01,Europa,False,55 Cancri e,47.0,True,0.0,2225.0,1572.9999999999998,201.0,23.0,True,C,P
 6305_01,Europa,True,55 Cancri e,19.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 6305_02,Europa,False,TRAPPIST-1e,46.0,False,3616.0,564.0,0.0,15.0,3303.0,False,B,S
@@ -5961,7 +5961,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6320_01,Mars,False,TRAPPIST-1e,53.0,False,78.0,85.0,859.0,0.0,0.0,True,E,S
 6321_01,Europa,True,55 Cancri e,58.0,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 6321_02,Europa,False,TRAPPIST-1e,19.0,False,0.0,1234.0,0.0,1956.0,0.0,False,C,P
-6321_03,Europa,True,55 Cancri e,37.56666666666666,False,0.0,0.0,0.0,0.0,0.0,True,C,P
+6321_03,Europa,True,55 Cancri e,39.86666666666667,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 6322_01,Earth,False,TRAPPIST-1e,16.0,False,0.0,68.0,1541.0,0.0,0.0,True,E,S
 6323_01,Europa,False,55 Cancri e,48.0,False,3.0,4088.9999999999995,0.0,4368.0,147.0,False,C,S
 6323_02,Europa,False,TRAPPIST-1e,33.0,False,2.0,4742.0,0.0,34.0,0.0,True,C,S
@@ -6015,7 +6015,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6363_04,Earth,True,TRAPPIST-1e,1.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 6363_05,Earth,False,TRAPPIST-1e,17.0,False,0.0,63.93333333333334,977.0,0.0,5.0,True,E,P
 6363_06,Earth,True,TRAPPIST-1e,47.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
-6363_07,Earth,True,TRAPPIST-1e,17.433333333333334,False,0.0,0.0,0.0,0.0,0.0,False,G,P
+6363_07,Earth,True,TRAPPIST-1e,20.433333333333334,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 6365_01,Europa,False,55 Cancri e,33.0,False,0.0,37.99999999999994,0.0,1.0,3167.0,False,A,P
 6366_01,Earth,False,PSO J318.5-22,16.0,False,0.0,0.0,99.0,94.83333333333331,774.0,True,E,S
 6367_01,Mars,False,TRAPPIST-1e,30.0,True,1960.0,0.0,638.0,0.0,0.0,False,F,S
@@ -6168,7 +6168,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6511_02,Earth,True,TRAPPIST-1e,31.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 6511_03,Earth,True,55 Cancri e,0.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 6512_01,Europa,False,TRAPPIST-1e,2.0,False,0.0,0.0,0.0,0.0,0.0,True,A,S
-6512_02,Europa,True,TRAPPIST-1e,27.333333333333332,False,0.0,0.0,0.0,0.0,0.0,True,A,S
+6512_02,Europa,True,TRAPPIST-1e,28.633333333333333,False,0.0,0.0,0.0,0.0,0.0,True,A,S
 6512_03,Europa,False,TRAPPIST-1e,28.0,False,0.0,3527.0,0.9999999999999716,2929.0,2236.0,False,A,S
 6513_01,Mars,False,TRAPPIST-1e,20.0,False,57.0,0.0,1185.0,0.0,0.0,False,F,S
 6514_01,Europa,False,55 Cancri e,28.0,True,19.0,21.999999999999943,2974.0,3603.0,158.0,False,B,S
@@ -6266,7 +6266,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6631_01,Europa,False,TRAPPIST-1e,27.0,False,0.0,1891.0,0.0,2167.0,0.0,False,C,P
 6633_01,Europa,False,TRAPPIST-1e,26.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 6634_01,Europa,True,55 Cancri e,46.0,False,0.0,0.0,0.0,0.0,0.0,True,B,P
-6634_02,Earth,True,TRAPPIST-1e,64.0,False,0.0,0.0,0.0,0.0,0.0,True,D,P
+6634_02,Europa,True,TRAPPIST-1e,64.0,False,0.0,0.0,0.0,0.0,0.0,True,D,P
 6635_01,Europa,False,TRAPPIST-1e,17.0,False,0.0,1339.0,26.0,244.0,15.0,False,C,P
 6635_02,Europa,False,55 Cancri e,45.0,False,0.0,313.0,1791.0,414.0,1675.0,False,C,P
 6637_01,Mars,False,TRAPPIST-1e,27.0,False,1228.0,0.0,0.0,0.0,0.0,False,F,S
@@ -6348,7 +6348,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6713_01,Earth,False,55 Cancri e,24.0,False,700.0,0.0,0.0,0.0,0.0,False,F,P
 6718_01,Earth,False,TRAPPIST-1e,37.0,False,18.0,238.0,0.0,528.0,0.0,False,G,P
 6718_02,Earth,True,TRAPPIST-1e,5.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
-6718_03,Earth,True,TRAPPIST-1e,22.366666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,P
+6718_03,Earth,True,TRAPPIST-1e,20.8,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 6719_01,Mars,True,TRAPPIST-1e,41.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 6720_01,Europa,False,TRAPPIST-1e,44.0,False,0.0,0.0,0.0,0.0,0.0,True,A,S
 6721_01,Earth,True,TRAPPIST-1e,23.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
@@ -6475,7 +6475,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6829_01,Earth,True,TRAPPIST-1e,2.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 6829_02,Earth,False,TRAPPIST-1e,49.0,False,355.0,449.0,8.0,0.0,0.0,False,G,P
 6829_03,Earth,True,TRAPPIST-1e,32.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
-6831_01,Earth,True,TRAPPIST-1e,17.433333333333334,False,0.0,0.0,0.0,0.0,0.0,False,G,P
+6831_01,Earth,True,TRAPPIST-1e,20.433333333333334,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 6832_01,Mars,True,TRAPPIST-1e,33.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 6833_01,Earth,False,PSO J318.5-22,23.0,False,6.999999999999972,0.0,0.0,716.0,800.0,True,E,S
 6834_01,Earth,True,TRAPPIST-1e,23.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
@@ -6580,7 +6580,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6940_01,Mars,False,TRAPPIST-1e,39.0,False,9.000000000000028,0.0,687.0,0.0,0.0,True,F,S
 6943_01,Europa,True,55 Cancri e,57.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 6944_01,Europa,True,TRAPPIST-1e,29.0,False,0.0,0.0,0.0,0.0,0.0,True,C,P
-6945_01,Europa,True,55 Cancri e,35.800000000000004,False,0.0,0.0,0.0,0.0,0.0,True,B,S
+6945_01,Europa,True,55 Cancri e,33.233333333333334,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 6946_01,Earth,False,TRAPPIST-1e,70.0,False,27.99999999999997,0.0,0.0,672.0,104.0,False,F,P
 6947_01,Europa,True,TRAPPIST-1e,13.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 6947_02,Europa,False,TRAPPIST-1e,49.0,False,0.0,1757.0,0.0,797.0,567.0,True,B,S
@@ -6622,7 +6622,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 6984_02,Mars,True,TRAPPIST-1e,54.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 6984_03,Mars,False,TRAPPIST-1e,19.0,False,1962.0,0.0,0.9999999999999716,641.0,0.0,False,F,P
 6985_01,Earth,False,TRAPPIST-1e,32.0,False,0.0,243.0,0.0,0.0,776.0,False,G,S
-6987_01,Earth,True,TRAPPIST-1e,26.4,False,0.0,0.0,0.0,0.0,0.0,True,G,S
+6987_01,Earth,True,TRAPPIST-1e,20.46666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 6988_01,Europa,False,TRAPPIST-1e,26.0,False,554.0,1307.0,32.0,93.0,1553.0,False,C,P
 6988_02,Europa,False,TRAPPIST-1e,28.0,False,0.0,4339.999999999999,0.0,186.0,0.0,True,C,P
 6990_01,Earth,False,PSO J318.5-22,21.0,False,1.0,21.999999999999943,0.0,649.0,2.0,False,F,P
@@ -6658,7 +6658,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 7018_01,Mars,False,TRAPPIST-1e,30.0,False,0.0,0.0,0.0,0.0,0.0,False,E,S
 7019_01,Earth,False,TRAPPIST-1e,31.0,False,0.0,0.0,717.0,0.0,0.0,False,F,P
 7019_02,Earth,False,TRAPPIST-1e,20.0,False,0.0,750.0,957.0,0.0,722.0,False,F,P
-7020_01,Earth,True,TRAPPIST-1e,26.4,False,0.0,0.0,0.0,0.0,0.0,True,G,S
+7020_01,Earth,True,TRAPPIST-1e,20.46666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 7021_01,Earth,True,55 Cancri e,33.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 7022_01,Europa,False,TRAPPIST-1e,35.0,False,0.0,5552.0,6.0,8.0,226.0,True,D,S
 7022_02,Europa,False,TRAPPIST-1e,46.0,False,0.0,664.0,0.0,2.0,2177.0,False,D,S
@@ -6697,7 +6697,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 7062_01,Earth,False,TRAPPIST-1e,21.0,False,0.0,13.0,0.0,720.0,170.0,False,F,P
 7068_01,Earth,False,PSO J318.5-22,45.0,False,0.0,0.0,0.0,0.0,595.0,False,F,S
 7069_01,Earth,False,TRAPPIST-1e,22.0,False,0.0,125.0,0.0,663.0,0.0,False,E,S
-7069_02,Earth,True,55 Cancri e,24.066666666666666,False,0.0,0.0,0.0,0.0,0.0,False,G,S
+7069_02,Earth,True,55 Cancri e,22.066666666666663,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 7069_03,Earth,False,TRAPPIST-1e,0.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 7071_01,Earth,False,PSO J318.5-22,63.0,False,526.0,1.9999999999999432,0.0,0.0,0.0,False,G,S
 7072_01,Earth,False,PSO J318.5-22,56.0,False,1.0,1.9999999999999432,0.0,102.0,536.1999999999999,False,F,S
@@ -7018,7 +7018,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 7461_01,Europa,True,TRAPPIST-1e,35.0,False,0.0,0.0,0.0,0.0,0.0,True,D,S
 7462_01,Earth,True,PSO J318.5-22,13.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 7464_01,Earth,True,TRAPPIST-1e,11.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
-7472_01,Mars,True,TRAPPIST-1e,27.3,False,0.0,0.0,0.0,0.0,0.0,True,F,S
+7472_01,Mars,True,TRAPPIST-1e,24.766666666666666,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 7475_01,Mars,True,TRAPPIST-1e,43.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 7475_02,Mars,True,TRAPPIST-1e,36.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 7477_01,Earth,False,PSO J318.5-22,22.0,False,26.99999999999997,0.0,0.0,663.0,0.0,False,F,P
@@ -7075,7 +7075,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 7525_02,Europa,True,55 Cancri e,61.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 7527_01,Earth,False,TRAPPIST-1e,18.0,False,0.0,732.0,2.0,13.0,47.0,True,F,P
 7529_01,Earth,True,TRAPPIST-1e,18.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
-7531_01,Europa,True,TRAPPIST-1e,34.666666666666664,False,0.0,0.0,0.0,0.0,0.0,True,B,S
+7531_01,Europa,True,TRAPPIST-1e,29.2,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 7531_02,Europa,True,55 Cancri e,15.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 7533_01,Earth,False,55 Cancri e,12.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 7534_01,Earth,False,PSO J318.5-22,40.0,False,420.0,0.0,345.0,1.0,0.0,False,F,S
@@ -7086,7 +7086,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 7542_01,Earth,False,TRAPPIST-1e,35.0,False,4.0,53.0,0.0,0.0,844.0,False,F,S
 7543_01,Earth,False,TRAPPIST-1e,29.0,False,0.0,0.0,702.0,0.0,56.0,False,F,P
 7544_01,Earth,False,TRAPPIST-1e,54.0,False,118.0,0.0,0.0,669.0,0.0,False,E,S
-7545_01,Earth,True,TRAPPIST-1e,26.366666666666667,False,0.0,0.0,0.0,0.0,0.0,False,G,S
+7545_01,Earth,True,TRAPPIST-1e,23.03333333333333,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 7549_01,Earth,False,TRAPPIST-1e,22.0,False,0.0,19.000000000000057,1468.0,2.0,119.0,True,E,P
 7550_01,Earth,True,PSO J318.5-22,18.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 7552_01,Earth,False,TRAPPIST-1e,26.0,False,0.0,652.0,97.0,43.0,0.0,True,E,P
@@ -7113,7 +7113,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 7579_01,Earth,False,PSO J318.5-22,45.0,False,1.0,7.0,56.0,613.0,0.0,True,G,S
 7580_01,Earth,True,TRAPPIST-1e,22.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 7583_01,Mars,False,TRAPPIST-1e,36.0,False,32.0,355.0,1826.0,9.000000000000057,0.0,True,F,P
-7584_01,Europa,False,55 Cancri e,19.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
+7584_01,Europa,False,PSO J318.5-22,19.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 7584_02,Europa,True,TRAPPIST-1e,59.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 7584_03,Earth,False,TRAPPIST-1e,31.0,False,0.0,1000.0,0.0,19.0,1776.0,False,B,S
 7585_01,Europa,True,55 Cancri e,31.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
@@ -7243,7 +7243,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 7743_01,Earth,False,TRAPPIST-1e,63.0,False,0.0,243.0,0.0,777.0,0.0,False,G,P
 7744_01,Europa,False,TRAPPIST-1e,19.0,False,0.0,4534.0,0.0,617.0,1156.0,False,B,S
 7744_02,Europa,True,TRAPPIST-1e,39.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
-7746_01,Europa,True,55 Cancri e,33.03333333333333,False,0.0,0.0,0.0,0.0,0.0,True,B,P
+7746_01,Europa,True,55 Cancri e,37.43333333333333,False,0.0,0.0,0.0,0.0,0.0,True,B,P
 7747_01,Mars,False,TRAPPIST-1e,41.0,False,688.0,31.0,1880.0,0.0,105.33333333333329,False,F,P
 7748_01,Europa,False,TRAPPIST-1e,44.0,False,18.0,1451.0,0.0,279.0,64.0,False,A,S
 7748_02,Europa,False,TRAPPIST-1e,39.0,True,0.0,395.0,0.0,1012.0,1080.0,False,A,S
@@ -7251,7 +7251,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 7749_02,Mars,False,TRAPPIST-1e,37.0,False,416.0,56.0,1912.0000000000002,0.0,0.0,False,D,P
 7751_01,Europa,True,55 Cancri e,41.0,False,0.0,0.0,0.0,0.0,0.0,True,C,P
 7752_01,Earth,False,PSO J318.5-22,18.0,False,0.0,0.0,0.0,746.0,1.0,False,F,S
-7753_01,Earth,True,55 Cancri e,21.5,False,0.0,0.0,0.0,0.0,0.0,False,G,P
+7753_01,Earth,True,55 Cancri e,22.46666666666667,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 7754_01,Europa,False,55 Cancri e,55.0,False,1.0,2670.0,34.0,542.0,1339.0,True,B,S
 7755_01,Earth,True,TRAPPIST-1e,21.0,False,0.0,0.0,0.0,0.0,0.0,True,E,P
 7757_01,Europa,True,TRAPPIST-1e,28.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
@@ -7403,7 +7403,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 7907_01,Mars,True,TRAPPIST-1e,25.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 7908_01,Europa,True,55 Cancri e,25.0,False,0.0,0.0,0.0,0.0,0.0,True,B,S
 7910_01,Earth,False,PSO J318.5-22,30.0,False,4.0,637.0,0.0,0.0,3.0,False,F,P
-7913_01,Earth,True,TRAPPIST-1e,26.4,False,0.0,0.0,0.0,0.0,0.0,True,G,S
+7913_01,Earth,True,TRAPPIST-1e,20.46666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 7914_01,Earth,True,TRAPPIST-1e,23.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 7914_02,Earth,False,TRAPPIST-1e,24.0,False,0.0,80.0,106.0,344.0,0.0,False,G,P
 7914_03,Earth,False,TRAPPIST-1e,47.0,False,397.0,0.0,321.0,0.0,5.0,True,G,P
@@ -7418,7 +7418,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 7930_01,Earth,True,TRAPPIST-1e,13.0,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 7935_01,Earth,False,TRAPPIST-1e,41.0,False,84.0,0.0,6.0,811.0,2.0,True,F,S
 7936_01,Earth,False,TRAPPIST-1e,21.0,False,6.999999999999972,0.0,622.0,0.0,0.0,False,F,P
-7936_02,Earth,False,TRAPPIST-1e,9.466666666666661,False,0.0,0.0,0.0,0.0,0.0,False,G,P
+7936_02,Earth,False,TRAPPIST-1e,10.833333333333332,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 7936_03,Earth,False,TRAPPIST-1e,9.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 7937_01,Europa,False,TRAPPIST-1e,36.0,False,0.0,9532.0,0.0,2326.0,461.0,False,D,S
 7937_02,Europa,True,55 Cancri e,30.0,False,0.0,0.0,0.0,0.0,0.0,True,D,S
@@ -7434,7 +7434,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 7947_01,Mars,False,TRAPPIST-1e,28.0,False,1811.0,1.0,57.0,0.0,0.0,False,F,P
 7949_01,Earth,False,TRAPPIST-1e,47.0,False,0.0,14.0,0.0,2330.0,0.0,False,G,S
 7950_01,Earth,False,TRAPPIST-1e,55.0,False,0.0,1620.0,159.0,201.89999999999998,0.0,False,G,P
-7950_02,Earth,True,TRAPPIST-1e,22.366666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,P
+7950_02,Earth,True,TRAPPIST-1e,20.8,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 7950_03,Earth,False,55 Cancri e,22.0,False,10.000000000000028,0.0,624.0,0.0,84.99999999999997,True,E,P
 7950_04,Earth,True,TRAPPIST-1e,26.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 7952_01,Mars,False,PSO J318.5-22,62.0,False,100.0,0.0,38.0,1211.0,0.0,False,F,S
@@ -7516,7 +7516,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 8036_01,Earth,False,TRAPPIST-1e,51.0,False,172.0,350.0,0.0,16.0,1005.0,False,F,S
 8036_02,Earth,False,TRAPPIST-1e,35.0,False,0.0,0.0,62.0,0.0,891.0,False,F,S
 8037_01,Earth,False,TRAPPIST-1e,14.0,False,0.0,476.0,249.0,177.0,0.0,False,F,S
-8038_01,Europa,True,55 Cancri e,34.4,False,0.0,0.0,0.0,0.0,0.0,True,C,S
+8038_01,Europa,True,55 Cancri e,39.8,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 8038_02,Europa,True,55 Cancri e,26.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 8042_01,Earth,True,55 Cancri e,21.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 8043_01,Europa,False,55 Cancri e,45.0,False,5.0,17901.0,0.0,79.0,281.0,True,A,S
@@ -7650,7 +7650,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 8161_01,Earth,False,TRAPPIST-1e,18.0,False,1157.0,28.0,50.0,0.0,0.0,False,F,P
 8162_01,Europa,False,TRAPPIST-1e,47.0,False,0.0,314.0,0.0,889.0,1090.0,False,E,P
 8164_01,Earth,False,TRAPPIST-1e,31.0,False,0.0,918.0,0.0,0.0,900.0,False,G,S
-8165_01,Mars,False,TRAPPIST-1e,27.466666666666665,False,279.0,11.0,40.0,718.0,0.0,False,E,P
+8165_01,Mars,False,TRAPPIST-1e,27.166666666666668,False,279.0,11.0,40.0,718.0,0.0,False,E,P
 8167_01,Earth,True,PSO J318.5-22,23.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 8168_01,Earth,False,55 Cancri e,32.0,False,6.999999999999972,723.0,212.76666666666668,6.0,13.0,False,F,S
 8168_02,Earth,False,TRAPPIST-1e,32.0,False,293.0,889.0,0.9999999999999716,1.0,200.0,False,F,S
@@ -7681,7 +7681,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 8200_01,Earth,True,PSO J318.5-22,22.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 8202_01,Europa,False,TRAPPIST-1e,4.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 8202_02,Europa,False,TRAPPIST-1e,0.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
-8202_03,Europa,True,TRAPPIST-1e,28.566666666666666,False,0.0,0.0,0.0,0.0,0.0,True,C,S
+8202_03,Europa,True,TRAPPIST-1e,32.266666666666666,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 8202_04,Europa,False,TRAPPIST-1e,39.0,False,19.0,3603.0,0.0,421.0,517.0,True,C,S
 8202_05,Europa,False,55 Cancri e,36.0,False,0.0,8151.0,5.0,0.0,8182.0,False,C,S
 8202_06,Europa,True,TRAPPIST-1e,53.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
@@ -7733,7 +7733,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 8252_01,Earth,False,55 Cancri e,29.0,False,52.00000000000003,100.69999999999999,612.0,465.0,79.0,False,F,P
 8252_02,Earth,False,TRAPPIST-1e,11.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 8252_03,Earth,True,TRAPPIST-1e,7.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
-8254_01,Mars,True,TRAPPIST-1e,25.966666666666665,False,0.0,0.0,0.0,0.0,0.0,True,F,P
+8254_01,Mars,True,TRAPPIST-1e,27.033333333333335,False,0.0,0.0,0.0,0.0,0.0,True,F,P
 8255_01,Earth,False,TRAPPIST-1e,28.0,False,0.0,1.0,12.0,875.0,0.0,False,G,S
 8257_01,Mars,False,TRAPPIST-1e,41.0,False,396.0,0.0,653.0,0.0,0.0,False,E,P
 8259_01,Earth,False,TRAPPIST-1e,31.03333333333333,False,0.0,0.0,486.0,324.0,0.0,False,G,P
@@ -7947,7 +7947,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 8482_01,Earth,True,55 Cancri e,47.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 8483_01,Europa,True,TRAPPIST-1e,29.0,True,0.0,0.0,0.0,0.0,0.0,True,D,S
 8486_01,Earth,True,TRAPPIST-1e,19.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
-8487_01,Europa,False,55 Cancri e,32.0,True,65.0,2762.6666666666665,0.0,88.0,9811.0,False,C,P
+8487_01,Europa,False,55 Cancri e,32.0,True,65.0,2762.666666666667,0.0,88.0,9811.0,False,C,P
 8489_01,Earth,True,PSO J318.5-22,22.0,False,0.0,0.0,0.0,0.0,0.0,True,G,P
 8491_01,Mars,False,55 Cancri e,35.0,False,319.0,0.0,6331.0,8.0,0.0,True,F,S
 8492_01,Earth,False,TRAPPIST-1e,28.0,False,0.0,62.0,3.0,667.0,0.0,True,F,P
@@ -8273,7 +8273,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 8831_01,Mars,True,TRAPPIST-1e,13.0,False,0.0,0.0,0.0,0.0,0.0,True,F,S
 8833_01,Earth,True,55 Cancri e,15.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 8834_01,Earth,False,TRAPPIST-1e,42.0,False,4.0,0.0,0.0,0.0,792.0,False,F,S
-8835_01,Earth,True,TRAPPIST-1e,26.366666666666667,False,0.0,0.0,0.0,0.0,0.0,False,G,S
+8835_01,Earth,True,TRAPPIST-1e,23.03333333333333,False,0.0,0.0,0.0,0.0,0.0,False,G,S
 8836_01,Earth,False,TRAPPIST-1e,26.0,False,903.0,0.0,182.0,0.0,27.0,False,F,P
 8836_02,Earth,True,TRAPPIST-1e,19.0,False,0.0,0.0,0.0,0.0,0.0,False,G,P
 8838_01,Earth,False,TRAPPIST-1e,18.0,False,0.0,181.0,628.0,0.0,0.0,True,G,P
@@ -8300,7 +8300,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 8861_01,Europa,False,TRAPPIST-1e,32.0,False,0.0,2583.0,3.0,500.0,129.0,True,C,P
 8862_01,Europa,False,55 Cancri e,34.0,False,0.0,3126.0,0.0,112.00000000000003,15.0,True,C,S
 8862_02,Europa,False,PSO J318.5-22,38.0,True,0.0,2191.0,863.0000000000001,207.0,6262.0,False,C,S
-8862_03,Europa,True,TRAPPIST-1e,33.766666666666666,False,0.0,0.0,0.0,0.0,0.0,True,C,S
+8862_03,Europa,True,TRAPPIST-1e,32.06666666666666,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 8862_04,Europa,True,55 Cancri e,28.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 8862_05,Europa,True,TRAPPIST-1e,25.0,False,0.0,0.0,0.0,0.0,0.0,True,C,S
 8863_01,Earth,False,55 Cancri e,24.0,False,0.0,784.0,5.0,0.0,1.0,True,E,S
@@ -8406,7 +8406,7 @@ PassengerId,HomePlanet,CryoSleep,Destination,Age,VIP,RoomService,FoodCourt,Shopp
 8986_01,Earth,False,TRAPPIST-1e,19.0,False,0.0,810.0,21.0,788.0,95.36666666666667,False,E,S
 8986_02,Earth,False,PSO J318.5-22,22.0,False,0.0,17.0,0.0,620.0,0.0,False,F,S
 8987_01,Europa,True,55 Cancri e,25.0,False,0.0,0.0,0.0,0.0,0.0,True,D,P
-8988_01,Earth,True,TRAPPIST-1e,26.4,False,0.0,0.0,0.0,0.0,0.0,True,G,S
+8988_01,Earth,True,TRAPPIST-1e,20.46666666666667,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 8988_02,Earth,True,55 Cancri e,17.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 8988_03,Earth,True,55 Cancri e,0.0,False,0.0,0.0,0.0,0.0,0.0,True,G,S
 8988_04,Earth,True,TRAPPIST-1e,5.0,False,0.0,0.0,0.0,0.0,0.0,False,G,S
