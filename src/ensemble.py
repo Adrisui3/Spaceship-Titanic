@@ -68,6 +68,8 @@ class BaggingClassifier:
         return
 
     def fit(self, X, y):        
+        X, y = X.to_numpy(), y.to_numpy()
+        
         # Retrieve number of classes
         self.__classes = np.unique(y)
 
@@ -91,6 +93,8 @@ class BaggingClassifier:
         return np.array([self.__fitted_estimators[i].predict_proba(X.iloc[:, self.__estimator_features[i]]) for i in range(self.__n_estimators)])
 
     def predict(self, X):
+        X = X.to_numpy()
+
         # Predict probabilities
         probas = self.__compute_probas(X)
         probas_weighted = np.zeros(shape = (len(X), len(self.__classes)))
