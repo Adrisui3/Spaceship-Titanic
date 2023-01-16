@@ -1,4 +1,5 @@
-# MERGED NUMERICS, SCV con 10 folds, mejor valor de k en términos del preprocesado y métrica de distancia
+#MERGED NUMERICS, SCV con 10 folds, mejor valor de k en términos del preprocesado y métrica de distancia
+#Imputación por moda
 
 Para RobustScaler data
 
