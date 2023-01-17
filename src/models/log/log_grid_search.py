@@ -8,13 +8,9 @@ sys.path.append(SRC)
 import utils
 import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import cross_validate
 from sklearn.model_selection import GridSearchCV as GS_CV
 
 train_raw = utils.load_train()
-# train_X = utils.one_hot_encode(df = train_raw.drop(["Transported", "PassengerId"], axis = 1))
-
-# train_X = utils.standard_scaler_all_oh(df = train_X)
 
 train_raw["SM_FC"] = train_raw["ShoppingMall"] + train_raw["FoodCourt"]
 train_raw["VD_SP"] = train_raw["Spa"] + train_raw["VRDeck"]
@@ -22,11 +18,6 @@ train_raw = train_raw.drop(["ShoppingMall", "FoodCourt", "Spa", "VRDeck"], axis=
 train_X = utils.one_hot_encode(df = train_raw.drop(["Transported", "PassengerId"], axis = 1))
 
 train_y = train_raw.Transported
-
-# Con robust_scaler_all_oh y max_iter = 1 obtenemos 0.7915599910056479
-# Con standard_scaler_all_oh aun peor
-
-# El clásico da max_iter = 50 y 0.7931730222345674
 
 log = LogisticRegression(random_state = 1234)
 

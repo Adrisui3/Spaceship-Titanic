@@ -17,13 +17,13 @@ train_y = train_raw.Transported
 cv = cross_validate(estimator = LogisticRegression(random_state = 1234), X = train_X, y = train_y, cv = 10, n_jobs = -1, verbose = 5)
 print("Cross-validation test score: ", np.mean(cv["test_score"]))
 
-# test_raw = utils.load_test()
-# test = utils.one_hot_encode(df = test_raw.drop(["PassengerId"], axis = 1))
+test_raw = utils.load_test()
+test = utils.one_hot_encode(df = test_raw.drop(["PassengerId"], axis = 1))
 
-# print("Training LogisticRegression...")
-# log = LogisticRegression(verbose=True, random_state=1234).fit(X = train_X, y = train_y)
-# print("Making predictions...")
-# pred_labels = log.predict(X = test)
-# print(pred_labels)
+print("Training LogisticRegression...")
+log = LogisticRegression(verbose=True, random_state=1234).fit(X = train_X, y = train_y)
+print("Making predictions...")
+pred_labels = log.predict(X = test)
+print(pred_labels)
 
-# utils.generate_submission(labels = pred_labels, method = "log", notes = "default_parameters")
+utils.generate_submission(labels = pred_labels, method = "log", notes = "default_parameters")

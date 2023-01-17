@@ -9,7 +9,6 @@ import utils
 import ensemble
 import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
 import pandas as pd
 
 train_raw = utils.load_train()
@@ -25,12 +24,27 @@ train_y = train_raw.Transported
 
 params = {'max_iter': 1, 'solver': 'newton-cholesky', 'C' : 1, 'tol' : 0.0001, 'fit_intercept' : False}
 
-gsen = ensemble.BaggingClassifier(weak_estimator = LogisticRegression(), n_estimators = 20000, estimator_params = params, verbose = True, random_state = 1234)
-gsen.fit(X = train_X, y = train_y)
+train_sc = []
+test_sc = []
+lr_list = []
 
-train_preds = gsen.predict(X = train_X)
-print("Mean OOB accuracy:", gsen.get_mean_oob_accuracy())
-print("Train score: ", accuracy_score(train_y, train_preds))
+for lr in np.arange(6.7, 6.8, 0.1):
+    gsen = ensemble.SAMMERClassifier(weak_estimator = LogisticRegression(verbose=False), n_estimators = 1000, estimator_params = params, learning_rate = lr, verbose = False)
+    cv = utils.stratified_cross_validation(estimator=gsen, X = train_X, y = train_y, verbose=False)
+
+    print("--- LEARNING RATE:", lr)
+    print("\tCross-validation train score: ", np.mean(cv["train_score"]))
+    print("\tCross-validation test score: ", np.mean(cv["test_score"]))
+    train_sc.append(np.mean(cv['train_score']))
+    test_sc.append(np.mean(cv["test_score"]))
+    lr_list.append(lr)
+    np.mean(cv['test_score'])
+
+print("RESULTADOS:")
+
+print(test_sc)
+print(train_sc)
+print(lr_list)
 
 #--------------- CREAR PREDICCIONES PARA EL TEST ---------------------------------
 
@@ -47,4 +61,4 @@ print("Making predictions...")
 pred_labels = gsen.predict(X = test)
 print(pred_labels)
 
-utils.generate_submission(labels = pred_labels, method = "log", notes = "bagging-nooutliers-20000")
+utils.generate_submission(labels = pred_labels, method = "log", notes = "sammer")

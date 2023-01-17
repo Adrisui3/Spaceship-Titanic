@@ -9,16 +9,14 @@ import utils
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_validate
-from sklearn.model_selection import GridSearchCV as GS_CV
 
 train_raw = utils.load_train()
 train_raw["SM_FC"] = train_raw["ShoppingMall"] + train_raw["FoodCourt"]
 train_raw["VD_SP"] = train_raw["Spa"] + train_raw["VRDeck"]
 train_raw = train_raw.drop(["ShoppingMall", "FoodCourt", "Spa", "VRDeck"], axis=1)
-# train_raw = train_raw.drop(["Cabin_deck", "Cabin_side"], axis=1)
-# print(train_raw)
+
 train_X = utils.one_hot_encode(df = train_raw.drop(["Transported", "PassengerId"], axis = 1))
-# train_X = utils.normalize(df = train_X)
+
 train_y = train_raw.Transported
 
 cv = cross_validate(estimator = LogisticRegression(random_state = 1234, max_iter=50), X = train_X, y = train_y, cv = 10, n_jobs = -1, verbose = 5)

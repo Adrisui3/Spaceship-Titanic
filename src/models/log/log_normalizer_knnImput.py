@@ -21,15 +21,8 @@ train_X_cat = train_X.drop(["Age", "RoomService", "SM_FC", "VD_SP"], axis = 1)
 train_X_num = utils.normalizer_oh(train_X_num, merged=True, nra=True, onlynum=True)
 train_X = pd.concat([train_X_cat.reset_index(drop=True), train_X_num], axis=1)
 
-train_X = train_X.drop(["Cabin_deck_T", "HomePlanet_Mars", "VIP_1.0", "Destination_PSO J318.5-22"], axis=1)
-
-# print(train_X)
-
 train_y = train_raw.Transported
 
-# print(train_y)
-
-# cv = cross_validate(estimator = LogisticRegression(random_state = 1234, max_iter=1, solver = "newton-cholesky", C = 6, tol = 0.0001, fit_intercept=True, class_weight="balanced"), X = train_X, y = train_y, cv = 10, n_jobs = -1, verbose = 5)
 cv = cross_validate(estimator = LogisticRegression(random_state = 1234, max_iter=1, solver = "newton-cholesky", C = 2, tol = 0.0001, fit_intercept=True, class_weight="balanced"), X = train_X, y = train_y, cv = 10, n_jobs = -1, verbose = 5)
 print("Cross-validation test score: ", np.mean(cv["test_score"]))
 
@@ -44,14 +37,7 @@ test_cat = test.drop(["Age", "RoomService", "SM_FC", "VD_SP"], axis = 1)
 test_num = utils.normalizer_oh(test_num, merged=True, nra=True, onlynum=True)
 test = pd.concat([test_cat.reset_index(drop=True), test_num], axis=1)
 
-test = test.drop(["Cabin_deck_T", "HomePlanet_Mars", "VIP_1.0", "Destination_PSO J318.5-22"], axis=1)
-
 print("Training LogisticRegression...")
-# log = LogisticRegression(verbose=True, random_state=1234, max_iter = 1, C = 2, solver = "newton-cholesky", tol = 0.0001).fit(X = train_X, y = train_y)
-# log = LogisticRegression(verbose=True, random_state=1234, max_iter = 1,solver = "newton-cholesky").fit(X = train_X, y = train_y)
-# log = LogisticRegression(verbose=True, random_state=1234, max_iter = 1,solver = "newton-cholesky", fit_intercept=False, C = 1, tol = 0.0001).fit(X = train_X, y = train_y)
-# log = LogisticRegression(verbose=True, random_state = 1234, max_iter=1, solver = "newton-cholesky", C = 8, tol = 0.0001, fit_intercept=False).fit(X = train_X, y = train_y)
-# log = LogisticRegression(verbose=True, random_state = 1234, max_iter=1, solver = "newton-cholesky", C = 6, tol = 0.0001, fit_intercept=True, class_weight="balanced").fit(X = train_X, y = train_y)
 log = LogisticRegression(verbose=True, random_state = 1234, max_iter=1, solver = "newton-cholesky", C = 2, tol = 0.0001, fit_intercept=True, class_weight="balanced").fit(X = train_X, y = train_y)
 print("Making predictions...")
 pred_labels = log.predict(X = test)
@@ -61,4 +47,4 @@ result=logit_model.fit()
 print("RESULTADO")
 print(result.summary())
 
-utils.generate_submission(labels = pred_labels, method = "log", notes = "feat_selection_knnimputed_k_23")
+utils.generate_submission(labels = pred_labels, method = "log", notes = "knn_imputed")

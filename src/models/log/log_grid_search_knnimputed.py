@@ -8,11 +8,10 @@ sys.path.append(SRC)
 import utils
 import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import cross_validate
 from sklearn.model_selection import GridSearchCV as GS_CV
 import pandas as pd
 
-train_raw = utils.load_train()
+train_raw = utils.load_train_KnnImp()
 
 train_X = utils.one_hot_encode(df = train_raw.drop(['Transported', 'PassengerId'], axis=1))
 train_X = utils.merge_numerical(train_X)
@@ -22,22 +21,16 @@ train_X_cat = train_X.drop(["Age", "RoomService", "SM_FC", "VD_SP"], axis = 1)
 train_X_num = utils.normalizer_oh(train_X_num, merged=True, nra=True, onlynum=True)
 train_X = pd.concat([train_X_cat.reset_index(drop=True), train_X_num], axis=1)
 
-# print(train_X)
-
 train_y = train_raw.Transported
-
-# print(train_y)
 
 log = LogisticRegression(random_state = 1234)
 
-iter_range = list(range(0,10))
+iter_range = list(range(0,100))
 
-range_tol = [1e-4, 1e-3, 1e-2, 1e-1, 1]
-range_C = list(range(1,15))
+range_tol = [1e-4]
+range_C = list(range(1,3))
 
-pgrid = dict(max_iter=iter_range, solver = ["liblinear", "lbfgs", "newton-cholesky"], tol = range_tol, C = range_C, class_weight = ["balanced", None], fit_intercept = [True, False])
-# pgrid = dict(max_iter=iter_range, solver = ["newton-cholesky"], tol = range_tol, C = range_C, fit_intercept = [False, True], class_weight = ["balanced", None])
-# pgrid = dict(max_iter=iter_range, solver = ["newton-cholesky"], tol = range_tol, C = range_C, fit_intercept = [False], class_weight = ["balanced"])
+pgrid = dict(max_iter=iter_range, solver = ["newton-cholesky"], tol = range_tol, C = range_C, fit_intercept = [False, True], class_weight = ["balanced", None])
 
 grid = GS_CV(log, pgrid, scoring='accuracy', n_jobs = -1, cv =10, return_train_score=True)
 
@@ -46,5 +39,3 @@ grid_search = grid.fit(train_X,train_y)
 print(grid_search.best_params_)
 
 print(grid_search.best_score_)
-
-pgrid = dict(max_iter=iter_range, solver = ["liblinear", "lbfgs", "newton-cholesky"], tol = range_tol, C = range_C, class_weight = ["balanced", None], fit_intercept = [True, False])
