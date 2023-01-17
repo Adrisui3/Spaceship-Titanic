@@ -6,11 +6,7 @@ sys.path.append(SRC)
 import utils
 import pandas as pd
 import numpy as np
-import six
-import sys
-sys.modules['sklearn.externals.six'] = six # tenemos que hacer este apaño para que funcione el ID3, ya que internamente hace un import de sklearn.externals.six que no setá actualizado
-from id3 import Id3Estimator
-from id3 import export_graphviz
+from c45 import C45
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import accuracy_score
 
@@ -26,16 +22,16 @@ train_y_numpy = train_y.to_numpy()
 skf = StratifiedKFold(n_splits=10)
 
 # Declaramos el árbol de decisión id3
-id3 = Id3Estimator()
+c_45 = C45(attrNames=train_x.columns.tolist())
 
 # entrenamos y evaluamos el modelo con validación cruzada
 accuracy_train = []
 accuracy_test = []
 for train, test in skf.split(train_x_numpy, train_y_numpy):
-    id3.fit(train_x_numpy[train], train_y_numpy[train])
-    pred_train = id3.predict(train_x_numpy[train])
+    c_45.fit(train_x_numpy[train], train_y_numpy[train])
+    pred_train = c_45.predict(train_x_numpy[train])
     accuracy_train.append(accuracy_score(train_y_numpy[train], pred_train))
-    pred_test = id3.predict(train_x_numpy[test])
+    pred_test = c_45.predict(train_x_numpy[test])
     accuracy_test.append(accuracy_score(train_y_numpy[test], pred_test))
 
 np.mean(accuracy_train)
@@ -51,6 +47,6 @@ test = utils.one_hot_encode(df = test_raw.drop(["PassengerId"], axis = 1))
 print("Training id3 classifier...")
 id3 = Id3Estimator().fit(X = train_x.to_numpy(), y = train_y.to_numpy())
 print("Making predictions...")
-pred_labels = id3.predict(X = test)
-true_labels = utils.encode_labels(pred_labels)
-utils.generate_submission(labels = true_labels, method = "tree", notes = "default_parameters")
+pred_labels = id3.predict(X = test.to_numpy())
+
+utils.generate_submission(labels = pred_labels, method = "tree", notes = "C45_default_parameters")
