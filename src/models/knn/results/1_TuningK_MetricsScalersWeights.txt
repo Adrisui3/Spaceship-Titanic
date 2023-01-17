@@ -1,4 +1,5 @@
 #SCV con 10 folds, mejor valor de k en términos del preprocesado, métrica de distancia y pesos en la distancia.
+# Sin mergear numéricas y imputación por moda
 
 Para RobustScaler data
 Pesos: uniform 
@@ -89,3 +90,17 @@ chebyshev 0.7879937304075235 96
 correlation 0.7813230956443526 94
 seuclidean 0.7883389548033808 76
 mahalanobis 0.7618782323452773 80
+
+Para MinMaxScaler data
+Pesos: uniform 
+
+CV score, k_optim, p
+0.7660250254619526 15 1
+0.7628030633705011 9 2
+
+Para MinMaxScaler data
+Pesos: distance 
+
+CV score, k_optim, p
+0.7600408713939923 17 1
+0.7561303122891948 14 2
