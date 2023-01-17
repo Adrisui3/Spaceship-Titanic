@@ -72,4 +72,4 @@ id3 = Id3Estimator(max_depth=best_params['max_depth'], min_samples_split=best_pa
 print("Making predictions...")
 pred_labels = id3.predict(X = test.to_numpy())
 
-utils.generate_submission(labels = pred_labels, method = "tree", notes = "id3_gridsearch_parameters2")
+utils.generate_submission(labels = pred_labels, method = "tree", notes = "id3_gridsearch_parameters3")

@@ -50,4 +50,4 @@ dtc = DecisionTreeClassifier(criterion = best_parameters['criterion'], max_depth
 print("Making predictions...")
 pred_labels = dtc.predict(X = test)
 true_labels = utils.encode_labels(pred_labels)
-utils.generate_submission(labels = true_labels, method = "tree", notes = "gridSearch_parameters3")
+utils.generate_submission(labels = true_labels, method = "tree", notes = "gridSearch_parameters4")

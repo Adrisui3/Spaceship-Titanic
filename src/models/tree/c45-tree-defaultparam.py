@@ -49,4 +49,4 @@ id3 = Id3Estimator().fit(X = train_x.to_numpy(), y = train_y.to_numpy())
 print("Making predictions...")
 pred_labels = id3.predict(X = test.to_numpy())
 
-utils.generate_submission(labels = pred_labels, method = "tree", notes = "id3_default_parameters")
+utils.generate_submission(labels = pred_labels, method = "tree", notes = "C45_default_parameters")
