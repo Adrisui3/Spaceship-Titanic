@@ -10,6 +10,7 @@ import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_validate
 import pandas as pd
+import statsmodels.api as sm
 
 train_raw = utils.load_train()
 train_X = utils.one_hot_encode(df = train_raw.drop(['Transported', 'PassengerId'], axis=1))
@@ -19,6 +20,8 @@ train_X_cat = train_X.drop(["Age", "RoomService", "SM_FC", "VD_SP"], axis = 1)
 
 train_X_num = utils.normalizer_oh(train_X_num, merged=True, nra=True, onlynum=True)
 train_X = pd.concat([train_X_cat.reset_index(drop=True), train_X_num], axis=1)
+
+# train_X = train_X.drop(["Cabin_deck_T", "VIP_1.0", "HomePlanet_Mars"], axis=1)
 
 train_y = train_raw.Transported
 
@@ -36,10 +39,16 @@ test_cat = test.drop(["Age", "RoomService", "SM_FC", "VD_SP"], axis = 1)
 test_num = utils.normalizer_oh(test_num, merged=True, nra=True, onlynum=True)
 test = pd.concat([test_cat.reset_index(drop=True), test_num], axis=1)
 
+# test = test.drop(["Cabin_deck_T", "VIP_1.0", "HomePlanet_Mars"], axis=1)
+
 print("Training LogisticRegression...")
 log = LogisticRegression(verbose=True, random_state = 1234, max_iter=1, solver = "newton-cholesky", C = 1, tol = 0.0001, fit_intercept=False).fit(X = train_X, y = train_y)
 print("Making predictions...")
 pred_labels = log.predict(X = test)
-print(pred_labels)
 
-utils.generate_submission(labels = pred_labels, method = "log", notes = "knn_imputed")
+logit_model=sm.Logit(train_y, train_X)
+result=logit_model.fit()
+print("RESULTADO")
+print(result.summary())
+
+# utils.generate_submission(labels = pred_labels, method = "log", notes = "norm")
