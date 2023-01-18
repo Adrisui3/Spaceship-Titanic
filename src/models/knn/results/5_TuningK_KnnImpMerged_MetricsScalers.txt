@@ -1,4 +1,4 @@
-#Datos con merged columns y realizando imputación con knn (k=30)
+#Datos con merged columns y realizando imputación con knn 
 #CV con 10 folds encontrando mejor valores de k en función de la métrica y el preprocesado, 
 
 --------------------------------imputación knn con k=30-------------------------------------
